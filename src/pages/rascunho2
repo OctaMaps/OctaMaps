@@ -1,0 +1,33 @@
+comandos drawer
+
+drawerPosition:'right'
+drawerBackgroundColor:
+
+activeTintColor:
+contentOptions: {
+                activeBackgroundColor: Colors.selectedRowHeader,
+                activeTintColor: Colors.navigationBar,
+                labelStyle: {
+                    fontSize: 16,
+                    fontFamily: Fonts.light,
+                    color: Colors.navigationBar,
+                }
+            }
+
+
+             <DrawerItems
+      {...props}
+      items={items.filter((item) => item.routeName === 'Home' && item.routeName !== 'HiddenRoute')} />
+    <Text>Section</Text>
+    <DrawerItems
+      {...props}
+      items={items.filter((item) => item.routeName !== 'Home' && item.routeName !== 'HiddenRoute')} />
+  </View>
+
+  <View style={{paddingTop: '-2%'}}>
+        <DrawerItems {...props} />
+      </View>    
+
+
+  //esconder itens
+    drawerLabel: () => null

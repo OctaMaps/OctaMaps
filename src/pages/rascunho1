@@ -1,0 +1,96 @@
+<Header style={styles.head}>
+           <TouchableOpacity style={styles.iconMenu}  onPress={() => this.props.navigation.openDrawer()}  >
+
+              <Image
+               style={styles.menu}
+                source={require('../menu.png')}
+                />
+            </TouchableOpacity>
+            <Text style={styles.headA}> Octa Map's </Text>
+        </Header> 
+        <View style={{flex:1, alignItems: 'center', justifyContent:'center' }}>
+            <ImageBackground source={require('../map.png')} style={{width: '100%', height: '100%'}}>
+                  <TouchableOpacity style={styles.blocoF1} onPress={this.onPress} >
+                      
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.blocoF2} onPress={this.onPress} >
+                      
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.blocoE1} onPress={this.onPress} >
+                      
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.blocoE2} onPress={this.onPress} >
+                      
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.blocoE3} onPress={this.onPress} >
+                      
+                  </TouchableOpacity>
+
+             </ImageBackground>
+        </View>
+
+
+         blocoF1:{
+    //backgroundColor: 'red',
+    width:'30%',
+    right:'-30%',
+    marginTop: '20%',
+    height:'17%'
+  },
+  blocoF2:{
+    //backgroundColor: 'red',
+    width:'30%',
+    right:'-20%',
+    height:'12%'
+   },
+   blocoE1:{
+    //backgroundColor: 'blue',
+    width: '20%',
+    right:'-15%',
+    height:'5%',
+    marginTop: '1%'
+   },
+   blocoE2:{
+    //backgroundColor: 'blue',
+    width: '20%',
+    right:'-25%',
+    height:'5%',
+    marginTop: '-5%'
+   },
+   blocoE3:{
+    //backgroundColor: 'blue',
+    width: '20%',
+    right:'-30%',
+    height:'5%',
+    marginTop: '-5%'
+   },
+   a:{
+    //color:'white',
+    textAlign: 'center'  
+    },
+    head:{
+    backgroundColor: '#4c037a',
+    height: 60
+    },
+    headA:{
+      color:'white',
+      fontSize: 40,
+      paddingTop:'1%',
+      right: '5%'
+    },
+    iconMenu:{
+      right: '150%',
+      width: 50,
+      height: 50,
+      borderRadius: 50,
+      marginTop: '1%',
+      
+      },
+    menu:{
+      height: 50,
+      width: 50
+    }
