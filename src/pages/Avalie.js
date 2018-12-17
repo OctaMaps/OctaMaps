@@ -10,12 +10,10 @@ export default class Avalie extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Icon.Button backgroundColor={'#2f63b5'}color={'white'}size={45} style ={styles.icon}name="arrow-left" onPress={this.voltar}/>
-          <Text style={styles.octa}> O que achou? </Text>
-              <Icon.Button backgroundColor={'#2f63b5'}color={'white'}size={40} style ={styles.icon}name="search" />
-
-        </View>
+        <View style={header.header}>
+              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={45} style ={styles.icon}name="arrow-left" onPress={() => this.props.navigation.openDrawer()}/>
+              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={40} style ={styles.icon}name="search" />
+          </View>
         <View style={{flex:1, alignItems: 'center', justifyContent:'center' }}>
              
 
@@ -44,6 +42,18 @@ const styles = StyleSheet.create({
   },
   icon:{
     flex:1
+  }
+});
+
+
+const header = StyleSheet.create({
+  
+  header:{
+    height:65,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: 'transparent'
   }
 });
 

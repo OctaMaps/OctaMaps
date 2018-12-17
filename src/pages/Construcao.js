@@ -10,9 +10,9 @@ export default class Sobre extends React.Component {
     return (
       <View style={styles.container}>
         <View style={header.header}>
-                  <Icon.Button backgroundColor={'#2f63b5'}color={'white'}size={45} style ={styles.icon}name="arrow-left" onPress={() => this.props.navigation.goBack()}/>
-                  <Icon.Button backgroundColor={'#2f63b5'}color={'white'}size={40} style ={styles.icon}name="search" />
-            </View>
+              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={45} style ={styles.icon}name="arrow-left" onPress={() => this.props.navigation.openDrawer()}/>
+              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={40} style ={styles.icon}name="search" />
+          </View>
         <View style={{flex:1, alignItems: 'center', justifyContent:'center' }}>
              <Image style = {styles.img}source={require('../usuarioLogo.jpg')} />
              <Text style= {styles.a}>Tela em construção!</Text>

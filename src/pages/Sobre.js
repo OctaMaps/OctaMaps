@@ -9,9 +9,9 @@ export default class Sobre extends React.Component {
     return (
       <View style={styles.container}>
             <View style={header.header}>
-                  <Icon.Button backgroundColor={'#2f63b5'}color={'white'}size={45} style ={styles.icon}name="arrow-left" onPress={() => this.props.navigation.goBack()}/>
-                  <Icon.Button backgroundColor={'#2f63b5'}color={'white'}size={40} style ={styles.icon}name="search" />
-            </View>
+                  <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={45} style ={styles.icon}name="menu" onPress={() => this.props.navigation.openDrawer()}/>
+              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={40} style ={styles.icon}name="search" />
+          </View>
 
             <View style={styles.texto} >
                  <Text style= {styles.text}>  Bem vindo ao Octa Maps! </Text>
@@ -22,6 +22,8 @@ export default class Sobre extends React.Component {
                  <Text style= {styles.desenvolvedores}> Aroldo Goulart </Text>
                  <Text style= {styles.desenvolvedores}> Teiji Watanabe </Text>
                  <Text style= {styles.desenvolvedores}> Carlos Eduardo </Text>
+                 <Text style= {styles.desenvolvedores}> Custódio Gastão da Silva Júnior </Text>
+
                  <Text style= {styles.desenvolvedores}> Vitoria Angel </Text>
             </View>
             <Image style ={styles.img}source={require('../usuarioLogo.jpg')} />
