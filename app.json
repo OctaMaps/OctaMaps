@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Octa Map's" ,
+    "name": "Octa.Maps" ,
     "description": "APP de autodirecionamento do Campus IFMT-Octayde",
     "slug": "OctaMaps",
     "privacy": "public",
