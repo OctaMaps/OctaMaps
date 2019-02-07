@@ -10,3 +10,9 @@ Além disso, outro propósito deste projeto é estimular estes estudantes a busc
 This project was created with the intention of providing students with an emphasis on performance, organization and proactivity, in the discipline of Algorithms and Programming Logic of the Technical Course in Integrated Computer Science at the Cuiabá Campus "Cel. Octayde Jorge da Silva, "the contact with scientific aspects of intellectual production as an alternative resource to the practices developed within and between the course disciplines.
 
 In addition, another purpose of this project is to encourage these students to seek information from sources other than academia, thus enriching their solutions and expanding their mental map of information processes for the solution in software and computer systems.
+
+## Parte Grafica Atualmente
+![alt text](https://raw.githubusercontent.com/OctaMaps/OctaMaps/master/src/imagens/example.jpg)
+
+## Grafics 
+![alt text](https://raw.githubusercontent.com/OctaMaps/OctaMaps/master/src/imagens/example.jpg)
