@@ -6,8 +6,8 @@ import data from './octa_maps.json'
 
 
 export default class Pesquisa1 extends React.Component {
-  constructor(){
-
+  constructor(props){
+    super(props)
     this.state = {
         volatileData: [], // Dados que podem/serão alterados
         fullData: [], // Dados recebidos da API
@@ -42,7 +42,7 @@ export default class Pesquisa1 extends React.Component {
     },
     () => {
     if (this.state.query){
-        this.state.fullData.forEach(( item ) => { // Loop para checar todos os itens que encaixam com o texto digitado
+        this.state.fullData.forEach( item => { // Loop para checar todos os itens que encaixam com o texto digitado
             if (this.contains(item, this.state.query)){
                 newData.push(item)
             }
