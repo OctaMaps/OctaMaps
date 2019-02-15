@@ -12,7 +12,7 @@ export default class Principal extends React.Component {
         <ImageBackground source={require('../imagens/map.png')} style={{width: '100%', height: '100%'}}>
           <View style={header.header}>
                   <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={45} style ={styles.icon}name="menu" onPress={() => this.props.navigation.openDrawer()}/>
-              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={40} style ={styles.icon}name="search" />
+              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={40} style ={styles.icon}name="search" onPress={() => this.props.navigation.navigate('Pesquisa')} /> 
           </View>
 
           <View style={{flex:1, alignItems: 'center',  flexDirection: 'column'}}>

@@ -15,7 +15,7 @@ export default class Artes extends React.Component {
           <ImageBackground source={require('../imagens/BlocoF.png')} style={{width: '100%', height: '100%'}}>
             <View style={header.header}>
               <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={45} style ={styles.icon}name="arrow-left" onPress={() => this.props.navigation.goBack()}/>
-              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={40} style ={styles.icon}name="search" />
+              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={40} style ={styles.icon}name="search" onPress={() => this.props.navigation.navigate('Pesquisa')} /> 
           </View>
           </ImageBackground>
       </View>
