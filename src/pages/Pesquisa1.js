@@ -25,40 +25,37 @@ export default class Pesquisa1 extends React.Component {
         volatileData: result,
         fullData: result,
         //loading: false,
-      },console.log(this.state.fullData))
+      })
     }, 1500)
   }
 
   contains = ({ titulo_bloco, numero_piso, codigo_sala, titulo_sala }, query) =>{ // Função que faz a filtragem
-    if (titulo_bloco.includes(query) || numero_piso.includes(query) || codigo_sala.includes(query) || titulo_sala.includes(query)){
+    titulo_bloco = titulo_bloco.toLowerCase()
+    titulo_sala = titulo_sala.toLowerCase()
+    codigo_sala = codigo_sala.toLowerCase()
+    numero_piso = numero_piso.toLowerCase()
+    if (titulo_sala.includes(query)){
       return true
     }
   }
   
   search = (value) => { // Chamado toda vez que ocorrer alteração de algum caracter no textInput
     let newData = []
-    console.log("value: ",value.toLowerCase())
     this.setState({ 
       query: value.toLowerCase() 
-    },
-    () => {
+    }, () => {
     if (this.state.query){
-        newData = this.state.fullData.filter((item) => {
-          return this.contains(item, this.state.query)
-        })
-        this.setState({ volatileData: newData })
-        /*this.state.fullData.forEach( function(item) {
-            if (this.contains(item, this.state.query)){
-                newData.push(item)
-            }
-            this.setState({ volatileData: newData})
-        }) */
+        console.log(this.state.query)
+        this.state.fullData.forEach( (item) => {
+          if (this.contains(item, this.state.query)){
+              newData.push(item)
+          }
+          this.setState({ volatileData: newData})
+        }) 
     }else{
         this.setState({ volatileData: this.state.fullData })
     }})
   }
-  
-  
   render() {
     return (
       
@@ -74,7 +71,7 @@ export default class Pesquisa1 extends React.Component {
         <Animatable.View animation="fadeIn" duration={5000}>  
           <FlatList
               style={{ backgroundColor: 'white' }}
-              data={this.state.fullData}
+              data={this.state.volatileData}
               renderItem={({ item }) => <Text style={{ padding: 20, fontSize: 20 }}>{ item.titulo_sala }</Text>}
               keyExtractor={(item, index) => index.toString()}
             />
