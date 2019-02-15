@@ -19,16 +19,16 @@ export default class Pesquisa1 extends React.Component {
 
   componentDidMount(){
     this.setState({ loading: true })
-
-    const result = data.result
-
-    this.setState({
-      volatileData: result,
-      fullData: result,
-      loading: false,
-    },console.log(this.state.fullData))
+    setTimeout(() => {
+      const result = data.result
+      this.setState({
+        volatileData: result,
+        fullData: result,
+        //loading: false,
+      },console.log(this.state.fullData))
+    }, 1500)
   }
-  
+
   contains = ({ titulo_bloco, numero_piso, codigo_sala, titulo_sala }, query) =>{ // Função que faz a filtragem
     if (titulo_bloco.includes(query) || numero_piso.includes(query) || codigo_sala.includes(query) || titulo_sala.includes(query)){
       return true
