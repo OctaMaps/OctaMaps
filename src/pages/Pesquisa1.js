@@ -43,12 +43,16 @@ export default class Pesquisa1 extends React.Component {
     },
     () => {
     if (this.state.query){
-        this.state.fullData.forEach( function(item) {
+        newData = this.state.fullData.filter((item) => {
+          return this.contains(item, this.state.query)
+        })
+        this.setState({ volatileData: newData })
+        /*this.state.fullData.forEach( function(item) {
             if (this.contains(item, this.state.query)){
                 newData.push(item)
             }
             this.setState({ volatileData: newData})
-        }) 
+        }) */
     }else{
         this.setState({ volatileData: this.state.fullData })
     }})
