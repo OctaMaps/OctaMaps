@@ -26,9 +26,9 @@ export default class Pesquisa1 extends React.Component {
       volatileData: result,
       fullData: result,
       loading: false,
-    })
-    console.log(this.state.fullData)
+    },console.log(this.state.fullData))
   }
+  
   contains = ({ titulo_bloco, numero_piso, codigo_sala, titulo_sala }, query) =>{ // Função que faz a filtragem
     if (titulo_bloco.includes(query) || numero_piso.includes(query) || codigo_sala.includes(query) || titulo_sala.includes(query)){
       return true
