@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, Image,ImageBackground,FlatList,TextInput } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather'
 import * as Animatable from 'react-native-animatable'
-import data from './octa_maps.json'
+import data from '../dados/octa_maps.json'
 
 
 export default class Pesquisa1 extends React.Component {
