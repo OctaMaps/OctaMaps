@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image,ImageBackground,FlatList,TextInput } from 'react-native'
+import { StyleSheet, Text, View, Image,ImageBackground,FlatList,TextInput,TouchableOpacity  } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather'
 import * as Animatable from 'react-native-animatable'
 import data from '../dados/octa_maps.json'
@@ -73,7 +73,15 @@ export default class Pesquisa1 extends React.Component {
           <FlatList
               style={{ backgroundColor: 'white' }}
               data={this.state.volatileData}
-              renderItem={({ item}) => <Text style={{ padding: 20, fontSize: 20 }}>{ `${item.titulo_bloco}  ${'-'} ${'Piso '+item.numero_piso} ${'-'} ${item.titulo_sala} `}</Text>}
+              renderItem={({ item}) => 
+              <TouchableOpacity onPress={this._onPressButton}>
+              <Text style={{ padding: 20, fontSize: 20 }}>
+                { `${item.titulo_bloco}  ${'-'} ${'Piso '+item.numero_piso} ${'-'} ${item.titulo_sala} `}
+              </Text>
+              </TouchableOpacity>
+
+              }
+
               keyExtractor={(item, index) => index.toString()} 
             />
         </Animatable.View>
