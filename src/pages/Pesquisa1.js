@@ -56,6 +56,7 @@ export default class Pesquisa1 extends React.Component {
         this.setState({ volatileData: [] })
     }})
   }
+
   render() {
     return (
       
@@ -75,7 +76,7 @@ export default class Pesquisa1 extends React.Component {
               style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}
               data={this.state.volatileData}
               renderItem={({ item}) => 
-                <TouchableOpacity onPress={ this.link(item.titulo_bloco) }> 
+                <TouchableOpacity onPress={ this.props.navigation.navigate(item.titulo_bloco) }> 
                   <Text style={{ padding: 20, fontSize: 20 }}>
                     { `${item.titulo_bloco}  ${'-'} ${'Piso '+item.numero_piso} ${'-'} ${item.titulo_sala} `}
                   </Text>
