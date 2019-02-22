@@ -8,16 +8,19 @@ export default class Sobre extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-            <View style={header.header}>
-              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={45} style ={styles.icon}name="arrow-left" onPress={() => this.props.navigation.goBack()}/>
-              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={40} style ={styles.icon}name="search" onPress={() => this.props.navigation.navigate('Pesquisa')} /> 
+          <View style={header.header}>
+            <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={45} style ={styles.icon}name="arrow-left" onPress={() => this.props.navigation.goBack()}/>
+            <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={40} style ={styles.icon}name="search" onPress={() => this.props.navigation.navigate('Pesquisa')} /> 
           </View>
+        <Image style ={styles.img}source={require('../../assets/icon.png')} />
 
             <View style={styles.texto} >
-                 <Text style= {styles.text}>  Bem vindo ao Octa Maps! </Text>
-                 <Text style= {styles.text}> IFMT - Campus Cuiabá - Octayde Jorge da Silva </Text>
+                 <Text style= {styles.text}> Aplicativo desenvolvido com recursos </Text>
+                 <Text style= {styles.text}> do projeto de Iniciação Científica para </Text>
+                 <Text style= {styles.text}>  o Ensino Médio do CNPq. Edital DPIEx 13/2018. </Text>
 
-                 <Text style= {{fontSize: 30, marginTop:'20%' }}> Desenvolvedores: </Text>
+                 <Text style= {{fontSize: 30, marginTop:'20%' }}> Participantes: </Text>
+
                  <Text style= {styles.desenvolvedores,{marginTop:10,fontSize:20}}> Alexandre Torrezam </Text>
                  <Text style= {styles.desenvolvedores}> Aroldo Goulart </Text>
                  <Text style= {styles.desenvolvedores}> Teiji Watanabe </Text>
@@ -26,7 +29,6 @@ export default class Sobre extends React.Component {
 
                  <Text style= {styles.desenvolvedores}> Vitoria Angel </Text>
             </View>
-            <Image style ={styles.img}source={require('../usuarioLogo.jpg')} />
 
       </View>
     );
@@ -44,12 +46,12 @@ const styles = StyleSheet.create({
   },
   text:{
     fontSize: 20,
-    alignSelf: 'center' 
+    alignSelf: 'center' ,
+    marginLeft: '4%'
   },
   img:{
-    marginTop: '10%',
-    width: '100%',
-    height: '50%'
+    width: '80%',
+
   },
   desenvolvedores:{
     fontSize: 20,

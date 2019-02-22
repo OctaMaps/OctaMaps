@@ -11,8 +11,8 @@ export default class Principal extends React.Component {
       <View style={{flex:1}}>
         <ImageBackground source={require('../imagens/map.png')} style={{width: '100%', height: '100%'}}>
           <View style={header.header}>
-                  <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={45} style ={styles.icon}name="menu" onPress={() => this.props.navigation.openDrawer()}/>
-              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={40} style ={styles.icon}name="search" onPress={() => this.props.navigation.navigate('Pesquisa')} /> 
+              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={35} style ={styles.icon}name="menu" onPress={() => this.props.navigation.openDrawer()}/>
+              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={35} style ={styles.icon}name="search" onPress={() => this.props.navigation.navigate('Pesquisa')} /> 
           </View>
 
           <View style={{flex:1, alignItems: 'center',  flexDirection: 'column'}}>
@@ -128,7 +128,7 @@ const bloco = StyleSheet.create({
     marginTop: '-90%'
   },
   B:{
-    //backgroundColor: 'yellow',
+   // backgroundColor: 'yellow',
     height: '30%',
     width: '15%',
     left: '30%',
@@ -142,7 +142,7 @@ const bloco = StyleSheet.create({
     marginTop: '-13%'
   },
   B2:{
-    //backgroundColor: 'red',
+   // backgroundColor: 'red',
     height: '30%',
     width: '15%',
     left: '20%',
@@ -163,11 +163,11 @@ const bloco = StyleSheet.create({
     marginTop: '-50%'
   },
   Artes:{
-   // backgroundColor: 'red',
-    height: '15%',
-    width: '15%',
+  // backgroundColor: 'red',
+    height: '30%',
+    width: '30%',
     left: '50%',
-    marginTop: '-170%'
+    marginTop: '-150%'
   }
 });
 
@@ -179,8 +179,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: 'transparent'
-
-
   },
   octa:{
     fontSize: 23,
@@ -189,7 +187,6 @@ const styles = StyleSheet.create({
   },
   icon:{
     flex:1
-
   }
 });
 

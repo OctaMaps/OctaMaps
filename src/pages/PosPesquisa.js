@@ -7,7 +7,7 @@ import Icon from 'react-native-vector-icons/Feather';
 
 
 
-export default class TesteBarra extends React.Component {
+export default class PosPesquisa extends React.Component {
   render() {
     return (
       
