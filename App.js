@@ -50,38 +50,38 @@ const menu = createDrawerNavigator({
         drawerIcon: () => <Icon name='md-star'/>
       }
     },
-    'BlocoA':{
+    'Bloco A':{
       screen: BlocoA,
       navigationOptions:{  
         //Configuração para não exibir o bloco no DrawerNavigator
         drawerLabel: () => null
       }
     },
-    'BlocoB':{
+    'Bloco B':{
       screen: BlocoB,
       navigationOptions:{  
         drawerLabel: () => null
       }
     },
-    'BlocoC':{
+    'Bloco C':{
       screen: BlocoC,
       navigationOptions:{  
         drawerLabel: () => null
       }
     },
-    'BlocoD':{
+    'Bloco D':{
       screen: BlocoD,
       navigationOptions:{  
         drawerLabel: () => null
       }
     },
-    'BlocoE':{
+    'Bloco E':{
       screen: BlocoE,
       navigationOptions:{  
         drawerLabel: () => null
       }
     },
-    'BlocoF':{
+    'Bloco F':{
       screen: BlocoF,
       navigationOptions:{  
         drawerLabel: () => null
@@ -152,8 +152,8 @@ const styles = StyleSheet.create({
     paddingTop: '6%'
   },
   icon:{
-    width: 100,
-    height: 100
+    width: 80,
+    height: 80
   }
 });
 

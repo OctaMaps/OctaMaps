@@ -22,7 +22,7 @@ export default class Pesquisa1 extends React.Component {
     setTimeout(() => {
       const result = data.result
       this.setState({
-        volatileData: result,
+        volatileData: [],
         fullData: result,
         //loading: false,
       })
@@ -53,16 +53,16 @@ export default class Pesquisa1 extends React.Component {
           this.setState({ volatileData: newData})
         }) 
     }else{
-        this.setState({ volatileData: this.state.fullData })
+        this.setState({ volatileData: [] })
     }})
   }
   render() {
     return (
       
       <View style={styles.container}>
-          
+      <ImageBackground source={require('../imagens/map.png')} style={{width: '100%', height: '100%'}}>    
         <View style={{ height: 80, backgroundColor: 'transparent', justifyContent: 'center', paddingHorizontal: 5 }}>
-          <Animatable.View animation="lightSpeedIn" duration={2000} style={{ height: 50, backgroundColor: 'white', flexDirection: 'row', padding: 5, alignItems: 'center' }}>
+          <Animatable.View animation="lightSpeedIn" duration={4000} style={{ height: 50, backgroundColor: 'white', flexDirection: 'row', padding: 5, alignItems: 'center' }}>
               <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={40} name="search" />
               <TextInput onChangeText={ value => this.search(value) }placeholder="Pesquisa" style={{ fontSize: 24, marginLeft: 15, flex: 1 }} />
           </Animatable.View>
@@ -70,22 +70,23 @@ export default class Pesquisa1 extends React.Component {
 
            
         <Animatable.View animation="fadeIn" duration={5000}>  
+          
           <FlatList
-              style={{ backgroundColor: 'white' }}
+              style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}
               data={this.state.volatileData}
               renderItem={({ item}) => 
-              <TouchableOpacity onPress={this._onPressButton}>
-              <Text style={{ padding: 20, fontSize: 20 }}>
-                { `${item.titulo_bloco}  ${'-'} ${'Piso '+item.numero_piso} ${'-'} ${item.titulo_sala} `}
-              </Text>
-              </TouchableOpacity>
-
-              }
-
+                <TouchableOpacity onPress={ this.link(item.titulo_bloco) }> 
+                  <Text style={{ padding: 20, fontSize: 20 }}>
+                    { `${item.titulo_bloco}  ${'-'} ${'Piso '+item.numero_piso} ${'-'} ${item.titulo_sala} `}
+                  </Text>
+                </TouchableOpacity>
+                }
               keyExtractor={(item, index) => index.toString()} 
             />
+
         </Animatable.View>
      
+     </ImageBackground>
 
       </View>
     );
