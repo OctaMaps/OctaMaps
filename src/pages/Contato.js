@@ -19,7 +19,7 @@ export default class Sobre extends React.Component {
                  <Text style= {styles.text}> Elogios, Contato, Criticas e Relato de Bugs</Text>
 
                  <Text style= {{fontSize: 30, marginTop:'40%' }}> Email: </Text>
-                 <Text style= {styles.desenvolvedores,{marginTop:10,fontSize:20}}> Aroldogooulart@gmail.com </Text>
+                 <Text style= {styles.desenvolvedores,{marginTop:10,fontSize:20}}> octa.maps@gmail.com </Text>
                  
             </View>
             <Image style ={styles.img}source={require('../usuarioLogo.jpg')} />
