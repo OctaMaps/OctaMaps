@@ -67,13 +67,14 @@ export default class Pesquisa1 extends React.Component {
               <TextInput onChangeText={ value => this.search(value) }placeholder="Pesquisa" style={{ fontSize: 24, marginLeft: 15, flex: 1 }} />
           </Animatable.View>
         </View>
-          
+
+           
         <Animatable.View animation="fadeIn" duration={5000}>  
           <FlatList
               style={{ backgroundColor: 'white' }}
               data={this.state.volatileData}
-              renderItem={({ item }) => <Text style={{ padding: 20, fontSize: 20 }}>{ item.titulo_sala }</Text>}
-              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item}) => <Text style={{ padding: 20, fontSize: 20 }}>{ `${item.titulo_bloco}  ${'-'} ${'Piso '+item.numero_piso} ${'-'} ${item.titulo_sala} `}</Text>}
+              keyExtractor={(item, index) => index.toString()} 
             />
         </Animatable.View>
      
@@ -96,4 +97,3 @@ const header = StyleSheet.create({
     flexDirection: 'row',
   }
 });
-

@@ -19,6 +19,8 @@ import BlocoC from './src/pages/BlocoC';
 import BlocoA from './src/pages/BlocoA';
 import BlocoB from './src/pages/BlocoB';
 
+import Pesquisa from './src/pages/Pesquisa1';
+
 
 //Criação das telas do DrawerNavigator
 const menu = createDrawerNavigator({
@@ -97,11 +99,17 @@ const menu = createDrawerNavigator({
         drawerLabel: () => null
       }
     },
+    'Pesquisa':{
+      screen: Pesquisa,
+      navigationOptions:{  
+        drawerLabel: () => null
+      }
+    },
 
 },{
     contentComponent: (props) => ( 
       <SafeAreaView style={{flex:1}}>
-        
+
         <StatusBar hidden />
 
         <View style={styles.bloco1}>
