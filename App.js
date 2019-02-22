@@ -22,11 +22,14 @@ import BlocoB from './src/pages/BlocoB';
 import Pesquisa from './src/pages/Pesquisa1';
 
 
+import Testes from './src/pages/Testess';
+
+
 //Criação das telas do DrawerNavigator
 const menu = createDrawerNavigator({
     Home: {
       //Definindo a Tela exibida no novo componente 'HOME'
-      screen: Principal,
+      screen: Testes,
       navigationOptions:{
         //Desenhando o Icone 
         drawerIcon: () => <Icon name='home'/>
