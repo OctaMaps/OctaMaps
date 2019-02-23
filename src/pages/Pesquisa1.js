@@ -75,7 +75,7 @@ export default class Pesquisa1 extends React.Component {
               style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}
               data={this.state.volatileData}
               renderItem={({ item}) => 
-                <TouchableOpacity onPress={ this.link(item.titulo_bloco) }> 
+                <TouchableOpacity onPress={ this._onPressButton }> 
                   <Text style={{ padding: 20, fontSize: 20 }}>
                     { `${item.titulo_bloco}  ${'-'} ${'Piso '+item.numero_piso} ${'-'} ${item.titulo_sala} `}
                   </Text>
@@ -92,7 +92,7 @@ export default class Pesquisa1 extends React.Component {
     );
   }
 }
-
+//this.link(item.titulo_bloco)
 const styles = StyleSheet.create({
   container: {
     flex:1,

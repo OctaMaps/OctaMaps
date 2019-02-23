@@ -18,27 +18,27 @@ export default class Principal extends React.Component {
           <View style={{flex:1, alignItems: 'center',  flexDirection: 'column'}}>
             
               <TouchableOpacity style={bloco.Quadra} onPress={() => this.props.navigation.navigate('Quadra')} />
-              <TouchableOpacity style={bloco.F} onPress={() => this.props.navigation.navigate('BlocoF')} />
+              <TouchableOpacity style={bloco.F} onPress={() => this.props.navigation.navigate('Bloco F')} />
 
-              <TouchableOpacity style={bloco.E} onPress={() => this.props.navigation.navigate('BlocoE')} />
-              <TouchableOpacity style={bloco.E1} onPress={() => this.props.navigation.navigate('BlocoE')} />
+              <TouchableOpacity style={bloco.E} onPress={() => this.props.navigation.navigate('Bloco E')} />
+              <TouchableOpacity style={bloco.E1} onPress={() => this.props.navigation.navigate('Bloco E')} />
 
-              <TouchableOpacity style={bloco.D} onPress={() => this.props.navigation.navigate('BlocoD')} />
-              <TouchableOpacity style={bloco.D1} onPress={() => this.props.navigation.navigate('BlocoD')} />
+              <TouchableOpacity style={bloco.D} onPress={() => this.props.navigation.navigate('Bloco D')} />
+              <TouchableOpacity style={bloco.D1} onPress={() => this.props.navigation.navigate('Bloco D')} />
 
-              <TouchableOpacity style={bloco.C} onPress={() => this.props.navigation.navigate('BlocoC')} />
-              <TouchableOpacity style={bloco.C1} onPress={() => this.props.navigation.navigate('BlocoC')} />
+              <TouchableOpacity style={bloco.C} onPress={() => this.props.navigation.navigate('Bloco C')} />
+              <TouchableOpacity style={bloco.C1} onPress={() => this.props.navigation.navigate('Bloco C')} />
 
-              <TouchableOpacity style={bloco.A} onPress={() => this.props.navigation.navigate('BlocoA')} />
-              <TouchableOpacity style={bloco.A1} onPress={() => this.props.navigation.navigate('BlocoA')} />
+              <TouchableOpacity style={bloco.A} onPress={() => this.props.navigation.navigate('Bloco A')} />
+              <TouchableOpacity style={bloco.A1} onPress={() => this.props.navigation.navigate('Bloco A')} />
 
-              <TouchableOpacity style={bloco.F2} onPress={() => this.props.navigation.navigate('BlocoF')} />
+              <TouchableOpacity style={bloco.F2} onPress={() => this.props.navigation.navigate('Bloco F')} />
 
-              <TouchableOpacity style={bloco.B} onPress={() => this.props.navigation.navigate('BlocoB')} />
-              <TouchableOpacity style={bloco.B1} onPress={() => this.props.navigation.navigate('BlocoB')} />
-              <TouchableOpacity style={bloco.B2} onPress={() => this.props.navigation.navigate('BlocoB')} />
-              <TouchableOpacity style={bloco.B3} onPress={() => this.props.navigation.navigate('BlocoB')} />
-              <TouchableOpacity style={bloco.B4} onPress={() => this.props.navigation.navigate('BlocoB')} />
+              <TouchableOpacity style={bloco.B} onPress={() => this.props.navigation.navigate('Bloco B')} />
+              <TouchableOpacity style={bloco.B1} onPress={() => this.props.navigation.navigate('Bloco B')} />
+              <TouchableOpacity style={bloco.B2} onPress={() => this.props.navigation.navigate('Bloco B')} />
+              <TouchableOpacity style={bloco.B3} onPress={() => this.props.navigation.navigate('Bloco B')} />
+              <TouchableOpacity style={bloco.B4} onPress={() => this.props.navigation.navigate('Bloco B')} />
 
               <TouchableOpacity style={bloco.Artes} onPress={() => this.props.navigation.navigate('Artes')} />
 

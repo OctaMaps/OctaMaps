@@ -4,7 +4,8 @@ import Icon from 'react-native-vector-icons/Feather';
 
 
 
-export default class Testess extends React.Component {
+
+export default class Loading extends React.Component {
   constructor(props) {
     super(props)
     this.state={
@@ -19,28 +20,31 @@ export default class Testess extends React.Component {
   }
 
   componentWillMount(){
-
     setTimeout(()=>{
       this.setState({
         showMe:false
-      }),
-      () => this.props.navigation.navigate('Pesquisa')
-
+      })
     },
-    6000)
+    6000),
+     setTimeout(() => this.props.navigation.navigate('Home'),3000)
   }
-
   render() {
     return (
-       <View style={{flex:1,marginTop:50}}>
+       <View style={{flex:1}}>
+        <ImageBackground style={{width: '100%', height: '100%'}} source={require('../imagens/Others/load.png')} >  
         {
           this.state.showMe ? 
-          <ActivityIndicator size="large" color="blue"/>
+          <ActivityIndicator style={{marginTop: '120%'}} size="large" color='rgba(95, 188, 221, 1)'/>
           : <View>
               <Text> Carregador carregado</Text>
             </View>
         }
+        </ImageBackground>
+
+
       </View>
+
+
   
 
 
