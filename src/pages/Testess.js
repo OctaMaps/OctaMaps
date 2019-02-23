@@ -3,14 +3,12 @@ import { StyleSheet, Text, View, Image,ImageBackground,ActivityIndicator} from '
 import Icon from 'react-native-vector-icons/Feather';
 
 
-import ProgressCircle from 'react-native-progress-circle'
-
 
 export default class Testess extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-      showMe:true;
+      showMe:true
     }
   }
 
@@ -25,9 +23,11 @@ export default class Testess extends React.Component {
     setTimeout(()=>{
       this.setState({
         showMe:false
-      })
+      }),
+      () => this.props.navigation.navigate('Pesquisa')
+
     },
-    3000)
+    6000)
   }
 
   render() {
