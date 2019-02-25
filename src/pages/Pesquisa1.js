@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import { StyleSheet, Text, View, Image,ImageBackground,FlatList,TextInput,TouchableOpacity  } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather'
 import * as Animatable from 'react-native-animatable'
