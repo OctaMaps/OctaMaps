@@ -3,6 +3,8 @@ import axios from 'axios'
 import { StyleSheet, Text, View, Image,ImageBackground,FlatList,TextInput,TouchableOpacity  } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather'
 import * as Animatable from 'react-native-animatable'
+const Datastore = require('react-native-local-mongodb')
+const db = new Datastore({ filename: 'OctaMaps', autoload: true });
 
 export default class Pesquisa1 extends React.Component {
   constructor(props){
@@ -15,6 +17,19 @@ export default class Pesquisa1 extends React.Component {
         query: "",
     }
   }
+  
+  insertDB(fullData){
+    fullData.forEach((item) => {
+      let doc = {
+        titulo_campus: item.titulo_campus,
+            titulo_bloco: item.titulo_bloco,
+            numero_piso: item.numero_piso,
+            codigo_sala: item.codigo_sala,
+            titulo_sala: item.codigo_sala
+      }
+      db.insert(doc)
+    })
+  }
 
   componentDidMount(){ // Após todos os componentes estarem carregados
     setTimeout(() => {
@@ -24,9 +39,18 @@ export default class Pesquisa1 extends React.Component {
       .then(response => {
         const { result } = response.data
         this.setState({
-          volatileData: result,
+          volatileData: [],
           fullData: result,
           //loading: false, // Não está exibindo animação de carregamento
+        })
+        db.remove({}, { multi: true })
+        this.insertDB(result)
+        db.find({},(error, docs) => {
+          console.log(docs)
+          this.setState({ fullData: docs })
+        })
+        db.count({}, (error, count) => {
+          console.log(count)
         })
       }).catch(error => {
         console.log(error) // Caso dê erro, exibir erro
