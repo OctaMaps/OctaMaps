@@ -21,20 +21,13 @@ import BlocoB from './src/pages/BlocoB';
 
 import Pesquisa from './src/pages/Pesquisa1';
 
-import Loading from './src/pages/Loading';
+import TestOnly from './src/pages/TestOnly';
 
 
 //Criação das telas do DrawerNavigator
 const menu = createDrawerNavigator({
-    Load: {
-      //Definindo a Tela exibida no novo componente 'HOME'
-      screen: Loading,
-      navigationOptions:{  
-        //Configuração para não exibir o bloco no DrawerNavigator
-        drawerLabel: () => null
-      }
-    },
     Home: {
+      //Definindo a Tela exibida no novo componente 'HOME'
       screen: Principal,
       navigationOptions:{
         drawerIcon: () => <Icon name='home'/>
@@ -121,7 +114,7 @@ const menu = createDrawerNavigator({
         <StatusBar hidden />
 
         <View style={styles.bloco1}>
-          <Image style={styles.img} source={require('./src/usuarioLogo.jpg')} />
+          <Image style={styles.img} source={require('./assets/icon.png')} />
           <Text style={styles.usuario}> Bem vindo ! </Text>
         </View> 
 

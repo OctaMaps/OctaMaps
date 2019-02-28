@@ -1,20 +1,46 @@
 import React from 'react';
-import { StyleSheet, Text, View,TouchableOpacity, Image,ImageBackground, StatusBar } from 'react-native';
+import { StyleSheet, Text, View,TouchableOpacity, Image,ImageBackground, StatusBar,ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 export default class Principal extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state={
+      showMe:true
+    }
+  }
 
+  onPress = () => {
+    this.setState({
+      count: this.state.count+10
+    })
+  }
 
+  componentWillMount(){
+    setTimeout(()=>{
+      this.setState({
+        showMe:false
+      })
+    },
+    6000)
+  }
 
   render() {
     return (
       <View style={{flex:1}}>
-        <ImageBackground source={require('../imagens/map.png')} style={{width: '100%', height: '100%'}}>
+        {
+          this.state.showMe ? //se for verdadeiro exibirá isso
+          <ImageBackground style={{width: '100%', height: '100%'}} source={require('../imagens/Others/load.png')} >  
+          <ActivityIndicator style={{marginTop: '120%'}} size="large" color='rgba(95, 188, 221, 1)'/>
+          </ImageBackground>
+
+          : //se for falso..
+          <ImageBackground source={require('../imagens/map.png')} style={{width: '100%', height: '100%'}}>
           <View style={header.header}>
               <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={35} style ={styles.icon}name="menu" onPress={() => this.props.navigation.openDrawer()}/>
               <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={35} style ={styles.icon}name="search" onPress={() => this.props.navigation.navigate('Pesquisa')} /> 
           </View>
-
+          
           <View style={{flex:1, alignItems: 'center',  flexDirection: 'column'}}>
             
               <TouchableOpacity style={bloco.Quadra} onPress={() => this.props.navigation.navigate('Quadra')} />
@@ -44,6 +70,10 @@ export default class Principal extends React.Component {
 
           </View>
         </ImageBackground>
+        }
+
+
+        
       </View>
     );
   }
