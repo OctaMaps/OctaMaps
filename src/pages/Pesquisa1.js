@@ -22,7 +22,7 @@ export default class Pesquisa1 extends React.Component {
     setTimeout(() => {
       this.setState({ loading: true }) // Animação de carregamento rodando
       axios
-      .get("http://octamaps.online/auth/jwt.php?sub=octaMapsAPP&name=admin") /// Url para conexão a API
+      .get("url") /// Url para conexão a API
       .then(response => {
         const { result } = response.data
         this.setState({
