@@ -18,13 +18,13 @@ export default class Pesquisa1 extends React.Component {
 
   componentDidMount(){ // Após todos os componentes estarem carregados
     setTimeout(() => {
-      this.setState({ loading: true }) // Animação de Loading rodando
+      this.setState({ loading: true }) // Animação de carregamento rodando
       axios
       .get("url") /// Url para conexão a API
       .then(response => {
         const { result } = response.data
         this.setState({
-          volatileData: result,
+          volatileData: [],
           fullData: result,
           //loading: false, // Não está exibindo animação de carregamento
         })
