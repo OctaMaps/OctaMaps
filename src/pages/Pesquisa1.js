@@ -1,9 +1,8 @@
 import React from 'react'
+import axios from 'axios'
 import { StyleSheet, Text, View, Image,ImageBackground,FlatList,TextInput,TouchableOpacity  } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather'
 import * as Animatable from 'react-native-animatable'
-import data from '../dados/octa_maps.json'
-
 
 export default class Pesquisa1 extends React.Component {
   constructor(props){
@@ -17,14 +16,25 @@ export default class Pesquisa1 extends React.Component {
     }
   }
 
-  componentDidMount(){
-    this.setState({ loading: true })
+  componentDidMount(){ // Após todos os componentes estarem carregados
     setTimeout(() => {
-      const result = data.result
-      this.setState({
-        volatileData: [],
-        fullData: result,
-        //loading: false,
+      this.setState({ loading: true }) // Animação de Loading rodando
+      axios
+      .get("url") /// Url para conexão a API
+      .then(response => {
+        const { result } = response.data
+        this.setState({
+          volatileData: result,
+          fullData: result,
+          //loading: false, // Não está exibindo animação de carregamento
+        })
+      }).catch(error => {
+        console.log(error) // Caso dê erro, exibir erro
+        this.setState({
+          error: true,
+          loading: false, // Animação de Loading Finalizando
+        })
+
       })
     }, 1500)
   }
