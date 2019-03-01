@@ -1,10 +1,11 @@
 import React from 'react'
-import axios from 'axios'
 import { StyleSheet, Text, View, Image,ImageBackground,FlatList,TextInput,TouchableOpacity  } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather'
 import * as Animatable from 'react-native-animatable'
-const Datastore = require('react-native-local-mongodb')
-const db = new Datastore({ filename: 'OctaMaps', autoload: true });
+import contains from "./src/utils/contains"
+import Conn from "./src/services/conn"
+
+connection = new Conn()
 
 export default class Pesquisa1 extends React.Component {
   constructor(props){
@@ -18,59 +19,14 @@ export default class Pesquisa1 extends React.Component {
     }
   }
   
-  insertDB(fullData){
-    fullData.forEach((item) => {
-      let doc = {
-        titulo_campus: item.titulo_campus,
-            titulo_bloco: item.titulo_bloco,
-            numero_piso: item.numero_piso,
-            codigo_sala: item.codigo_sala,
-            titulo_sala: item.codigo_sala
-      }
-      db.insert(doc)
+  componentDidMount(){ 
+    connection.api("url").then((data) => {
+      this.setState({fullData: data}) // Dados recebidos
     })
-  }
-
-  componentDidMount(){ // Após todos os componentes estarem carregados
-    setTimeout(() => {
-      this.setState({ loading: true }) // Animação de carregamento rodando
-      axios
-      .get("url") /// Url para conexão a API
-      .then(response => {
-        const { result } = response.data
-        this.setState({
-          volatileData: [],
-          fullData: result,
-          //loading: false, // Não está exibindo animação de carregamento
-        })
-        db.remove({}, { multi: true })
-        this.insertDB(result)
-        db.find({},(error, docs) => {
-          console.log(docs)
-          this.setState({ fullData: docs })
-        })
-        db.count({}, (error, count) => {
-          console.log(count)
-        })
-      }).catch(error => {
-        console.log(error) // Caso dê erro, exibir erro
-        this.setState({
-          error: true,
-          loading: false, // Animação de Loading Finalizando
-        })
-
-      })
-    }, 1500)
-  }
-
-  contains = ({ titulo_bloco, numero_piso, codigo_sala, titulo_sala }, query) =>{ // Função que faz a filtragem
-    titulo_bloco = titulo_bloco.toLowerCase()
-    titulo_sala = titulo_sala.toLowerCase()
-    codigo_sala = codigo_sala.toLowerCase()
-    numero_piso = numero_piso.toLowerCase()
-    if (titulo_sala.includes(query)){
-      return true
-    }
+    .catch((error) => {
+      console.log(error)
+      this.setState({ error: true }) // State de Erro
+    })  
   }
   
   search = (value) => { // Chamado toda vez que ocorrer alteração de algum caracter no textInput
