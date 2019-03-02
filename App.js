@@ -21,6 +21,8 @@ import BlocoB from './src/pages/BlocoB';
 
 import Pesquisa from './src/pages/Pesquisa1';
 
+import TestOnly from './src/pages/TestOnly';
+
 
 //Criação das telas do DrawerNavigator
 const menu = createDrawerNavigator({
@@ -28,7 +30,6 @@ const menu = createDrawerNavigator({
       //Definindo a Tela exibida no novo componente 'HOME'
       screen: Principal,
       navigationOptions:{
-        //Desenhando o Icone 
         drawerIcon: () => <Icon name='home'/>
       }
     },
@@ -113,7 +114,7 @@ const menu = createDrawerNavigator({
         <StatusBar hidden />
 
         <View style={styles.bloco1}>
-          <Image style={styles.img} source={require('./src/usuarioLogo.jpg')} />
+          <Image style={styles.img} source={require('./assets/icon.png')} />
           <Text style={styles.usuario}> Bem vindo ! </Text>
         </View> 
 

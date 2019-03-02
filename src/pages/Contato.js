@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View,Image} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
+
 export default class Sobre extends React.Component {
 
   
@@ -22,7 +23,7 @@ export default class Sobre extends React.Component {
                  <Text style= {styles.desenvolvedores,{marginTop:10,fontSize:20}}> octa.maps@gmail.com </Text>
                  
             </View>
-            <Image style ={styles.img}source={require('../usuarioLogo.jpg')} />
+            <Image style ={styles.img}source={require('../imagens/Others/simbolo.png')} />
 
       </View>
     );
