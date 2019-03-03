@@ -9,7 +9,7 @@
       "ios",
       "android"
     ],
-    "version": "1.0.6",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -28,6 +28,7 @@
     },
     "android": {
       "package": "projeto.ifmt",
+      "versionCode": 2,
       "permissions": [
         "CAMERA",
         "RECORD_AUDIO",
@@ -39,7 +40,6 @@
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION",
         //"CHANGE_CONFIGURATION",
-        "com.google.android.c2dm.permission.RECEIVE",
         "com.android.launcher.permission.INSTALL_SHORTCUT",
         "com.htc.launcher.permission.UPDATE_SHORTCUT"
       ]
