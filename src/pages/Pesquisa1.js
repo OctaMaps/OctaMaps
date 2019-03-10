@@ -18,38 +18,17 @@ export default class Pesquisa1 extends React.Component {
     }
   }
 
-  componentDidMount(){ // Após todos os componentes estarem carregados
-    setTimeout(() => {
-      this.setState({ loading: true }) // Animação de carregamento rodando
-      axios
-      .get("url") /// Url para conexão a API
-      .then(response => {
-        const { result } = response.data
-        this.setState({
-          volatileData: [],
-          fullData: result,
-          //loading: false, // Não está exibindo animação de carregamento
-        })
-      }).catch(error => {
-        console.log(error) // Caso dê erro, exibir erro
-        this.setState({
-          error: true,
-          loading: false, // Animação de Loading Finalizando
-        })
+    componentDidMount(){
+    this.setState({ loading: true }) // Loading On
+    connection.api("http://octamaps.online/?isAPP=true")
+    .then((data) => {
+      this.setState({fullData: data})
+      this.setState({ loading: false }) // Loading Off
+    })
+    .catch(e =>{
+      console.log(e)
+    })
 
-      })
-    }, 1500)
-  }
-
-  contains = ({ titulo_bloco, numero_piso, codigo_sala, titulo_sala }, query) =>{ // Função que faz a filtragem
-    titulo_bloco = titulo_bloco.toLowerCase()
-    titulo_sala = titulo_sala.toLowerCase()
-    codigo_sala = codigo_sala.toLowerCase()
-    numero_piso = numero_piso.toLowerCase()
-    if (titulo_sala.includes(query)){
-      return true
-    }
-  }
   
   search = (value) => { // Chamado toda vez que ocorrer alteração de algum caracter no textInput
     let newData = []
@@ -57,15 +36,14 @@ export default class Pesquisa1 extends React.Component {
       query: value.toLowerCase() 
     }, () => {
     if (this.state.query){
-        console.log(this.state.query)
         this.state.fullData.forEach( (item) => {
-          if (this.contains(item, this.state.query)){
+          if (contains(item, this.state.query)){
               newData.push(item)
           }
           this.setState({ volatileData: newData})
         }) 
     }else{
-        this.setState({ volatileData: [] })
+        this.setState({ volatileData: {} })
     }})
   }
   render() {
