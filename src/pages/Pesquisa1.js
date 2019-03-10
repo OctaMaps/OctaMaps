@@ -2,8 +2,8 @@ import React from 'react'
 import { StyleSheet, Text, View, Image,ImageBackground,FlatList,TextInput,TouchableOpacity,TouchableHighlight  } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather'
 import * as Animatable from 'react-native-animatable'
-import data from '../dados/octa_maps.json'
-import axios from 'axios'
+import contains from "./src/utils/contains"
+import Conn from "./src/services/Conn"
 
 
 export default class Pesquisa1 extends React.Component {
