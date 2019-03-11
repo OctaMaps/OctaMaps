@@ -2,10 +2,10 @@ import React from 'react'
 import { StyleSheet, Text, View, Image,ImageBackground,FlatList,TextInput,TouchableOpacity,TouchableHighlight  } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather'
 import * as Animatable from 'react-native-animatable'
-import contains from "./src/utils/contains"
-import Conn from "./src/services/Conn"
+import contains from "../utils/contains"
+import Conn from "../services/conn"
 
-
+connection = new Conn()
 export default class Pesquisa1 extends React.Component {
   constructor(props){
     super(props)
@@ -28,7 +28,7 @@ export default class Pesquisa1 extends React.Component {
     .catch(e =>{
       console.log(e)
     })
-
+  }
   
   search = (value) => { // Chamado toda vez que ocorrer alteração de algum caracter no textInput
     let newData = []
@@ -46,6 +46,7 @@ export default class Pesquisa1 extends React.Component {
         this.setState({ volatileData: {} })
     }})
   }
+
   render() {
     return (
       <View style={styles.container}>
