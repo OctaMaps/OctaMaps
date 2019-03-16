@@ -16,6 +16,7 @@
     "react-native-app-link": "^1.0.0",
     "react-native-local-mongodb": "^2.2.5",
     "react-native-progress-circle": "^2.0.1",
+    "react-native-searchable-dropdown": "^1.0.6",
     "react-native-vector-icons": "6.1.0",
     "react-native-video": "^4.4.0",
     "react-navigation": "^3.2.1"

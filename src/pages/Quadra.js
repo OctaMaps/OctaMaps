@@ -1,8 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image,ImageBackground } from 'react-native';
+import { StyleSheet, View, ImageBackground } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
-
-
+import NewHeader from '../component/NewHeader';
 
 
 
@@ -10,13 +9,9 @@ import Icon from 'react-native-vector-icons/Feather';
 export default class Artes extends React.Component {
   render() {
     return (
-      
       <View style={styles.container}>
           <ImageBackground source={require('../imagens/BlocoF.png')} style={{width: '100%', height: '100%'}}>
-            <View style={header.header}>
-              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={45} style ={styles.icon}name="arrow-left" onPress={() => this.props.navigation.goBack()}/>
-              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={40} style ={styles.icon}name="search" onPress={() => this.props.navigation.navigate('Pesquisa')} /> 
-          </View>
+            <NewHeader></NewHeader>
           </ImageBackground>
       </View>
     );
@@ -30,7 +25,6 @@ const styles = StyleSheet.create({
 });
 
 const header = StyleSheet.create({
-  
   header:{
     height:65,
     flexDirection: 'row',

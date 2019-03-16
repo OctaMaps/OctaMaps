@@ -1,18 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View,Image} from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
-
+import NewHeader from '../component/NewHeader';
 
 export default class Sobre extends React.Component {
-
   
   render() {
     return (
       <View style={styles.container}>
-            <View style={header.header}>
-              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={45} style ={styles.icon}name="arrow-left" onPress={() => this.props.navigation.goBack()}/>
-              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={40} style ={styles.icon}name="search" onPress={() => this.props.navigation.navigate('Pesquisa')} /> 
-          </View>
+           <NewHeader></NewHeader>
 
             <View style={styles.texto} >
                  <Text style= {styles.text}>  Bem vindo ao Octa Maps! </Text>
@@ -21,10 +16,10 @@ export default class Sobre extends React.Component {
 
                  <Text style= {{fontSize: 30, marginTop:'40%' }}> Email: </Text>
                  <Text style= {styles.desenvolvedores,{marginTop:10,fontSize:20}}> octa.maps@gmail.com </Text>
-                 
-            </View>
-            <Image style ={styles.img}source={require('../imagens/Others/simbolo.png')} />
 
+            </View>
+
+            <Image style ={styles.img}source={require('../imagens/Others/simbolo.png')} />
       </View>
     );
   }
@@ -56,7 +51,6 @@ const styles = StyleSheet.create({
 
 
 const header = StyleSheet.create({
-  
   header:{
     height:65,
     flexDirection: 'row',

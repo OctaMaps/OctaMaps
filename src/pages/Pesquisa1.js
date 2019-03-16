@@ -2,10 +2,12 @@ import React from 'react'
 import { StyleSheet, Text, View, Image,ImageBackground,FlatList,TextInput,TouchableOpacity,TouchableHighlight  } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather'
 import * as Animatable from 'react-native-animatable'
+
 import contains from "../utils/contains"
 import Conn from "../services/conn"
 
 connection = new Conn()
+
 export default class Pesquisa1 extends React.Component {
   constructor(props){
     super(props)
@@ -19,15 +21,15 @@ export default class Pesquisa1 extends React.Component {
   }
 
     componentDidMount(){
-    this.setState({ loading: true }) // Loading On
-    connection.api("http://octamaps.online/?isAPP=true")
-    .then((data) => {
-      this.setState({fullData: data})
-      this.setState({ loading: false }) // Loading Off
-    })
-    .catch(e =>{
-      console.log(e)
-    })
+      this.setState({ loading: true }) // Loading On
+      connection.api("http://octamaps.online/?isAPP=true")
+      .then((data) => {
+        this.setState({fullData: data})
+        this.setState({ loading: false }) // Loading Off
+      })
+      .catch(e =>{
+        console.log(e)
+      })
   }
   
   search = (value) => { // Chamado toda vez que ocorrer alteração de algum caracter no textInput
@@ -53,15 +55,14 @@ export default class Pesquisa1 extends React.Component {
        <TouchableHighlight onPress={() => this.props.navigation.goBack()}> 
 
           <ImageBackground source={require('../imagens/map.png')} style={{width: '100%', height: '100%'}}>    
-            <View style={{ height: 80, backgroundColor: 'transparent', justifyContent: 'center', paddingHorizontal: 5 }}>
-              <Animatable.View animation="lightSpeedIn" duration={4000} style={{ height: 50, backgroundColor: 'white', flexDirection: 'row', padding: 5, alignItems: 'center' }}>
-                  <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={40} name="search" />
-                  <TextInput onChangeText={ value => this.search(value) }placeholder="Pesquisa" style={{ fontSize: 24, marginLeft: 15, flex: 1 }} />
-              </Animatable.View>
-            </View>
+              <View style={{ height: 80, backgroundColor: 'transparent', justifyContent: 'center', paddingHorizontal: 5 }}>
+                <Animatable.View animation="lightSpeedIn" duration={4000} style={{ height: 50, backgroundColor: 'white', flexDirection: 'row', padding: 5, alignItems: 'center' }}>
+                    <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={40} name="search" />
+                    <TextInput onChangeText={ value => this.search(value) }placeholder="Pesquisa" style={{ fontSize: 24, marginLeft: 15, flex: 1 }} />
+                </Animatable.View>
+              </View>
 
                
-            <Animatable.View animation="fadeIn" duration={5000}>  
               <FlatList
                   style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}
                   data={this.state.volatileData}
@@ -74,7 +75,6 @@ export default class Pesquisa1 extends React.Component {
                     }
                   keyExtractor={(item, index) => index.toString()} 
               />
-            </Animatable.View>
           </ImageBackground>
        </TouchableHighlight>
       </View>
@@ -89,7 +89,6 @@ const styles = StyleSheet.create({
 });
 
 const header = StyleSheet.create({
-  
   header:{
     height:65,
     flexDirection: 'row',

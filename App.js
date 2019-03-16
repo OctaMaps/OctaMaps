@@ -8,8 +8,6 @@ import Sobre from './src/pages/Sobre';
 import Contato from './src/pages/Contato';
 import Avalie from './src/pages/Avalie';
 
-import Construcao from './src/pages/Construcao';
-
 import Quadra from './src/pages/Quadra';
 import Artes from './src/pages/Artes';
 import BlocoF from './src/pages/BlocoF';
@@ -20,20 +18,20 @@ import BlocoA from './src/pages/BlocoA';
 import BlocoB from './src/pages/BlocoB';
 
 import Pesquisa from './src/pages/Pesquisa1';
-
 import TestOnly from './src/pages/TestOnly';
 
-
 //Criação das telas do DrawerNavigator
+
+// AVISO CODIGO PARA PURO ESTUDO AGORA, ARRUMAR HOME E SOBRE
 const menu = createDrawerNavigator({
-    Home: {
+    'Home': {
       //Definindo a Tela exibida no novo componente 'HOME'
       screen: Principal,
       navigationOptions:{
         drawerIcon: () => <Icon name='home'/>
       }
     },
-    Sobre: {
+    'Sobre': {
       screen: Sobre,
       navigationOptions:{
         drawerIcon: () => <Icon name='information-circle'/>
@@ -46,7 +44,7 @@ const menu = createDrawerNavigator({
       }
     },
     'Avalie':{
-      screen: Construcao,
+      screen: Avalie,
       navigationOptions:{
         drawerIcon: () => <Icon name='md-star'/>
       }
@@ -115,7 +113,7 @@ const menu = createDrawerNavigator({
 
         <View style={styles.bloco1}>
           <Image style={styles.img} source={require('./assets/icon.png')} />
-          <Text style={styles.usuario}> Bem vindo ! </Text>
+          <Text style={styles.usuario}> Ola mundo ! </Text>
         </View> 
 
         <View style={{paddingTop: '-2%'}}>
