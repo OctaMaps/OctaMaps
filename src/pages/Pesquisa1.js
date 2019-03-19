@@ -2,49 +2,27 @@ import React from 'react'
 import { StyleSheet, Text, View, Image,ImageBackground,FlatList,TextInput,TouchableOpacity,TouchableHighlight  } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather'
 import * as Animatable from 'react-native-animatable'
-import contains from "../utils/contains"
-import Conn from "../services/conn"
+import Database from '../services/Database'
+import filter from '../utils/filter'
 
-connection = new Conn()
+const database = new Database("OctaMaps")
+
 export default class Pesquisa1 extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-        volatileData: [], // Dados que podem/serão alterados
-        fullData: [], // Dados recebidos da API
-        loading: false, 
-        error: false,
-        query: "",
+      volatileData: [], // Dados que podem/serão alterados
+      fullData: [], // Dados recebidos da API
+      loading: false,
+      error: false,
     }
+    database.migration()
   }
 
-    componentDidMount(){
-    this.setState({ loading: true }) // Loading On
-    connection.api("http://octamaps.online/?isAPP=true")
-    .then((data) => {
-      this.setState({fullData: data})
-      this.setState({ loading: false }) // Loading Off
-    })
-    .catch(e =>{
-      console.log(e)
-    })
-  }
-  
-  search = (value) => { // Chamado toda vez que ocorrer alteração de algum caracter no textInput
-    let newData = []
-    this.setState({ 
-      query: value.toLowerCase() 
-    }, () => {
-    if (this.state.query){
-        this.state.fullData.forEach( (item) => {
-          if (contains(item, this.state.query)){
-              newData.push(item)
-          }
-          this.setState({ volatileData: newData})
-        }) 
-    }else{
-        this.setState({ volatileData: {} })
-    }})
+
+  async search(query){
+    this.setState({fullData: await database.getData()})
+    this.setState({ volatileData: filter(query, this.state.fullData)})
   }
 
   render() {
@@ -61,7 +39,6 @@ export default class Pesquisa1 extends React.Component {
             </View>
 
                
-            <Animatable.View animation="fadeIn" duration={5000}>  
               <FlatList
                   style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}
                   data={this.state.volatileData}
@@ -74,7 +51,6 @@ export default class Pesquisa1 extends React.Component {
                     }
                   keyExtractor={(item, index) => index.toString()} 
               />
-            </Animatable.View>
           </ImageBackground>
        </TouchableHighlight>
       </View>
