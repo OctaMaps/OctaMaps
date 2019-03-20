@@ -2,51 +2,30 @@ import React from 'react'
 import { StyleSheet, Text, View, Image,ImageBackground,FlatList,TextInput,TouchableOpacity,TouchableHighlight  } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather'
 import * as Animatable from 'react-native-animatable'
+import Database from '../services/Database'
+import filter from '../utils/filter'
 
-import contains from "../utils/contains"
-import Conn from "../services/conn"
-
-connection = new Conn()
+const database = new Database("OctaMaps")
 
 export default class Pesquisa1 extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-        volatileData: [], // Dados que podem/serão alterados
-        fullData: [], // Dados recebidos da API
-        loading: false, 
-        error: false,
-        query: "",
+      volatileData: [], // Dados que fornecerão quais itens a lista deve mostrar
+      fullData: [], // Dados recebidos, sem alteração
+      loading: false,
+      error: false,
     }
   }
 
-    componentDidMount(){
-      this.setState({ loading: true }) // Loading On
-      connection.api("http://octamaps.online/?isAPP=true")
-      .then((data) => {
-        this.setState({fullData: data})
-        this.setState({ loading: false }) // Loading Off
-      })
-      .catch(e =>{
-        console.log(e)
-      })
+  async componentDidMount(){
+    database.migration()
+    this.setState({ fullData: await database.getData() })
   }
-  
-  search = (value) => { // Chamado toda vez que ocorrer alteração de algum caracter no textInput
-    let newData = []
-    this.setState({ 
-      query: value.toLowerCase() 
-    }, () => {
-    if (this.state.query){
-        this.state.fullData.forEach( (item) => {
-          if (contains(item, this.state.query)){
-              newData.push(item)
-          }
-          this.setState({ volatileData: newData})
-        }) 
-    }else{
-        this.setState({ volatileData: {} })
-    }})
+
+
+  search(query){
+    this.setState({ volatileData: filter(query, this.state.fullData) })
   }
 
   render() {
@@ -81,7 +60,6 @@ export default class Pesquisa1 extends React.Component {
     );
   }
 }
-//this.link(item.titulo_bloco)
 const styles = StyleSheet.create({
   container: {
     flex:1,
