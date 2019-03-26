@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity ,ImageBackground, ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
-
+import NewHeader from '../component/NewHeader';
+ 
 export default class Principal extends React.Component {
   constructor(props) {
     super(props)
@@ -22,7 +23,7 @@ export default class Principal extends React.Component {
         showMe:false
       })
     },
-    6000)
+    3000)
   }
 
   render() {
@@ -37,10 +38,7 @@ export default class Principal extends React.Component {
           : //se for falso.. 
             <ImageBackground source={require('../imagens/map.png')} style={{width: '100%', height: '100%'}}>
 
-            <View style={header.header /*Usei esse header no lugar do newHeader pois precisava do "menu"*/}>
-              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={35} style ={header.icon}name="menu" onPress={() => this.props.navigation.openDrawer()}/>
-              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={35} style ={header.icon}name="search" onPress={() => this.props.navigation.navigate('Pesquisa')} /> 
-            </View>
+            <NewHeader icon={false}></NewHeader>
             
             <View style={{flex:1, alignItems: 'center',  flexDirection: 'column'}}>
               

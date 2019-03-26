@@ -9,7 +9,7 @@ var appStoreId = '0'
 var appStoreLocale = 'us'
 var playStoreId = 'projeto.ifmt'
 
-export default class Sobre extends React.Component {
+export default class Avalie extends React.Component {
 
   voltar = () => {
     this.props.navigation.goBack();
