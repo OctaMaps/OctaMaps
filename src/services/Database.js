@@ -8,6 +8,7 @@ class Database{
         this.database = new PouchDB(name)
         this.connectionAPI = new ConnAPI()
         this.dataFromAPI = []
+        //connectionAPI.getUpdate()
     }
 
     getData = async () => {

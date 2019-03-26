@@ -7,6 +7,7 @@ filter = (query, fullData) => {
       fullData.forEach( (item) => {
         if (contains(item, query)){
           filteredData.push(item)
+          console.log(item._id)
         }
         }) 
         return filteredData
