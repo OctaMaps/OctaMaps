@@ -7,7 +7,7 @@ export default class Artes extends React.Component {
     return (
       <View style={styles.container}>
           <ImageBackground source={require('../imagens/BlocoB.png')} style={{width: '100%', height: '100%'}}>
-             <NewHeader icon={"arrow-left"}></NewHeader>
+             <NewHeader></NewHeader>
           </ImageBackground>
       </View>
     );
