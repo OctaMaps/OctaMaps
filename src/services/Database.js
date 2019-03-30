@@ -8,7 +8,6 @@ class Database{
         this.database = new PouchDB(name)
         this.connectionAPI = new ConnAPI()
         this.dataFromAPI = []
-        //connectionAPI.getUpdate()
     }
 
     getData = async () => {
@@ -16,53 +15,93 @@ class Database{
         try{
             const response = await this.database.allDocs()
             response.rows.forEach(item => {
-                data.push(item.doc)
+                if (item.doc._id !== "updateVersionID"){
+                    data.push(item.doc)
+                }  
             })
             return data
         }catch(error){
-            console.log(error)
+            throw(error)
         }
     }
-    
-    migration = () => {
-    this.database.allDocs({
-        include_docs: true,
-        attachments: true,
-    })
-    .then(docs => {
-        this.rows = docs.total_rows
-        if (this.rows>0){
-            console.log(this.rows)
-        }else{
-            console.log(this.rows)
-            let counter = 0
-            this.connectionAPI.getData(credentials.apiURL)
-            .then((response) => { 
-                this.dataFromAPI = response 
-                this.dataFromAPI.forEach((item) => {
-                    counter++
-                    this.database.put({
-                        _id: counter.toString(),
-                        codigo_sala: item.codigo_sala,
-                        numero_piso: item.numero_piso,
-                        titulo_bloco: item.titulo_bloco,
-                        titulo_campus: item.titulo_campus,
-                        titulo_sala:item.titulo_sala
-                    })
-                    .then()
-                    .catch(e => console.log(e))
-                })
-            })
-            .catch(e =>{ console.log(e) })
 
+    deleteAllData = async () => {
+        try{
+            const response = await this.database.allDocs()
+            response.rows.forEach(item => {
+                this.database.remove(item.doc)
+            })
+        }catch(error){
+            throw(error)
         }
-    })
-    }      
-    
+    }
+
+   migration = async () => {
+       try{
+            docs = await this.database.allDocs({
+                include_docs: true,
+                attachments: true,    
+            })
+        }catch(error){
+            throw(error)
+        }
+        if(docs.total_rows<=0){
+            try{
+                response = await this.connectionAPI.getData(credentials.getDataURL)
+                updateVersionID = await this.connectionAPI.getUpdateVersionID(credentials.getUpdateURL)
+            }catch(error){
+                response = undefined
+                updateVersionID = undefined
+                throw(error)
+            }
+            if (response){
+                response.forEach(item => {
+                    let { _id, codigo_sala, numero_piso, titulo_bloco, titulo_campus, titulo_sala } = item
+                    this.database.put({ 
+                        _id, codigo_sala, numero_piso, titulo_bloco, titulo_campus, titulo_sala
+                    }, (error) => { 
+                            if(error){throw(error)} 
+                        }
+                    )
+                })
+            }
+            if (updateVersionID){
+                this.database.put({
+                    _id: "updateVersionID",
+                    updateVersionID: updateVersionID 
+                })
+                .then(response => console.log(response))
+                .catch(error => console.log(error))
+            }
+        }
+   }
+   
+   getUpdateVersionID = async () => {
+       try{
+            response = await this.database.get("updateVersionID")
+            return response.updateVersionID
+       }catch(error){
+           throw(error)
+        }
+   }
+
     destroy = () => {
         this.database.destroy()
         .then(response => console.log(response))
         .catch( e => console.log(e))
+    }
+
+    checkUpdate = async (updateVersionID) => {
+        try{
+            let response = await this.connectionAPI.getUpdateVersionID(credentials.getUpdateURL)
+            response = parseInt(response)
+            if (response > updateVersionID){
+                response = await this.deleteAllData()
+                response = await this.migration()
+            }
+        }catch(error){
+            throw(error)
+        }   
     }
 
     

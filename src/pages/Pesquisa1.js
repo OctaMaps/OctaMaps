@@ -21,11 +21,13 @@ export default class Pesquisa1 extends React.Component {
   async componentDidMount(){
     database.migration()
     this.setState({ fullData: await database.getData() })
+    updateVersionID = await database.getUpdateVersionID()
+    response = await database.checkUpdate(updateVersionID)
   }
 
 
   search(query){
-    this.setState({ volatileData: filter(query, this.state.fullData) })
+    this.setState({ volatileData: filter(query, this.state.fullData)})
   }
 
   render() {
