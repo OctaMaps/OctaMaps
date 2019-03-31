@@ -38,12 +38,14 @@ class NewHeader extends React.Component {
   //parte logica
   async componentDidMount(){
     database.migration()
+    updateVersionID = await database.getUpdateVersionID()
+    response = await database.checkUpdate(updateVersionID)
     this.setState({ fullData: await database.getData() })
   }
+
+
   search(query){
-    this.setState({ 
-      volatileData: filter(query, this.state.fullData),
-    })
+    this.setState({ volatileData: filter(query, this.state.fullData)})
   }
 
   // apenas funcao para textar 
