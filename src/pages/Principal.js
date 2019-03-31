@@ -38,7 +38,7 @@ export default class Principal extends React.Component {
           : //se for falso.. 
             <ImageBackground source={require('../imagens/map.png')} style={{width: '100%', height: '100%'}}>
 
-            <NewHeader icon={false}></NewHeader>
+            <NewHeader icon={true}></NewHeader>
             
             <View style={{flex:1, alignItems: 'center',  flexDirection: 'column'}}>
               
