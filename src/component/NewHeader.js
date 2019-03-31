@@ -37,7 +37,7 @@ class NewHeader extends React.Component {
 
   //parte logica
   async componentDidMount(){
-    database.migration()
+    response = await database.migration()
     updateVersionID = await database.getUpdateVersionID()
     response = await database.checkUpdate(updateVersionID)
     this.setState({ fullData: await database.getData() })
