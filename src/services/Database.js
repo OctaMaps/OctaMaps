@@ -81,6 +81,8 @@ class Database{
             response = await this.database.get("updateVersionID")
             return response.updateVersionID
        }catch(error){
+           this.deleteAllData()
+           this.migration()
            throw(error)
         }
    }
@@ -95,6 +97,8 @@ class Database{
         try{
             let response = await this.connectionAPI.getUpdateVersionID(credentials.getUpdateURL)
             response = parseInt(response)
+            console.log(response)
+            console.log(updateVersionID)
             if (response > updateVersionID){
                 response = await this.deleteAllData()
                 response = await this.migration()
