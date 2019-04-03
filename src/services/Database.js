@@ -12,17 +12,13 @@ class Database{
 
     getData = async () => {
         let data = []
-        try{
-            const response = await this.database.allDocs()
-            response.rows.forEach(item => {
-                if (item.doc._id !== "updateVersionID"){
-                    data.push(item.doc)
-                }  
-            })
-            return data
-        }catch(error){
-            throw(error)
-        }
+        const response = await this.database.allDocs()
+        response.rows.forEach(item => {
+            if (item.doc._id !== "updateVersionID"){
+                data.push(item.doc)
+            }  
+        })
+        return data
     }
 
     deleteAllData = async () => {
@@ -32,19 +28,15 @@ class Database{
                 this.database.remove(item.doc)
             })
         }catch(error){
-            throw(error)
+            console.log("Erro ao deletar todos os arquivos: " + error)
         }
     }
 
    migration = async () => {
-       try{
-            docs = await this.database.allDocs({
-                include_docs: true,
-                attachments: true,    
-            })
-        }catch(error){
-            throw(error)
-        }
+        docs = await this.database.allDocs({
+            include_docs: true,
+            attachments: true,    
+        })
         if(docs.total_rows<=0){
             try{
                 response = await this.connectionAPI.getData(credentials.getDataURL)
@@ -52,7 +44,7 @@ class Database{
             }catch(error){
                 response = undefined
                 updateVersionID = undefined
-                throw(error)
+                console.log("Erro ao obter os dados: " + error)
             }
             if (response){
                 response.forEach(item => {
@@ -66,12 +58,14 @@ class Database{
                 })
             }
             if (updateVersionID){
-                this.database.put({
-                    _id: "updateVersionID",
-                    updateVersionID: updateVersionID 
-                })
-                .then(response => console.log(response))
-                .catch(error => console.log(error))
+                try{
+                    await this.database.put({
+                        _id: "updateVersionID",
+                        updateVersionID: updateVersionID 
+                    })
+                }catch(error){
+                    console.log("Erro ao inserir 'UpdateVersionID' no Banco de Dados: " + error)
+                }
             }
         }
    }
@@ -82,12 +76,11 @@ class Database{
             return response.updateVersionID
        }catch(error){
            try{
-           response = await this.deleteAllData()
-           response = await this.migration()
+           await this.deleteAllData()
+           await this.migration()
            }catch(error){
-               throw(error)
+               console.log("Erro ao tentar atualizar os dados após tentar obter 'UpdateVersionID': " + error)
            }
-           throw(error)
         }
    }
 
@@ -106,7 +99,7 @@ class Database{
                 response = await this.migration()
             }
         }catch(error){
-            throw(error)
+            console.log("Erro ao atualizar dados: " + error)
         }   
     }
 
