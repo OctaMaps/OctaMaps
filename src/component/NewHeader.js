@@ -72,9 +72,13 @@ class NewHeader extends React.Component {
         return(
           <Animatable.View style={header.header}ref={this.handleViewRef}>
               <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={35} style ={header.icon}name={this.props.icon ? "menu" : "arrow-left"} onPress={this.props.icon  ? () => this.props.navigation.openDrawer() : () => this.props.navigation.goBack() }/>
-              <Icon.Button backgroundColor={'transparent'}
-                  color={'#b5b5b5'}size={30} style ={header.icon}
-                  name="search" onPress={this.balanco}/>
+              { this.state.searchable ? 
+                            null
+                :
+                  <Icon.Button backgroundColor={'transparent'}
+                                color={'#b5b5b5'}size={30} style ={header.icon}
+                                name="search" onPress={this.balanco}/>
+                                }
          </Animatable.View>
         )
       case '1':

@@ -9,7 +9,7 @@ export default class Sobre extends React.Component {
       <View style={styles.container}>
       
         <ImageBackground style={{flex:1}} source={require('../imagens/Others/sobre.png')} >
-          <NewHeader> </NewHeader>
+           <NewHeader searchable={false}></NewHeader>
         </ImageBackground>
         
       </View>
