@@ -7,7 +7,7 @@ export default class Sobre extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-           <NewHeader></NewHeader>
+           <NewHeader searchable={false}></NewHeader>
 
             <View style={styles.texto} >
                  <Text style= {styles.text}>  Bem vindo ao Octa Maps! </Text>
