@@ -6,10 +6,10 @@ import Icon from 'react-native-vector-icons/Feather';
 import * as Animatable from 'react-native-animatable'
 
 // importando banco de dados e conexoes
-import Database from '../services/Database'
+const Database = require('../services/Database')
 import filter from '../utils/filter'
 
-const database = new Database("OctaMaps")
+const database = Database('OctaMaps')
 
 
 // O que é pra ser feito agora, fazer transcrição do codigo pesquisa para aqui e criar um "pop up" indepedente da sceen
@@ -37,10 +37,15 @@ class NewHeader extends React.Component {
 
   //parte logica
   async componentDidMount(){
-    response = await database.migration()
-    updateVersionID = await database.getUpdateVersionID()
-    response = await database.checkUpdate(updateVersionID)
-    this.setState({ fullData: await database.getData() })
+    try {
+      await database.migration()
+      await database.checkUpdate()
+      const fullData = await database.getAllDocs() 
+      this.setState({ fullData })
+    }catch(error){
+      this.setState({ error: true })
+      console.log(error)
+    }
   }
 
 
