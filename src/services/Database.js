@@ -1,116 +1,142 @@
-import PouchDB from 'pouchdb-react-native'
-import ConnAPI from "./ConnAPI"
+import PouchDB from "pouchdb-react-native"
+const API = require('./API')
+const arraySync = require('../utils/arraySync')
 
-const credentials = require("../credentials/credentials.json")
+function Database(name){
 
-class Database{
-    constructor(name){
-        this.database = new PouchDB(name)
-        this.connectionAPI = new ConnAPI()
-        this.dataFromAPI = []
+  const database = new PouchDB(name)
+  const APIConn = API()
+
+  destroy = async () => {
+    database.destroy()
+  }
+
+  insert = async ({ _id, codigo_sala, numero_piso, titulo_bloco, titulo_campus, titulo_sala, _rev }) => {
+    if(_rev){
+      response = await database.put({
+        _id, _rev, codigo_sala, numero_piso, titulo_bloco, titulo_campus, titulo_sala
+      })
+    }else{
+      await database.put({
+        _id, codigo_sala, numero_piso, titulo_bloco, titulo_campus, titulo_sala
+      })
     }
+  }
 
-    getData = async () => {
-        let data = []
-        try{
-            const response = await this.database.allDocs()
-            response.rows.forEach(item => {
-                if (item.doc._id !== "updateVersionID"){
-                    data.push(item.doc)
-                }  
-            })
-            return data
-        }catch(error){
-            throw(error)
-        }
-    }
+  getAllDocsID = async () => {
+    const response = await database.allDocs({
+      include_docs: false,
+      attachments: false,
+    })
+    const docs = response.rows.filter(item => item.id !== "updateVersionID")
+    const docsID = docs.map(item => item.id )
+    return docsID
+  }
 
-    deleteAllData = async () => {
-        try{
-            const response = await this.database.allDocs()
-            response.rows.forEach(item => {
-                this.database.remove(item.doc)
-            })
-        }catch(error){
-            throw(error)
-        }
-    }
+  getAllDocs = async () => {
+    const rawDocs = await database.allDocs({
+      include_docs: true,
+      attachments: false,
+    })
+    let docs = rawDocs.rows.filter(item => item.doc._id !== "versionCode")
+    docs = docs.map(item => item.doc)
+    return docs
+  }
 
-   migration = async () => {
-       try{
-            docs = await this.database.allDocs({
-                include_docs: true,
-                attachments: true,    
-            })
-        }catch(error){
-            throw(error)
-        }
-        if(docs.total_rows<=0){
+  setData = async (docsAPI, versionCode, func) => {
+    try{
+      if (docsAPI){
+        switch(func){
+          case 'update':
             try{
-                response = await this.connectionAPI.getData(credentials.getDataURL)
-                updateVersionID = await this.connectionAPI.getUpdateVersionID(credentials.getUpdateURL)
+              const docsDB = await getAllDocs()
+              const differences = await arraySync(docsDB, docsAPI, '_id')
+              
+              differences.removed.forEach(async item => {
+                  await database.remove(item._id, item._rev)      
+              }) 
+              differences.created.forEach(async item => {
+                  await insert(item)
+              })
+              differences.changed.forEach(async updateItem => {
+                  sourceItem = await database.get(updateItem._id)
+                  updateItem._rev = sourceItem._rev
+                  await insert(updateItem)
+              })
+              
             }catch(error){
-                response = undefined
-                updateVersionID = undefined
-                throw(error)
+              throw new Error(error)
             }
-            if (response){
-                response.forEach(item => {
-                    let { _id, codigo_sala, numero_piso, titulo_bloco, titulo_campus, titulo_sala } = item
-                    this.database.put({ 
-                        _id, codigo_sala, numero_piso, titulo_bloco, titulo_campus, titulo_sala
-                    }, (error) => { 
-                            if(error){throw(error)} 
-                        }
-                    )
-                })
-            }
-            if (updateVersionID){
-                this.database.put({
-                    _id: "updateVersionID",
-                    updateVersionID: updateVersionID 
-                })
-                .then(response => console.log(response))
-                .catch(error => console.log(error))
-            }
+          break
+          case 'insert':
+            docsAPI.forEach(async item => {
+              insert(item) 
+            })
+          break 
         }
-   }
-   
-   getUpdateVersionID = async () => {
-       try{
-            response = await this.database.get("updateVersionID")
-            return response.updateVersionID
-       }catch(error){
-           try{
-           response = await this.deleteAllData()
-           response = await this.migration()
-           }catch(error){
-               throw(error)
-           }
-           throw(error)
+        
+      }else{
+        throw new Error("Sem dados para inserir")
+      }
+      if(versionCode){
+        switch(func){
+          case 'update':
+            versionCodeDB = await database.get('versionCode')
+            database.put({
+              _id: 'versionCode',
+              _rev: versionCodeDB._rev,
+              versionCode: versionCode
+            })
+            break
+          case 'insert':
+            database.put({
+              _id: 'versionCode',
+              versionCode: versionCode
+            })
+            .then(message => console.log(message))
+            .catch(error => console.log(error))
+          break
         }
-   }
-
-    destroy = () => {
-        this.database.destroy()
-        .then(response => console.log(response))
-        .catch( e => console.log(e))
+      }else{
+        throw new Error("Sem 'versionCode' para inserir")
+      }
+    }catch(error){
+      throw('Erro: '+error)
     }
+  }
 
-    checkUpdate = async (updateVersionID) => {
-        try{
-            let response = await this.connectionAPI.getUpdateVersionID(credentials.getUpdateURL)
-            response = parseInt(response)
-            if (response > updateVersionID){
-                response = await this.deleteAllData()
-                response = await this.migration()
-            }
-        }catch(error){
-            throw(error)
-        }   
+  migration = async () => {
+    docs = await database.allDocs({
+      include_docs: false,
+      attachments: false,
+    })
+    console.log(docs.total_rows)
+    if(docs.total_rows<=0){
+      const {data, versionCode} = await APIConn.setData()
+      docs = data
+      versionCode = versionCode
+      await setData(docs, versionCode, 'insert')
     }
+  }
 
-    
+  update = async (docs, versionCode) => {
+    await setData(docs, versionCode, 'update')
+  }
+
+  checkUpdate = async () => {
+
+    const { versionCode} = await APIConn.setData(false, true)
+    versionCodeAPI = versionCode
+    versionCodeDB = await database.get('versionCode')
+    versionCodeDB = versionCodeDB.versionCode
+    console.log(versionCodeAPI, versionCodeDB)
+    if (versionCodeAPI > versionCodeDB){
+      const { data } = await APIConn.setData(true, false)
+      docs = data
+      update(docs, versionCodeAPI)
+    }
+  }
+  return{ migration, checkUpdate, getAllDocs}
 }
 
-export default Database
+module.exports = Database

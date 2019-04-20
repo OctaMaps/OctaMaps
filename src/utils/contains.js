@@ -5,7 +5,9 @@ contains = ({ titulo_bloco, numero_piso, codigo_sala, titulo_sala }, query) =>{ 
     numero_piso = numero_piso.toLowerCase()
     if (titulo_sala.includes(query)){
       return true
+    }else{
+      return false
     }
   }
 
-  export default contains 
+module.exports = contains

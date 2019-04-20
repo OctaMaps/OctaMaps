@@ -4,7 +4,7 @@ filter = (query, fullData) => {
   let filteredData = []
   query = query.toLowerCase() 
   if (query){
-      fullData.forEach( (item) => {
+      fullData.forEach( (item) => { //Trocar por filter
         if (contains(item, query)){
           filteredData.push(item)
         }
