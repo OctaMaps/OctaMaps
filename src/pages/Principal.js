@@ -2,20 +2,19 @@ import React from 'react';
 import { StyleSheet, View, TouchableOpacity ,ImageBackground, ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import NewHeader from '../component/NewHeader';
- 
+
+import Video from './TestOnly';
+import newVideo from '../component/makeVideo'
 export default class Principal extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-      showMe:true
+      showMe:true,
+      videoBloco:'Bloco F', // bloco inicial
+      stateBloco: false      // state inicial
     }
   }
-
-  onPress = () => {
-    this.setState({
-      count: this.state.count+10
-    })
-  }
+//CONTINUE CONFIGURANDO
 
   componentWillMount(){
     setTimeout(()=>{
@@ -24,6 +23,13 @@ export default class Principal extends React.Component {
       })
     },
     3000)
+    console.log(this.state.stateBloco)
+  }
+
+  //apenas um setState mais pratico
+  simplexState(bloco, state){
+    console.log(bloco, state, this.state.stateBloco)
+    this.setState({ videoBloco: bloco, stateBloco: true })
   }
 
   render() {
@@ -40,9 +46,10 @@ export default class Principal extends React.Component {
 
             <NewHeader icon={true}></NewHeader>
             
+
             <View style={{flex:1, alignItems: 'center',  flexDirection: 'column'}}>
               
-                <TouchableOpacity style={bloco.Quadra} onPress={() => this.props.navigation.navigate('Quadra')} />
+                <TouchableOpacity style={bloco.Quadra} onPress={() => this.props.navigation.navigate('Bloco F')} />
                 <TouchableOpacity style={bloco.F} onPress={() => this.props.navigation.navigate('Bloco F')} />
 
                 <TouchableOpacity style={bloco.E} onPress={() => this.props.navigation.navigate('Bloco E')} />

@@ -1,39 +1,77 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image,ImageBackground,ActivityIndicator,TouchableWithoutFeedback,Picker,ProgressBarAndroid,ToastAndroid,Platform} from 'react-native';
+import { StyleSheet, Text, View, Image,Button, ImageBackground,ActivityIndicator,TouchableWithoutFeedback,Picker,ProgressBarAndroid,ToastAndroid,Platform} from 'react-native';
 import { withNavigationFocus,NavigationEvents  } from 'react-navigation';
   
-import NewHeader from '../component/NewHeader';
+import { Video } from 'expo';
 
 
-export default class TestOnly extends React.Component {
+class TestOnly extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      videoOn: this.props.showVideo,
+      videoBloco: this.props.videoBloco
+    };
+  }
+
+
  
+
+  console() {
+    console.log("iniciando video..")
+    setTimeout(() => {
+      this.setState({videoOn: false})
+      this.props.navigation.navigate(this.state.videoBloco)
+
+    }, 1000)
+  }
+
+  search() {
+    this.setState({videoOn: this.pros})
+    switch (this.state.videoBloco) {
+      case 'Bloco A':
+        return require('../videos/BlocoA.mp4');
+      case 'Bloco B':
+        return require('../videos/BlocoB.mp4');
+      case 'Bloco C':
+        return require('../videos/BlocoC.mp4');
+      case 'Bloco D':
+        return require('../videos/BlocoC.mp4'); // preciso arruamr
+      case 'Bloco E':
+        return require('../videos/BlocoE.mp4');
+      case 'Bloco F':
+        return require('../videos/BlocoF.mp4');
+      default:
+        return require('../videos/BlocoA.mp4');
+    }
+  }
 
   render() {
     return (
-      <View style={styles.container}>
-        <TestOnly2></TestOnly2>
+      <View>
+       {this.props.showVideo ? 
+          <Video
+            source={this.search()}
+            rate={1.0}
+            volume={1.0}
+            isMuted={false}
+            resizeMode="cover"
+            shouldPlay
+            isLooping={false}
+            onError={() => console.log('SS')}
+            onLoad={() => this.console()}
+            onLoadStart={() => console.log("carregando video..")}
+            style={{ width: '100%', height: '100%' }}
+          />
+        : null
+      }
       </View>
     );
   } 
 }
 
+export default withNavigationFocus(TestOnly)
 
-const styles = StyleSheet.create({
-  container: {
-    flex:1
-  }
-});
-
-const header = StyleSheet.create({
-  
-  header:{
-    height:65,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: 'transparent'
-  }
-});
 /*
 
   componentWillMount(){

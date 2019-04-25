@@ -17,8 +17,7 @@ import BlocoC from './src/pages/BlocoC';
 import BlocoA from './src/pages/BlocoA';
 import BlocoB from './src/pages/BlocoB';
 
-import Pesquisa from './src/pages/Pesquisa1';
-import TestOnly from './src/pages/TestOnly';
+import TestOnly from './src/component/makeVideo';
 
 //Criação das telas do DrawerNavigator
 
@@ -26,7 +25,7 @@ import TestOnly from './src/pages/TestOnly';
 const menu = createDrawerNavigator({
     'Home': {
       //Definindo a Tela exibida no novo componente 'HOME'
-      screen: Principal,
+      screen: Principal ,
       navigationOptions:{
         drawerIcon: () => <Icon name='home'/>
       }
@@ -98,12 +97,6 @@ const menu = createDrawerNavigator({
         drawerLabel: () => null
       }
     },
-    'Pesquisa':{
-      screen: Pesquisa,
-      navigationOptions:{  
-        drawerLabel: () => null
-      }
-    },
 
 },{
     contentComponent: (props) => ( 
@@ -113,7 +106,7 @@ const menu = createDrawerNavigator({
 
         <View style={styles.bloco1}>
           <Image style={styles.img} source={require('./assets/icon.png')} />
-          <Text style={styles.usuario}> Ola mundo ! </Text>
+          <Text style={styles.usuario}> Bem Vindo ! </Text>
         </View> 
 
         <View style={{paddingTop: '-2%'}}>
@@ -124,9 +117,9 @@ const menu = createDrawerNavigator({
       //define configuração padrao do DrawerNavigator
       contentOptions: {
         activeBackgroundColor: '#dcdfe5',
-        activeTintColor: '#7a9de2',
+        activeTintColor: '#2e88a2',
           labelStyle: {
-            fontSize: 14,
+            fontSize: 18,
           },
       },
   });
@@ -135,7 +128,7 @@ const menu = createDrawerNavigator({
 const styles = StyleSheet.create({
   bloco1: {
     height:'35%',
-    backgroundColor: '#588fe8',
+    backgroundColor: '#2e88a2',
     alignItems:'center',
     justifyContent:'center'
   },

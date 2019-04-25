@@ -36,16 +36,16 @@ class NewHeader extends React.Component {
   }
 
   //parte logica
-  async componentDidMount(){
-    try {
-      await database.migration()
-      await database.checkUpdate()
-      const fullData = await database.getAllDocs() 
-      this.setState({ fullData })
-    }catch(error){
-      this.setState({ error: true })
-      console.log(error)
-    }
+    async componentDidMount(){
+      try {
+        await database.migration()
+        await database.checkUpdate()
+        const fullData = await database.getAllDocs() 
+        this.setState({ fullData })
+      }catch(error){
+        this.setState({ error: true })
+        console.log(error)
+      }
   }
 
 
@@ -77,13 +77,15 @@ class NewHeader extends React.Component {
         return(
           <Animatable.View style={header.header}ref={this.handleViewRef}>
               <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={35} style ={header.icon}name={this.props.icon ? "menu" : "arrow-left"} onPress={this.props.icon  ? () => this.props.navigation.openDrawer() : () => this.props.navigation.goBack() }/>
-              { this.state.searchable ? 
-                            null
-                :
-                  <Icon.Button backgroundColor={'transparent'}
-                                color={'#b5b5b5'}size={30} style ={header.icon}
-                                name="search" onPress={this.balanco}/>
-                                }
+              {this.props.searchableOff ?
+                  null
+                :   
+                  <Icon.Button 
+                      backgroundColor={'transparent'}
+                      color={'#b5b5b5'}size={30} style ={header.icon}
+                      name="search" onPress={this.balanco}
+                  />
+              }
          </Animatable.View>
         )
       case '1':
@@ -114,7 +116,7 @@ class NewHeader extends React.Component {
     this.setState({pressed: '1'})
 
 
-    this.view.lightSpeedIn(2000)//.then(endState => endState.finished ? this.case2 : null);
+    this.view.lightSpeedIn(1000)//.then(endState => endState.finished ? this.case2 : null);
    }
 
 
@@ -130,7 +132,7 @@ class NewHeader extends React.Component {
               { 
                  this.state.pressed == "1" ?
                             
-                              <TouchableHighlight style={{backgroundColor:'rgba(255, 255, 255, 0.8)'}}onPress={() => this.setState({pressed:'0'})}> 
+                              <TouchableHighlight style={{backgroundColor:'rgba(255, 255, 255, 0.0)'}}onPress={() => this.setState({pressed:'0'})}> 
                                 <View style={{width: '100%', height: '100%'}}>    
                                   <Animatable.View animation="fadeIn" duration={5000}>  
                                     <FlatList
@@ -232,6 +234,7 @@ const header = StyleSheet.create({
 
 
 /*
+ 
 
 const  IconSearch = (props) => {
    handleViewRef = ref => this.view = ref;

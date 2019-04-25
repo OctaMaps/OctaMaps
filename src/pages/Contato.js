@@ -1,62 +1,72 @@
 import React from 'react';
-import { StyleSheet, Text, View,Image} from 'react-native';
+import { Text, View, StyleSheet,Button, Linking, Image } from 'react-native';
 import NewHeader from '../component/NewHeader';
+import Icon from 'react-native-vector-icons/Feather';
+
+
 
 export default class Sobre extends React.Component {
   
   render() {
     return (
       <View style={styles.container}>
-           <NewHeader searchable={false}></NewHeader>
 
-            <View style={styles.texto} >
-                 <Text style= {styles.text}>  Bem vindo ao Octa Maps! </Text>
-                 <Text style= {styles.text,{marginTop:10,fontSize:20}}> Email de Contato para: </Text>
-                 <Text style= {styles.text}> Elogios, Contato, Criticas e Relato de Bugs</Text>
+           <View style={styles.general}>
+              <NewHeader backgroundBlue={true} searchableOff={true}></NewHeader>
 
-                 <Text style= {{fontSize: 30, marginTop:'40%' }}> Email: </Text>
-                 <Text style= {styles.desenvolvedores,{marginTop:10,fontSize:20}}> octa.maps@gmail.com </Text>
+              <View style={styles.blueBar} />
 
-            </View>
+              <View style={styles.whiteBar}>
+                  <Text style={styles.paragraph}> Bem vindo ao Octa Maps! </Text>
+                  <Text style={styles.paragraph}> Elogios, Contato, Criticas e Relato de Bugs</Text>
+                      
+                  <Text style={styles.paragraph}></Text>
 
-            <Image style ={styles.img}source={require('../imagens/Others/simbolo.png')} />
+                  <View style={styles.email}>
+                    <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={35} style ={{textAlign: 'left', marginRigth: '10%'}}name={"mail"} onPress={() => Linking.openURL('mailto:octa.maps@gmail.com')}/>
+                    <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={35} style ={{marginLeft:'75%'}}name={"github"} onPress={() => Linking.openURL('https://github.com/OctaMaps/OctaMaps')}/>
+                  </View>
+
+              </View>
+
+              <View style={styles.blueBar} />
+      </View>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex:1,
-    backgroundColor: 'white'
-  },
-  texto:{
-    justifyContent:'center',
-    alignItems: 'center'
-  },
-  text:{
-    fontSize: 20,
-    alignSelf: 'center' 
-  },
-  img:{
-    marginTop: '10%',
-    width: '100%',
-    height: '50%'
-  },
-  desenvolvedores:{
-    fontSize: 20,
-
-  }
-});
-
 
 const header = StyleSheet.create({
-  header:{
-    height:65,
+  icon:{}
+});
+
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+  },
+
+  general: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#2e88a2',
+  },
+  whiteBar: {
+    flex: 2,
+    backgroundColor: 'white',
+    paddingTop: '10%',
+    paddingLeft: '5%',
+  },
+  blueBar: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  paragraph: {
+    textAlign: 'left', fontSize: 19, fontWeight: 'bold', marginTop: '2%'
+  },
+  email:{
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: 'transparent'
+    marginTop:'30%'
   }
 });
 
