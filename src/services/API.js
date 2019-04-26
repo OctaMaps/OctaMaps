@@ -17,6 +17,8 @@ function API(){
 
   setData = async (downloadData = true, downloadVersionCode = true) => {
     try{
+      data = []
+      versionCode = ""
       if (downloadData) data = await getData(credentials.getDataURL)
       if (downloadVersionCode) versionCode = await getData(credentials.getUpdateURL)
       return{ data,versionCode }
