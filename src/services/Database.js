@@ -120,7 +120,6 @@ function Database(name){
 
   update = async (docs, versionCode) => {
     await setData(docs, versionCode, 'update')
-    console.log('Atualizado, eu acho')
   }
 
   checkUpdate = async () => {
@@ -133,7 +132,6 @@ function Database(name){
     if (versionCodeAPI > versionCodeDB){
       const { data } = await APIConn.setData(true, false)
       docs = data
-      console.log('Atualizando...')
       await update(docs, versionCodeAPI)
     }
   }
