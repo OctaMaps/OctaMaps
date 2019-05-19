@@ -1,13 +1,16 @@
 import React from 'react';
 import { StyleSheet, View, ImageBackground } from 'react-native';
+
 import NewHeader from '../component/NewHeader';
+import MapB from '../component/maps/MapB';
 import { Video } from 'expo';
+
 
 export default class BlocoB extends React.Component {
   constructor(props){         
     super(props);
     this.state = {
-      estado: true
+      estado: false
     };
   }
 
@@ -26,7 +29,7 @@ export default class BlocoB extends React.Component {
       this.setState({
         estado:false
         })
-      },1000)
+      },1200)
   }
 
   render() {
@@ -48,12 +51,13 @@ export default class BlocoB extends React.Component {
               style={{ width: '100%', height: '100%' }}
            />
         :
-          null 
+            <ImageBackground source={require('../imagens/BlocoB.png')} style={{width: '100%', height: '100%'}}>
+              <NewHeader/>
+              <MapB/>
+            </ImageBackground> 
       }
 
-          <ImageBackground source={require('../imagens/BlocoB.png')} style={{width: '100%', height: '100%'}}>
-            <NewHeader></NewHeader>
-          </ImageBackground>
+        
       </View>
     );
   }

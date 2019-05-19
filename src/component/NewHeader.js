@@ -1,6 +1,6 @@
 // parte visual
 import React from 'react';
-import {StyleSheet, View, TouchableWithoutFeedback, Text,TextInput,TouchableOpacity,FlatList, TouchableHighlight,ImageBackground,ActivityIndicator } from 'react-native';
+import {StyleSheet, View, TouchableWithoutFeedback, Text,TextInput,TouchableOpacity,FlatList, TouchableHighlight,ImageBackground,ActivityIndicator, Alert } from 'react-native';
 import { withNavigationFocus } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Feather';
 import * as Animatable from 'react-native-animatable'
@@ -11,6 +11,7 @@ import filter from '../utils/filter'
 
 const database = Database('OctaMaps')
 
+// nova implementaçao de alert 03/05/19
 
 // O que é pra ser feito agora, fazer transcrição do codigo pesquisa para aqui e criar um "pop up" indepedente da sceen
 
@@ -23,15 +24,11 @@ class NewHeader extends React.Component {
                      // if pressed == false, { o render vai gerar o menu header normal}
                      // if pressed == true. { o render vai tirar o menu header, executar a animação e apos isso pressed passa a ser false e a tela é alterada para pesquisa.}
         listOn: false,
-
                     //parte logica
         volatileData: [], // Dados que fornecerão quais itens a lista deve mostrar
         fullData: [], // Dados recebidos, sem alteração
         loading: false,
         error: false,
-
-        showMe:true // carregando
-
     }
   }
 
@@ -53,36 +50,19 @@ class NewHeader extends React.Component {
     this.setState({ volatileData: filter(query, this.state.fullData)})
   }
 
-  // apenas funcao para textar 
-  log(){
-    console.log(this.state.text)
-    console.log("")
-    console.log(" oi")
-  }
-
-
-
-  componentWillMount(){
-    setTimeout(()=>{
-      this.setState({
-        showMe:false
-      })
-    },
-    2000)
-  }
-
+  
   renderCodition(){
       switch(this.state.pressed){
       case '0':
         return(
           <Animatable.View style={header.header}ref={this.handleViewRef}>
-              <Icon.Button backgroundColor={'transparent'}color={'#b5b5b5'}size={35} style ={header.icon}name={this.props.icon ? "menu" : "arrow-left"} onPress={this.props.icon  ? () => this.props.navigation.openDrawer() : () => this.props.navigation.goBack() }/>
+              <Icon.Button backgroundColor={'transparent'}color={'#dee9fc'}size={35} style ={header.icon}name={this.props.icon ? "menu" : "arrow-left"} onPress={this.props.icon  ? () => this.props.navigation.openDrawer() : () => this.props.navigation.goBack() }/>
               {this.props.searchableOff ?
                   null
                 :   
                   <Icon.Button 
                       backgroundColor={'transparent'}
-                      color={'#b5b5b5'}size={30} style ={header.icon}
+                      color={'#dee9fc'}size={30} style ={header.icon}
                       name="search" onPress={this.balanco}
                   />
               }
@@ -93,15 +73,15 @@ class NewHeader extends React.Component {
              <Animatable.View style={header.headerActive} ref={this.handleViewRef}>
                 <View >
                   <Icon.Button backgroundColor={'transparent'}
-                      color={'#b5b5b5'}size={30} style ={header.iconActive}
-                      name="search" onPress={this.case2}/>
+                      color={'#cccc'}size={30} style ={header.iconActive}
+                      name="arrow-left" onPress={this.searchOff}/>
                 </View>    
                      <TextInput onChangeText={ value => this.search(value) }placeholder="Pesquisa" style={{ fontSize: 24, marginLeft: 15, flex: 1}} />
  
              </Animatable.View>
 
         )
-        
+          
    }
   }
 
@@ -111,6 +91,7 @@ class NewHeader extends React.Component {
 
   // executa o codigo da animacao e transiçao do pressed 0 para o 1
   handleViewRef = ref => this.view = ref;
+  // Ativar Pesquisa e animacao
   balanco = () =>{
     //APOS 1000ms o conteudo do timeout é executado
     this.setState({pressed: '1'})
@@ -118,6 +99,33 @@ class NewHeader extends React.Component {
 
     this.view.lightSpeedIn(1000)//.then(endState => endState.finished ? this.case2 : null);
    }
+
+   searchOff = () =>{
+    this.setState({pressed: '0'})
+
+
+   }
+
+
+   alertaSimples = (term)=>{
+   //function to make two option alert
+   let text = "Transição Para "+ term
+    Alert.alert(
+      //title
+      text,
+      //body
+      // falta deixar mais bonito
+      'Deseja ser redirecionado à tela correspondente?',
+      [
+        {text: 'Sim', onPress: () => this.props.navigation.navigate(term)},
+        {text: 'Não', onPress: () => console.log('No Pressed'), style: 'cancel'},
+      ],
+      { cancelable: false }
+      //clicking out side of alert will not cancel
+    );
+
+  }
+
 
 
 
@@ -136,14 +144,10 @@ class NewHeader extends React.Component {
                                 <View style={{width: '100%', height: '100%'}}>    
                                   <Animatable.View animation="fadeIn" duration={5000}>  
                                     <FlatList
-                                        style={{ backgroundColor: 'white' }}
+                                        style={{ backgroundColor: 'white', marginLeft:'10%' }}
                                         data={this.state.volatileData}
                                         renderItem={({ item}) => 
-                                          <TouchableOpacity onPress={ this._onPressButton } style={header.touchableTouch }> 
-                                            <Icon.Button backgroundColor={'transparent'}
-                                                         color={'#b5b5b5'}size={25} style ={header.iconTouch}
-                                                         name="tag" onPress={this.case2}/>
-
+                                          <TouchableOpacity onPress={ value => this.alertaSimples(item.titulo_bloco) } style={header.touchableTouch }> 
                                             <Text style={header.textTouch}>
                                               { `${item.titulo_bloco}  ${'-'} ${'Piso '+item.numero_piso} ${'-'} ${item.titulo_sala} `}
                                             </Text>
@@ -224,7 +228,8 @@ const header = StyleSheet.create({
     flexDirection: "row",
     borderRadius: 5,
     borderWidth: 1,
-    borderColor: '#fff'
+    borderColor: '#fff',
+
 
   }
 
@@ -263,3 +268,20 @@ const  IconSearch = (props) => {
 
 
 */
+
+/*
+  //function to make two option alert
+    Alert.alert(
+      //title
+      term,
+      //body
+      'Deseja ser redirecionado à tela correspondente?',
+      [
+        {text: 'Sim', onPress: () => console.log('Yes Pressed')},
+        {text: 'Não', onPress: () => console.log('No Pressed'), style: 'cancel'},
+      ],
+      { cancelable: false }
+      //clicking out side of alert will not cancel
+    );
+
+  */

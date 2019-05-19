@@ -1,13 +1,15 @@
 import React from 'react';
 import { StyleSheet, View, ImageBackground } from 'react-native';
+
 import NewHeader from '../component/NewHeader';
+import MapC from '../component/maps/MapC';
 import { Video } from 'expo';
 
 export default class BlocoC extends React.Component {
   constructor(props){         
     super(props);
     this.state = {
-      estado: true
+      estado: false
     };
   }
 
@@ -48,12 +50,13 @@ export default class BlocoC extends React.Component {
               style={{ width: '100%', height: '100%' }}
            />
         :
-          null 
-      }
-
           <ImageBackground source={require('../imagens/BlocoC.png')} style={{width: '100%', height: '100%'}}>
             <NewHeader></NewHeader>
-          </ImageBackground>
+            <MapC/>
+          </ImageBackground> 
+      }
+
+         
       </View>
     );
   }
