@@ -22,7 +22,7 @@ export default class Principal extends React.Component {
         showMe:false
       })
     },
-    2400)
+    3000)
     console.log(this.state.stateBloco)
   }
 
@@ -85,122 +85,122 @@ export default class Principal extends React.Component {
 
 const bloco = StyleSheet.create({
   Quadra:{
-  //backgroundColor: 'brown',
+    //backgroundColor: 'brown',
     height: '20%',
     width: '41%',
     left:'-8%'
   },
   F:{
-   //backgroundColor: 'orange',
+    //backgroundColor: 'orange',
     height: '12%',
     width: '41%',
     left:'-20%',
     marginTop: '5%'
   },
   E:{
-   //backgroundColor: 'cyan',
+    //backgroundColor: 'cyan',
     height: '8%',
     width: '41%',
     left:'-20%',
     marginTop: '6%'
   },
   E1:{
-   //backgroundColor: 'white',
+    //backgroundColor: 'white',
     height: '7%',
     width: '10%',
     left:'-40%',
     marginTop: '-16%'
   },
   D:{
-   //backgroundColor: 'green',
+    //backgroundColor: 'green',
     height: '9%',
     width: '41%',
     left:'-35%',
     marginTop: '6%'
   },
   D1:{
-   //backgroundColor: 'green',
+    //backgroundColor: 'green',
     height: '8%',
     width: '25%',
     left:'-16%',
     marginTop: '-6%'
   },
   C:{
-  // backgroundColor: 'orange',
+    //backgroundColor: 'orange',
     height: '9%',
     width: '20%',
     left:'-40%',
     marginTop: '0%'
   },
   C1:{
-   //backgroundColor: 'brown',
+    //backgroundColor: 'brown',
     height: '11%',
     width: '20%',
     left:'-20%',
     marginTop: '-12%'
   },
   A:{
-  // backgroundColor: 'blue',
+   // backgroundColor: 'blue',
     height: '16%',
     width: '20%',
     left:'-40%',
     marginTop: '-2%'
   },
   A1:{
-  //backgroundColor: 'cyan',
+    //backgroundColor: 'cyan',
     height: '16%',
     width: '20%',
     left:'-20%',
     marginTop: '-23%'
   },
   F2:{
-  // backgroundColor: 'brown',
+    //backgroundColor: 'brown',
     height: '8%',
     width: '20%',
     left:'-10%',
     marginTop: '-90%'
   },
   B:{
-  // backgroundColor: 'yellow',
+   // backgroundColor: 'yellow',
     height: '30%',
     width: '15%',
     left: '30%',
     marginTop: '-55%'
   },
   B1:{
-  // backgroundColor: 'orange',
+    //backgroundColor: 'orange',
     height: '30%',
     width: '15%',
     left: '12%',
     marginTop: '-13%'
   },
   B2:{
-   //backgroundColor: 'red',
+   // backgroundColor: 'red',
     height: '30%',
     width: '15%',
     left: '20%',
     marginTop: '-45%'
   },
   B3:{
- //  backgroundColor: 'green',
+    //backgroundColor: 'green',
     height: '50%',
     width: '15%',
     left: '10%',
     marginTop: '-10%'
   },
   B4:{
-  // backgroundColor: 'cyan',
+    //backgroundColor: 'cyan',
     height: '50%',
     width: '15%',
     left: '0%',
     marginTop: '-50%'
   },
   Artes:{
-//  backgroundColor: 'red',
+  // backgroundColor: 'red',
     height: '30%',
-    width: '50%',
+    width: '30%',
     left: '50%',
-    marginTop: '-180%'
+    marginTop: '-150%'
   }
 });
 

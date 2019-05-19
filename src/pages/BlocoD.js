@@ -1,15 +1,13 @@
 import React from 'react';
 import { StyleSheet, View, ImageBackground } from 'react-native';
 import NewHeader from '../component/NewHeader';
-import MapD from '../component/maps/MapD'
-
 import { Video } from 'expo';
 
 export default class BlocoD extends React.Component {
   constructor(props){         
     super(props);
     this.state = {
-      estado: false
+      estado: true
     };
   }
 
@@ -50,13 +48,12 @@ export default class BlocoD extends React.Component {
               style={{ width: '100%', height: '100%' }}
            />
         :
-          <ImageBackground source={require('../imagens/BlocoD.png')} style={{width: '100%', height: '100%'}}>
-            <NewHeader></NewHeader>
-            <MapD/>
-          </ImageBackground> 
+          null 
       }
 
-          
+          <ImageBackground source={require('../imagens/BlocoD.png')} style={{width: '100%', height: '100%'}}>
+            <NewHeader></NewHeader>
+          </ImageBackground>
       </View>
     );
   }
