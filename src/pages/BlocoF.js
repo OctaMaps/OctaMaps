@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, ImageBackground } from 'react-native';
 import NewHeader from '../component/NewHeader';
+import MapF from '../component/maps/MapF'
 import { Video } from 'expo';
 
 export default class BlocoF extends React.Component {
@@ -48,12 +49,13 @@ export default class BlocoF extends React.Component {
               style={{ width: '100%', height: '100%' }}
            />
         :
-          null 
+            <ImageBackground source={require('../imagens/BlocoF.png')} style={{width: '100%', height: '100%'}}>
+            <NewHeader></NewHeader>
+            <MapF/>
+          </ImageBackground> 
       }
 
-          <ImageBackground source={require('../imagens/BlocoF.png')} style={{width: '100%', height: '100%'}}>
-            <NewHeader></NewHeader>
-          </ImageBackground>
+        
       </View>
     );
   }
