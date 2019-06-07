@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Svg } from 'expo';
+import { withNavigationFocus,NavigationEvents } from 'react-navigation';
 
 
 const corAndar0 = 'transparent'
 const corFundo0 = 'transparent'
-
-export default class MapF extends React.Component {
+class MapF extends React.Component {
   terreo(){
-    alert("Bloco F ")
+    this.props.navigation.navigate('BlocoFTerreo')
   }
 
   render() {
@@ -51,3 +51,4 @@ const styles = StyleSheet.create({
     flex:1
   }
 });
+export default withNavigationFocus(MapF)

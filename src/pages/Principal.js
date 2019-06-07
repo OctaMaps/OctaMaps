@@ -42,7 +42,10 @@ export default class Principal extends React.Component {
             <ActivityIndicator style={{marginTop: '120%'}} size="large" color='rgba(95, 188, 221, 1)'/>
             </ImageBackground>
           : //se for falso.. 
-            <ImageBackground source={require('../imagens/map.png')} style={{width: '100%', height: '100%'}}>
+            null
+          }
+
+          <ImageBackground source={require('../imagens/map.png')} style={{width: '100%', height: '100%'}}>
 
             <NewHeader icon={true}></NewHeader>
             
@@ -72,11 +75,10 @@ export default class Principal extends React.Component {
                 <TouchableOpacity style={bloco.B3} onPress={() => this.props.navigation.navigate('Bloco B')} />
                 <TouchableOpacity style={bloco.B4} onPress={() => this.props.navigation.navigate('Bloco B')} />
 
-                <TouchableOpacity style={bloco.Artes} onPress={() => this.props.navigation.navigate('Artes')} />
+                <TouchableOpacity style={bloco.Artes} onPress={() => this.props.navigation.navigate('Bloco B')} />
 
             </View>
           </ImageBackground>
-          }
       </View>
     );
   }

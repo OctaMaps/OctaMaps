@@ -9,7 +9,6 @@ import Contato from './src/pages/Contato';
 import Avalie from './src/pages/Avalie';
 
 import Quadra from './src/pages/Quadra';
-import Artes from './src/pages/Artes';
 import BlocoF from './src/pages/BlocoF';
 import BlocoE from './src/pages/BlocoE';
 import BlocoD from './src/pages/BlocoD';
@@ -18,6 +17,22 @@ import BlocoA from './src/pages/BlocoA';
 import BlocoB from './src/pages/BlocoB';
 
 import TestOnly from './src/component/makeVideo';
+
+import BlocoAP1 from './src/pages/Pisos/BlocoAP1';
+import BlocoAP2 from './src/pages/Pisos/BlocoAP2';
+import BlocoBTerreo from './src/pages/Pisos/BlocoBTerreo';
+import BlocoBP1 from './src/pages/Pisos/BlocoBP1';
+import BlocoBP2 from './src/pages/Pisos/BlocoBP2';
+import BlocoCTerreo from './src/pages/Pisos/BlocoCTerreo';
+import BlocoCP1 from './src/pages/Pisos/BlocoCP1';
+import BlocoDTerreo from './src/pages/Pisos/BlocoDTerreo';
+import BlocoDP1 from './src/pages/Pisos/BlocoDP1';
+import BlocoETerreo from './src/pages/Pisos/BlocoETerreo';
+import BlocoEP2 from './src/pages/Pisos/BlocoEP2';
+import BlocoEP1 from './src/pages/Pisos/BlocoEP1';
+import BlocoFTerreo from './src/pages/Pisos/BlocoFTerreo';
+
+
 
 //Criação das telas do DrawerNavigator
 
@@ -91,12 +106,88 @@ const menu = createDrawerNavigator({
         drawerLabel: () => null
       }
     },
-    'Artes':{
-      screen: Artes,
+    'BlocoAP1':{
+      screen: BlocoAP1,
       navigationOptions:{  
         drawerLabel: () => null
       }
     },
+    'BlocoAP2':{
+      screen: BlocoAP2,
+      navigationOptions:{  
+        drawerLabel: () => null
+      }
+    },
+    'BlocoBTerreo':{
+      screen: BlocoBTerreo,
+      navigationOptions:{  
+        drawerLabel: () => null
+      }
+    },
+    'BlocoCP1':{
+      screen: BlocoCP1,
+      navigationOptions:{  
+        drawerLabel: () => null
+      }
+    },
+    'BlocoDP1':{
+      screen: BlocoDP1,
+      navigationOptions:{  
+        drawerLabel: () => null
+      }
+    },
+    'BlocoETerreo':{
+      screen: BlocoETerreo,
+      navigationOptions:{  
+        drawerLabel: () => null
+      }
+    },
+    'BlocoEP2':{
+      screen: BlocoEP2,
+      navigationOptions:{  
+        drawerLabel: () => null
+      }
+    },
+    'BlocoEP1':{
+      screen: BlocoEP1,
+      navigationOptions:{  
+        drawerLabel: () => null
+      }
+    },
+    'BlocoFTerreo':{
+      screen: BlocoFTerreo,
+      navigationOptions:{  
+        drawerLabel: () => null
+      }
+    },
+    'BlocoDTerreo':{
+      screen: BlocoDTerreo,
+      navigationOptions:{  
+        drawerLabel: () => null
+      }
+    },
+    'BlocoCTerreo':{
+      screen: BlocoCTerreo,
+      navigationOptions:{  
+        drawerLabel: () => null
+      }
+    },
+    'BlocoBP1':{
+      screen: BlocoBP1,
+      navigationOptions:{  
+        drawerLabel: () => null
+      }
+    },
+    'BlocoBP2':{
+      screen: BlocoBP2,
+      navigationOptions:{  
+        drawerLabel: () => null
+      }
+    },
+
+
+
+
 
 },{
     contentComponent: (props) => ( 

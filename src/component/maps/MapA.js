@@ -1,32 +1,24 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Svg } from 'expo';
+import { withNavigationFocus,NavigationEvents } from 'react-navigation';
 
-export default class MapA extends React.Component {
+ class MapA extends React.Component {
 
   terreo(){
-    alert("Bloco A terreo")
+    alert("Bloco A Terreo, ainda não implementado")
+
   }
   piso1(){
-    alert("Bloco A Piso 1")
+    this.props.navigation.navigate('BlocoAP1')
   }
   piso2(){
-    alert("Bloco A Piso 2")
+    this.props.navigation.navigate('BlocoAP2')
   }
   render() {
     return (
       <View>
         <Svg height={"100%"} width={'100%'}>
-                <Svg.Rect
-                  x={'0%'}
-                  y={'32%'}
-                  width={'50%'}
-                  height={'25%'}
-                  strokeWidth={2}
-                  stroke={'transparent'}
-                  fill="rgba(255, 255, 255, 0)"
-                  onPress={() =>this.terreo()}
-                />
 
                 <Svg.Rect
                   x={'44%'}
@@ -214,3 +206,4 @@ const styles = StyleSheet.create({
     flex:1
   }
 });
+export default withNavigationFocus(MapA)

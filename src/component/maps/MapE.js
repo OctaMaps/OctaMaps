@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Svg } from 'expo';
+import { withNavigationFocus,NavigationEvents } from 'react-navigation';
 
 const corAndar1 = 'transparent'
 const corFundo1 = 'transparent'
@@ -10,17 +11,16 @@ const corFundo0 = 'transparent'
 
 const corAndar2 = 'transparent'
 const corFundo2 = 'transparent'
-
-export default class MapE extends React.Component {
+class MapE extends React.Component {
   terreo(){
-    alert("Bloco E Terreo")
+    this.props.navigation.navigate('BlocoETerreo')
   }
   piso1(){
-    alert("Bloco E Piso 2")
+    this.props.navigation.navigate('BlocoEP2')
   }
 
   pisoMedio(){
-    alert("Bloco E Piso 1")
+    this.props.navigation.navigate('BlocoEP1')
   }
   render() {
     return (
@@ -549,3 +549,4 @@ const styles = StyleSheet.create({
     flex:1
   }
 });
+export default withNavigationFocus(MapE)

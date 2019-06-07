@@ -1,16 +1,15 @@
 import React from 'react';
 import { StyleSheet, View, ImageBackground } from 'react-native';
-
 import NewHeader from '../component/NewHeader';
-import MapA from '../component/maps/MapA';
-import { Video } from 'expo';
+import MapA from '../component/maps/MapA'
 
+import { Video } from 'expo';
 
 export default class BlocoA extends React.Component {
   constructor(props){         
     super(props);
     this.state = {
-      estado: true
+      estado: false
     };
   }
 
@@ -26,13 +25,11 @@ export default class BlocoA extends React.Component {
 
   onEnd(){
      setTimeout(()=>{
-      console.log("Video Terminado")
       this.setState({
         estado:false
         })
       },1200)
   }
-
 
   render() {
     return (
@@ -53,13 +50,13 @@ export default class BlocoA extends React.Component {
               style={{ width: '100%', height: '100%' }}
            />
         :
-            <ImageBackground source={require('../imagens/BlocoA.png')} style={{width: '100%', height: '100%'}}>
-              <NewHeader/>
-              <MapA/>
-            </ImageBackground> 
+          <ImageBackground source={require('../imagens/BlocoA.png')} style={{width: '100%', height: '100%'}}>
+            <NewHeader></NewHeader>
+            <MapA/>
+          </ImageBackground> 
       }
 
-        
+          
       </View>
     );
   }
@@ -70,3 +67,14 @@ const styles = StyleSheet.create({
     flex:1
   }
 });
+
+const header = StyleSheet.create({
+  header:{
+    height:65,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: 'transparent'
+  }
+});
+

@@ -3,32 +3,46 @@ import { StyleSheet, Text, View, Image,Button, ImageBackground,ActivityIndicator
 import { withNavigationFocus,NavigationEvents  } from 'react-navigation';
   
 import { Video } from 'expo';
-
+const a =  " ";
 
 class TestOnly extends React.Component {
-  constructor(props){
+
+  constructor(props){         
     super(props);
     this.state = {
-      videoOn: this.props.showVideo,
-      videoBloco: this.props.videoBloco
+      estado: true
     };
   }
 
+ componentDidMount(){
+    this.props.navigation.addListener('willFocus',
+      ()=>{
+        this.setState({estado:true})
+        console.log("Video Permetido. Carregamento deve começar..")
+        console.log("o state é", this.state.estado," o props é ", this.props.transitionIs)
+      }
+    )
+  }
 
- 
+  onLoadStart(){
+    console.log("Carregando video..")
+  }
 
-  console() {
-    console.log("iniciando video..")
-    setTimeout(() => {
-      this.setState({videoOn: false})
-      this.props.navigation.navigate(this.state.videoBloco)
+  onLoad(){
+     setTimeout(()=>{
+      console.log("Video Terminado")
+      this.setState({
+        estado:false
+        })
+      },1200)
+  }
 
-    }, 1000)
+  onError(){
+    console.log('Error Happen')
   }
 
   search() {
-    this.setState({videoOn: this.pros})
-    switch (this.state.videoBloco) {
+    switch (this.props.transitionIs) {
       case 'Bloco A':
         return require('../videos/BlocoA.mp4');
       case 'Bloco B':
@@ -36,7 +50,7 @@ class TestOnly extends React.Component {
       case 'Bloco C':
         return require('../videos/BlocoC.mp4');
       case 'Bloco D':
-        return require('../videos/BlocoC.mp4'); // preciso arruamr
+        return require('../videos/BlocoD.mp4');
       case 'Bloco E':
         return require('../videos/BlocoE.mp4');
       case 'Bloco F':
@@ -49,21 +63,21 @@ class TestOnly extends React.Component {
   render() {
     return (
       <View>
-       {this.props.showVideo ? 
+       {this.props.estado ? 
           <Video
-            source={this.search()}
-            rate={1.0}
-            volume={1.0}
-            isMuted={false}
-            resizeMode="cover"
-            shouldPlay
-            isLooping={false}
-            onError={() => console.log('SS')}
-            onLoad={() => this.console()}
-            onLoadStart={() => console.log("carregando video..")}
-            style={{ width: '100%', height: '100%' }}
+            source={require('../videos/BlocoA.mp4')}
+              rate={1.0}
+              volume={1.0}
+              isMuted={false}
+              resizeMode="cover"
+              shouldPlay
+              isLooping={false}
+              onError={() => this.onError()}
+              onLoad={() => this.onLoad()}
+              onLoadStart={() => this.onLoadStart()}
+              style={{ width: '100%', height: '100%' }}
           />
-        : null
+        : <Text> asdasd </Text> 
       }
       </View>
     );
