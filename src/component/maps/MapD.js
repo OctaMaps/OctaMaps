@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Svg } from 'expo';
+import Svg, { Rect } from 'react-native-svg';
 import { withNavigationFocus,NavigationEvents } from 'react-navigation';
 
 const corAndar1 = 'transparent'
@@ -24,7 +24,7 @@ const corFundo0 = 'transparent'
       <View>
         <Svg height={"100%"} width={'100%'}>
 
-            <Svg.Rect
+            <Rect
               x={'0%'}
               y={'35%'}
               width={'100%'}
@@ -35,7 +35,7 @@ const corFundo0 = 'transparent'
               onPress={() => this.terreo()}
             />
 
-            <Svg.Rect
+            <Rect
               x={'0%'}
               y={'25%'}
               width={'100%'}
@@ -46,7 +46,7 @@ const corFundo0 = 'transparent'
               onPress={() => this.piso1()}
             />
 
-            <Svg.Rect
+            <Rect
               x={'20%'}
               y={'32%'}
               width={'100%'}
@@ -57,7 +57,7 @@ const corFundo0 = 'transparent'
               onPress={() => this.piso1()}
             />
 
-            <Svg.Rect
+            <Rect
               x={'25%'}
               y={'33%'}
               width={'100%'}
@@ -68,7 +68,7 @@ const corFundo0 = 'transparent'
               onPress={() => this.piso1() }
             />
 
-            <Svg.Rect
+            <Rect
               x={'30%'}
               y={'34%'}
               width={'100%'}
@@ -79,7 +79,7 @@ const corFundo0 = 'transparent'
               onPress={() => this.piso1() }
             />
 
-            <Svg.Rect
+            <Rect
               x={'35%'}
               y={'36%'}
               width={'100%'}
@@ -90,7 +90,7 @@ const corFundo0 = 'transparent'
               onPress={() => this.piso1() }
             />
 
-            <Svg.Rect
+            <Rect
               x={'40%'}
               y={'38%'}
               width={'100%'}
@@ -101,7 +101,7 @@ const corFundo0 = 'transparent'
               onPress={() => this.piso1() }
             />
 
-            <Svg.Rect
+            <Rect
               x={'45%'}
               y={'40%'}
               width={'100%'}
@@ -112,7 +112,7 @@ const corFundo0 = 'transparent'
               onPress={() => this.piso1() }
             />
 
-            <Svg.Rect
+            <Rect
               x={'50%'}
               y={'41%'}
               width={'100%'}
@@ -123,7 +123,7 @@ const corFundo0 = 'transparent'
               onPress={() => this.piso1() }
             />
 
-            <Svg.Rect
+            <Rect
               x={'58%'}
               y={'42%'}
               width={'100%'}
@@ -134,7 +134,7 @@ const corFundo0 = 'transparent'
               onPress={() => this.piso1() }
             />
 
-            <Svg.Rect
+            <Rect
               x={'62%'}
               y={'44%'}
               width={'100%'}
@@ -145,7 +145,7 @@ const corFundo0 = 'transparent'
               onPress={() => this.piso1() }
             />
 
-            <Svg.Rect
+            <Rect
               x={'65%'}
               y={'46%'}
               width={'100%'}

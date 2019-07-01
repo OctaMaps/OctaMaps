@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Svg } from 'expo';
+import Svg, { Rect } from 'react-native-svg';
 import { withNavigationFocus,NavigationEvents } from 'react-navigation';
 
 
@@ -16,7 +16,7 @@ class MapF extends React.Component {
       <View>
         <Svg height={"100%"} width={'100%'}>
 
-            <Svg.Rect
+            <Rect
               x={'0%'}
               y={'34%'}
               width={'50%'}
@@ -27,7 +27,7 @@ class MapF extends React.Component {
               onPress={() => this.terreo()}
             />
 
-             <Svg.Rect
+             <Rect
               x={'20%'}
               y={'40%'}
               width={'43%'}
