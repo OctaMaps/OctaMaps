@@ -67,7 +67,7 @@ export default class BlocoD extends React.Component {
             :
               null
           }
-         <Header/>
+         <Header searchableOff/>
          <MapD/>
            
        </ImageBackground> 

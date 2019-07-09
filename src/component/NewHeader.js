@@ -1,13 +1,14 @@
 // parte visual
 import React from 'react';
 import {StyleSheet, View, TouchableWithoutFeedback, Text,TextInput,TouchableOpacity,FlatList, TouchableHighlight,ImageBackground,ActivityIndicator, Alert } from 'react-native';
-import { withNavigationFocus } from 'react-navigation';
+import { withNavigationFocus, NavigationActions} from 'react-navigation';
 import Icon from 'react-native-vector-icons/Feather';
 import * as Animatable from 'react-native-animatable'
-
+let nave = 0;
 // importando banco de dados e conexoes
 const Database = require('../services/Database')
 import filter from '../utils/filter'
+
 
 const database = Database('OctaMaps')
 
@@ -29,8 +30,10 @@ class NewHeader extends React.Component {
         fullData: [], // Dados recebidos, sem alteração
         loading: false,
         error: false,
+        screenBack: ''
     }
   }
+  
 
   //parte logica
     async componentDidMount(){
@@ -45,18 +48,63 @@ class NewHeader extends React.Component {
       }
   }
 
-
   search(query){
     this.setState({ volatileData: filter(query, this.state.fullData)})
   }
 
+  goTrue(){
+    console.log("Header esta dizendo que voce esta na tela:", this.props.navigation.state.routeName)    
+    var screenNow = this.props.navigation.state.routeName
+    if(screenNow.includes("BlocoA")){
+      console.log("Tela anterior é A")
+      nave = 'Bloco A'
+    }
+    else if(screenNow.includes("BlocoB")){
+      console.log("Tela anterior é BlocoB")
+      nave = 'Bloco B'
+    }
+    else if(screenNow.includes("BlocoC")){
+      console.log("Tela anterior é BlocoC")
+      nave = 'Bloco C'
+    }
+    else if(screenNow.includes("BlocoD")){
+      console.log("Tela anterior é BlocoD")
+      nave = 'Bloco D'
+    }
+    else if(screenNow.includes("BlocoE")){
+      console.log("Tela anterior é BlocoE")
+      nave = 'Bloco E'
+    }
+    else if(screenNow.includes("BlocoF")){
+      console.log("Tela anterior BlocoF")
+      nave = 'Bloco F'
+    }
+    else{
+      console.log("Go back Original")
+      nave = 'Home'
+    }
+    console.log("nave é ", nave);
+    this.props.navigation.navigate(nave)
+  }
   
   renderCodition(){
       switch(this.state.pressed){
       case '0':
         return(
           <Animatable.View style={header.header}ref={this.handleViewRef}>
-              <Icon.Button backgroundColor={'transparent'}color={'#dee9fc'}size={35} style ={header.icon}name={this.props.iconHamburguer ? "menu" : "arrow-left"} onPress={this.props.iconHamburguer  ? () => this.props.navigation.openDrawer() : () => this.props.navigation.goBack() }/>
+              <Icon.Button backgroundColor={'transparent'}
+              color={'#dee9fc'}size={35} 
+              style ={header.icon}
+              name={this.props.iconHamburguer ? "menu" : "arrow-left"} 
+              onPress={
+                this.props.iconHamburguer ?
+                  () => this.props.navigation.openDrawer()
+                :
+                  () => this.goTrue()
+              }
+          />
+
+
               {this.props.searchableOff ?
                   null
                 :   

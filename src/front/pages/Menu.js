@@ -35,6 +35,7 @@ import BlocoEP2 from './Level/BlocoEP2';
 
 import BlocoFTerreo from './Level/BlocoFTerreo';
 
+import JustTest from'./Blocos/JustTest'
 /*
 */
 

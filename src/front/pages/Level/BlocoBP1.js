@@ -28,8 +28,8 @@ export default class BlocoBP1 extends React.Component {
     switch(this.state.part){
       case 0:
         return(
-              <ImageBackground source={require('../../images/Level/BlocoB1P1.jpg')} style={{width: '100%', height: '100%'}}>
-                <Header></Header>
+            <ImageBackground source={require('../../images/Level/BlocoB1P1.jpg')} style={{width: '100%', height: '100%'}}>
+            <Header searchableOff/>
                   <Icon.Button 
                           backgroundColor={'transparent'}
                           color={'#dee9fc'}size={30} style ={header.icon}
@@ -41,8 +41,7 @@ export default class BlocoBP1 extends React.Component {
             return(    
               
             <ImageBackground source={require('../../images/Level/BlocoB2P1.jpg')} style={{width: '100%', height: '100%'}}>
-
-                <Header></Header>
+            <Header searchableOff/>
 
                 <Icon.Button 
                         backgroundColor={'transparent'}
@@ -62,7 +61,7 @@ export default class BlocoBP1 extends React.Component {
       case 2:
             return(    
             <ImageBackground source={require('../../images/Level/BlocoB3P1.jpg')} style={{width: '100%', height: '100%'}}>
-                <Header></Header>
+            <Header searchableOff/>
                 <Icon.Button 
                         backgroundColor={'transparent'}
                         color={'#dee9fc'}size={30} style ={header.icon}

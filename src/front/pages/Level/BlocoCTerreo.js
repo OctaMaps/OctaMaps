@@ -10,7 +10,7 @@ export default class BlocoCTerreo extends React.Component {
     return (
       <View style={styles.container}>
           <ImageBackground source={require('../../images/Level/BlocoCTerreo.jpg')} style={{width: '100%', height: '100%'}}>
-            <Header></Header>
+            <Header searchableOff/>
           </ImageBackground>
       </View>
     );

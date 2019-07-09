@@ -67,7 +67,7 @@ export default class BlocoA extends React.Component {
             :
               null
           }
-         <Header/>
+         <Header searchableOff/>
          <MapA/>
            
        </ImageBackground> 

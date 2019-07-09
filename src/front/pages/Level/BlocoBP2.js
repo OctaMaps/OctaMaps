@@ -29,7 +29,7 @@ export default class BlocoBP2 extends React.Component {
       case 0:
         return(
               <ImageBackground source={require('../../images/Level/BlocoB1P2.png')} style={{width: '100%', height: '100%'}}>
-                <Header></Header>
+                <Header searchableOff/>
                   <Icon.Button 
                           backgroundColor={'transparent'}
                           color={'#dee9fc'}size={30} style ={header.icon}
@@ -41,8 +41,7 @@ export default class BlocoBP2 extends React.Component {
             return(    
               
             <ImageBackground source={require('../../images/Level/BlocoB2P2.png')} style={{width: '100%', height: '100%'}}>
-
-                <Header></Header>
+              <Header searchableOff/>
 
                 <Icon.Button 
                         backgroundColor={'transparent'}
@@ -61,7 +60,7 @@ export default class BlocoBP2 extends React.Component {
       case 2:
             return(    
             <ImageBackground source={require('../../images/Level/BlocoB3P2.png')} style={{width: '100%', height: '100%'}}>
-                <Header></Header>
+              <Header searchableOff/>
                 <Icon.Button 
                         backgroundColor={'transparent'}
                         color={'#dee9fc'}size={30} style ={header.icon}

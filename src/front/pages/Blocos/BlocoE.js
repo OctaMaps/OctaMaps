@@ -67,7 +67,7 @@ export default class BlocoE extends React.Component {
             :
               null
           }
-         <Header/>
+         <Header searchableOff/>
          <MapE/>
            
        </ImageBackground> 

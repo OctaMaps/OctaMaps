@@ -10,7 +10,7 @@ export default class BlocoCP1 extends React.Component {
     return (
       <View style={styles.container}>
           <ImageBackground source={require('../../images/Level/BlocoCP1.jpg')} style={{width: '100%', height: '100%'}}>
-            <Header></Header>
+            <Header searchableOff/>
           </ImageBackground>
       </View>
     );

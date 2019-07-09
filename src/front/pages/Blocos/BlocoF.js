@@ -67,7 +67,7 @@ export default class BlocoF extends React.Component {
             :
               null
           }
-         <Header/>
+         <Header searchableOff/>
          <MapF/>
            
        </ImageBackground> 

@@ -7,3 +7,4 @@ npm-debug.*
 *.mobileprovision
 dontread.txt
 src/credentials/**
+src/front/pages/Blocos/JustTest.js
