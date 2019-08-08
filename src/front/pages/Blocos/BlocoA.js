@@ -6,6 +6,8 @@ import { Video } from 'expo-av';
 import Header from '../../../component/NewHeader'
 
 import MapA from '../../../component/maps/MapA'
+import Text from '../../../component/text/TAT'
+
 
 export default class BlocoA extends React.Component {
   constructor(props){         
@@ -69,6 +71,7 @@ export default class BlocoA extends React.Component {
           }
          <Header searchableOff/>
          <MapA/>
+         <Text/>
            
        </ImageBackground> 
       

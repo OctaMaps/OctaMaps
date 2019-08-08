@@ -16,6 +16,7 @@ import BlocoD  from './Blocos/BlocoD';
 import BlocoE from './Blocos/BlocoE';
 import BlocoF from './Blocos/BlocoF';
 
+import BlocoATerreo from './Level/BlocoATerreo';
 import BlocoAP1 from './Level/BlocoAP1';
 import BlocoAP2 from './Level/BlocoAP2';
 
@@ -34,6 +35,7 @@ import BlocoEP1 from './Level/BlocoEP1';
 import BlocoEP2 from './Level/BlocoEP2';
 
 import BlocoFTerreo from './Level/BlocoFTerreo';
+import BlocoFP1 from './Level/BlocoFP1';
 
 import JustTest from'./Blocos/JustTest'
 /*
@@ -42,7 +44,7 @@ import JustTest from'./Blocos/JustTest'
 const menu = createDrawerNavigator({
     'Home': {
       //Definindo a Tela exibida no novo componente 'HOME'
-      screen: Index , 
+      screen: BlocoBP2 , 
       navigationOptions:{
         //Icone que sera desenhado
         drawerIcon: () => <Icon name='home'/>
@@ -109,6 +111,12 @@ const menu = createDrawerNavigator({
 
     //Pisos Terreo 1 e 2
     //Bloco A
+    'BlocoATerreo':{
+      screen: BlocoATerreo,
+      navigationOptions:{  
+        drawerLabel: () => null
+      }
+    },
     'BlocoAP1':{
       screen: BlocoAP1,
       navigationOptions:{  
@@ -192,7 +200,12 @@ const menu = createDrawerNavigator({
         drawerLabel: () => null
       }
     },
-
+    'BlocoFP1':{
+      screen: BlocoFP1,
+      navigationOptions:{  
+        drawerLabel: () => null
+      }
+    },
 
   },
   //Configurando a parte oculta do menu, 

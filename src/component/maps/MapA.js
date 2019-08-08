@@ -6,7 +6,7 @@ import { withNavigationFocus,NavigationEvents } from 'react-navigation';
  class MapA extends React.Component {
 
   terreo(){
-    alert("Bloco A Terreo, ainda não implementado")
+   this.props.navigation.navigate("BlocoATerreo")  
   }
   piso1(){
    this.props.navigation.navigate("BlocoAP1")  
@@ -19,6 +19,17 @@ import { withNavigationFocus,NavigationEvents } from 'react-navigation';
     return (
       <View>
         <Svg height={"100%"} width={'100%'}>
+
+              <Rect
+                  x={'7%'}
+                  y={'36%'}
+                  width={'50%'}
+                  height={'20%'}
+                  strokeWidth={2}
+                  stroke={'transparent'}
+                  fill="rgba(220, 220, 0, 0.0)"
+                  onPress={() =>this.piso2()}
+                />
 
                 <Rect
                   x={'44%'}
@@ -195,6 +206,8 @@ import { withNavigationFocus,NavigationEvents } from 'react-navigation';
                   fill="rgba(0, 0, 0, 0.0)"
                   onPress={() =>this.piso2()}
                 />
+
+                
 
                 
           </Svg>

@@ -8,7 +8,7 @@ const corAndar0 = 'transparent'
 const corFundo0 = 'transparent'
 class MapF extends React.Component {
   terreo(){
-    this.props.navigation.navigate('BlocoFTerreo')
+    this.props.navigation.navigate('BlocoFP1')
   }
 
   render() {

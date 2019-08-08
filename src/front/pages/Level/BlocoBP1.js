@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 import { StyleSheet, View, ImageBackground,Text } from 'react-native';
 import Header from '../../../component/NewHeader';
 import Icon from 'react-native-vector-icons/Feather';
@@ -62,6 +62,25 @@ export default class BlocoBP1 extends React.Component {
             return(    
             <ImageBackground source={require('../../images/Level/BlocoB3P1.jpg')} style={{width: '100%', height: '100%'}}>
             <Header searchableOff/>
+
+                <Icon.Button 
+                        backgroundColor={'transparent'}
+                        color={'#dee9fc'}size={30} style ={header.icon}
+                        name="arrow-up" onPress={this.changeDown}
+                />
+
+                <Icon.Button 
+                        backgroundColor={'transparent'}
+                        color={'#dee9fc'}size={30} style ={{flexDirection: 'row'}}
+                        name="arrow-down" onPress={this.changeUp}
+                />
+
+             </ImageBackground>
+              )
+      case 3:
+            return(    
+            <ImageBackground source={require('../../images/Level/BlocoB4P1.jpg')} style={{width: '100%', height: '100%'}}>
+            <Header searchableOff/>
                 <Icon.Button 
                         backgroundColor={'transparent'}
                         color={'#dee9fc'}size={30} style ={header.icon}
@@ -69,7 +88,7 @@ export default class BlocoBP1 extends React.Component {
                 />
                 
              </ImageBackground>
-              )
+              )    
 
     }
   }

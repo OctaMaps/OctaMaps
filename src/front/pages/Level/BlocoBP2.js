@@ -1,7 +1,9 @@
-import React from 'react';
+  import React from 'react';
 import { StyleSheet, View, ImageBackground,Text } from 'react-native';
 import Header from '../../../component/NewHeader';
 import Icon from 'react-native-vector-icons/Feather';
+
+import Info1 from '../../../component/text/BP2A';
 
 
 export default class BlocoBP2 extends React.Component {
@@ -28,20 +30,23 @@ export default class BlocoBP2 extends React.Component {
     switch(this.state.part){
       case 0:
         return(
-              <ImageBackground source={require('../../images/Level/BlocoB1P2.png')} style={{width: '100%', height: '100%'}}>
-                <Header searchableOff/>
+            <ImageBackground source={require('../../images/Level/BlocoB5P2.png')} style={{width: '100%', height: '100%'}}>
+            <Header searchableOff/>
                   <Icon.Button 
                           backgroundColor={'transparent'}
                           color={'#dee9fc'}size={30} style ={header.icon}
                           name="arrow-down" onPress={this.changeUp}
                   />
+                  <Info1>
+                    
+                  </Info1>
              </ImageBackground>
          )
       case 1:
             return(    
               
-            <ImageBackground source={require('../../images/Level/BlocoB2P2.png')} style={{width: '100%', height: '100%'}}>
-              <Header searchableOff/>
+            <ImageBackground source={require('../../images/Level/BlocoB4P2.png')} style={{width: '100%', height: '100%'}}>
+            <Header searchableOff/>
 
                 <Icon.Button 
                         backgroundColor={'transparent'}
@@ -54,13 +59,53 @@ export default class BlocoBP2 extends React.Component {
                         color={'#dee9fc'}size={30} style ={{flexDirection: 'row'}}
                         name="arrow-down" onPress={this.changeUp}
                 />
+
              </ImageBackground>
               )
 
       case 2:
             return(    
             <ImageBackground source={require('../../images/Level/BlocoB3P2.png')} style={{width: '100%', height: '100%'}}>
-              <Header searchableOff/>
+            <Header searchableOff/>
+
+                <Icon.Button 
+                        backgroundColor={'transparent'}
+                        color={'#dee9fc'}size={30} style ={header.icon}
+                        name="arrow-up" onPress={this.changeDown}
+                />
+
+                <Icon.Button 
+                        backgroundColor={'transparent'}
+                        color={'#dee9fc'}size={30} style ={{flexDirection: 'row'}}
+                        name="arrow-down" onPress={this.changeUp}
+                />
+
+             </ImageBackground>
+              )
+      case 3:
+            return(    
+            <ImageBackground source={require('../../images/Level/BlocoB2P2.png')} style={{width: '100%', height: '100%'}}>
+            <Header searchableOff/>
+
+                <Icon.Button 
+                        backgroundColor={'transparent'}
+                        color={'#dee9fc'}size={30} style ={header.icon}
+                        name="arrow-up" onPress={this.changeDown}
+                />
+
+                <Icon.Button 
+                        backgroundColor={'transparent'}
+                        color={'#dee9fc'}size={30} style ={{flexDirection: 'row'}}
+                        name="arrow-down" onPress={this.changeUp}
+                />
+
+             </ImageBackground>
+              )
+
+      case 4:
+            return(    
+            <ImageBackground source={require('../../images/Level/BlocoB1P2.png')} style={{width: '100%', height: '100%'}}>
+            <Header searchableOff/>
                 <Icon.Button 
                         backgroundColor={'transparent'}
                         color={'#dee9fc'}size={30} style ={header.icon}
@@ -68,7 +113,7 @@ export default class BlocoBP2 extends React.Component {
                 />
                 
              </ImageBackground>
-              )
+              )    
 
     }
   }
@@ -77,8 +122,6 @@ export default class BlocoBP2 extends React.Component {
     return (
       <View style={styles.container}>
           {this.renderPart()}
-         
-
       </View>
     );
   }
@@ -102,3 +145,4 @@ const header = StyleSheet.create({
 
   }
 });
+
