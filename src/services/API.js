@@ -1,32 +1,33 @@
-import axios from 'axios'
-const credentials = require("../credentials/credentials.json")
+import axios from "axios"
+const credentials = require("../credentials.json")
 
-function API(){
-  getData = async ( url ) => {
-    try{
-      const response = await axios.get(url)
-      if (response.data.result){
-        return response.data.result
-      }else{
-        return response.data
-      }
-    }catch(error){
-      return new Error(error)
-    }
-  }
+function API() {
+	const { baseURL, classRoomURL, versionCodeURL } = credentials
+	axios.defaults.baseURL = baseURL
+	getData = async () => {
+		try {
+			const response = await axios.get(classRoomURL)
+			if (response.data.result) {
+				return response.data.result
+			}
+		} catch (error) {
+			console.log("getVersionCode", error)
+			throw ("getVersionCode", error)
+		}
+	}
 
-  setData = async (downloadData = true, downloadVersionCode = true) => {
-    try{
-      data = []
-      versionCode = ""
-      if (downloadData) data = await getData(credentials.getDataURL)
-      if (downloadVersionCode) versionCode = await getData(credentials.getUpdateURL)
-      return{ data,versionCode }
-    }catch(error){
-      throw new Error(error)
-    }
-  }
-  return{ setData }
+	getVersionCode = async () => {
+		try {
+			const response = await axios.get(versionCodeURL)
+			if (response.data.id_version) {
+				return response.data.id_version
+			}
+		} catch (error) {
+			throw ("getVersionCode", error)
+		}
+	}
+
+	return { getData, getVersionCode }
 }
 
 module.exports = API
