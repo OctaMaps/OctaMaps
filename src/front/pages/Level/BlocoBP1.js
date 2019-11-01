@@ -2,7 +2,10 @@
 import { StyleSheet, View, ImageBackground,Text } from 'react-native';
 import Header from '../../../component/NewHeader';
 import Icon from 'react-native-vector-icons/Feather';
-
+import Info from '../../../component/text/BP1'
+import Info2 from '../../../component/text/BP12'
+import Info3 from '../../../component/text/BP13'
+import Info4 from '../../../component/text/BP14'
 
 export default class BlocoBP1 extends React.Component {
   constructor(props){         
@@ -35,6 +38,7 @@ export default class BlocoBP1 extends React.Component {
                           color={'#dee9fc'}size={30} style ={header.icon}
                           name="arrow-down" onPress={this.changeUp}
                   />
+                  <Info></Info>
              </ImageBackground>
          )
       case 1:
@@ -49,11 +53,13 @@ export default class BlocoBP1 extends React.Component {
                         name="arrow-up" onPress={this.changeDown}
                 />
 
+
                 <Icon.Button 
                         backgroundColor={'transparent'}
                         color={'#dee9fc'}size={30} style ={{flexDirection: 'row'}}
                         name="arrow-down" onPress={this.changeUp}
                 />
+                <Info2> </Info2>
 
              </ImageBackground>
               )
@@ -74,7 +80,7 @@ export default class BlocoBP1 extends React.Component {
                         color={'#dee9fc'}size={30} style ={{flexDirection: 'row'}}
                         name="arrow-down" onPress={this.changeUp}
                 />
-
+              <Info3></Info3> 
              </ImageBackground>
               )
       case 3:
@@ -86,7 +92,7 @@ export default class BlocoBP1 extends React.Component {
                         color={'#dee9fc'}size={30} style ={header.icon}
                         name="arrow-up" onPress={this.changeDown}
                 />
-                
+                <Info4> </Info4>
              </ImageBackground>
               )    
 

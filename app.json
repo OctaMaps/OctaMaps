@@ -9,7 +9,7 @@
       "ios",
       "android"
     ],
-    "version": "1.1.9.2",
+    "version": "1.1.9.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -28,7 +28,7 @@
     },
     "android": {
       "package": "projeto.ifmt",
-      "versionCode": 12,
+      "versionCode": 13,
       "permissions": [
         "CAMERA",
         "RECORD_AUDIO",

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, ImageBackground } from 'react-native';
 import Header from '../../../component/NewHeader';
-
+import Info from '../../../component/text/TC'
 
 export default class BlocoCTerreo extends React.Component {
 
@@ -11,6 +11,7 @@ export default class BlocoCTerreo extends React.Component {
       <View style={styles.container}>
           <ImageBackground source={require('../../images/Level/BlocoCTerreo.jpg')} style={{width: '100%', height: '100%'}}>
             <Header searchableOff/>
+            <Info/>
           </ImageBackground>
       </View>
     );

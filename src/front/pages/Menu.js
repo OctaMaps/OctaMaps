@@ -27,6 +27,8 @@ import BlocoD from "./Blocos/BlocoD"
 import BlocoE from "./Blocos/BlocoE"
 import BlocoF from "./Blocos/BlocoF"
 
+import Teste from "./Blocos/BackVideo"
+
 import BlocoATerreo from "./Level/BlocoATerreo"
 import BlocoAP1 from "./Level/BlocoAP1"
 import BlocoAP2 from "./Level/BlocoAP2"
@@ -212,6 +214,12 @@ const menu = createDrawerNavigator(
 		},
 		BlocoFP1: {
 			screen: BlocoFP1,
+			navigationOptions: {
+				drawerLabel: () => null
+			}
+		},
+		'Teste':{
+			screen: Teste,
 			navigationOptions: {
 				drawerLabel: () => null
 			}

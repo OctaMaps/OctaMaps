@@ -1,75 +1,122 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { withNavigationFocus,NavigationEvents } from 'react-navigation';
-  const a = "ColocarAlgumTextoAquiVitoria"
-  const b = 'ColocarAlgumTextoAquiVitoria'
-  const c = "ColocarAlgumTextoAquiVitoria"
-  const d = 'ColocarAlgumTextoAquiVitoria'
-  const e = 'ColocarAlgumTextoAquiVitoria'
-  const f = 'ColocarAlgumTextoAquiVitoria'
-  const g = 'ColocarAlgumTextoAquiVitoria'
-  const h = 'ColocarAlgumTextoAquiVitoria>'
-  const i = 'ColocarAlgumTextoAquiVitoria>'
-  const j = 'ColocarAlgumTextoAquiVitoria>'
-  const k = 'ColocarAlgumTextoAquiVitoria>'
-  const l = 'ColocarAlgumTextoAquiVitoria>'
-  const m = 'ColocarAlgumTextoAquiVitoria>'
-  const n = 'ColocarAlgumTextoAquiVitoria>'
-  const o = 'ColocarAlgumTextoAquiVitoria>'
-  const p = 'ColocarAlgumTextoAquiVitoria>'
-  const q = 'ColocarAlgumTextoAquiVitoria>'
-  const r = 'ColocarAlgumTextoAquiVitoria>'
-  const s = 'ColocarAlgumTextoAquiVitoria>'
-  const u = 'ColocarAlgumTextoAquiVitoria>'
+  const a = "B-201"
+  const b = 'B-202'
+  const c = "B-203"
+  const d = 'B-204'
+  const e = 'B-205'    
+  const f = 'WC'
+  const g = ''
+  const h = ''
+  const i = ''
+
+  const j = ''
+  const k = ''
+
+  const l = ''
+  const m = ''
 
  class BP2A extends React.Component {
 
   render() {
     return (
-      <View style={{marginTop: '52%'}}>
+      <View style={{marginLeft: '0%'}}>
 
-        <Text style={t.a1}> {a.slice(0,7)} </Text>
-        <Text style={t.a1}> {a.slice(7,15)} </Text>
 
-        <View style={{marginTop: '12%'}}>
-          <Text style={t.a2}> {b.slice(0,7)} </Text>
-          <Text style={t.a2}> {b.slice(7,15)} </Text>
-          <Text style={t.a2}> {b.slice(15,23)} </Text>
-          <Text style={t.a2}> {b.slice(23,31)} </Text>
+        <View style={{marginTop: '0%'}}>
+           <Text style={t.a1}> {a.slice(0,10)} </Text>
+           <Text style={t.a1}> {a.slice(10,20)} </Text>
+           <Text style={t.a1}> {a.slice(20,50)} </Text>
 
         </View>
 
-        <View style={{marginTop: '1%'}}>
-          <Text style={t.a3}> {c.slice(0,7)} </Text>
-          <Text style={t.a3}> {c.slice(7,15)} </Text>
-          <Text style={t.a3}> {c.slice(15,23)} </Text>
-          <Text style={t.a3}> {c.slice(23,31)} </Text>
+           <View style={{marginTop: '40%'}}>
+           <Text style={t.a2}> {b.slice(0,5)} </Text>
+           <Text style={t.a2}> {b.slice(5,10)} </Text>
+           <Text style={t.a2}> {b.slice(10,20)} </Text>
+           </View>
 
-        </View>
+           <View style={{marginTop: '25%'}}>
+           <Text style={t.a3}> {c.slice(0,10)} </Text>
+           <Text style={t.a3}> {c.slice(10,20)} </Text>
+           <Text style={t.a3}> {c.slice(20,30)} </Text>
+           <Text style={t.a3}> {c.slice(30,45)} </Text>
+           </View>  
 
-        <View style={{marginTop: '1%'}}>
-          <Text style={t.a4}> {d.slice(0,7)} </Text>
-          <Text style={t.a4}> {d.slice(7,15)} </Text>
-          <Text style={t.a4}> {d.slice(15,23)} </Text>
-          <Text style={t.a4}> {d.slice(23,31)} </Text>
+           <View style={{marginTop: '9%'}}>
+           <Text style={t.a4}> {d.slice(0,9)} </Text>
+           <Text style={t.a4}> {d.slice(9,20)} </Text>
+           <Text style={t.a4}> {d.slice(20,38)} </Text>
+           <Text style={t.a4}> {d.slice(38,50)} </Text>
+           </View>  
 
-        </View>
+           <View style={{marginTop: '5%'}}>
+           <Text style={t.a5}> {e.slice(0,7) }</Text>
+           <Text style={t.a5}> {e.slice(7,8)} </Text>
+           <Text style={t.a5}> {e.slice(8,40)} </Text>
+           <Text style={t.a5}> {e.slice(40,60)} </Text>
+           </View>  
 
-        <View style={{marginTop: '1%'}}>
-          <Text style={t.a5}> {e.slice(0,7)} </Text>
-          <Text style={t.a5}> {e.slice(7,15)} </Text>
-          <Text style={t.a5}> {e.slice(15,23)} </Text>
-          <Text style={t.a5}> {e.slice(23,31)} </Text>
 
-        </View>
 
-        <View style={{marginTop: '1%'}}>
-          <Text style={t.a6}> {f.slice(0,7)} </Text>
-          <Text style={t.a6}> {f.slice(7,15)} </Text>
-          <Text style={t.a6}> {f.slice(15,23)} </Text>
-          <Text style={t.a6}> {f.slice(23,31)} </Text>
 
-        </View>
+
+
+           <View style={{marginTop: '4%'}}>
+           <Text style={t.a6}> {f.slice(0,9)} </Text>
+           <Text style={t.a6}> {f.slice(9,20)} </Text>
+           <Text style={t.a6}> {f.slice(20,27)} </Text>
+           <Text style={t.a6}> {f.slice(27,36)} </Text>
+           </View>  
+
+
+           <View style={{marginTop: '2%'}}>
+           <Text style={t.a7}> {g.slice(0,9)} </Text>
+           <Text style={t.a7}> {g.slice(9,20)} </Text>
+           <Text style={t.a7}> {g.slice(20,40)} </Text>
+
+           </View>  
+
+           <View style={{marginTop: '0%'}} >
+           <Text style={t.a8}> {h.slice(0,9)} </Text>
+           <Text style={t.a8}> {h.slice(9,30)} </Text>
+           <Text style={t.a8}> {h.slice(30,50)} </Text>
+</View>
+
+           <View style={{marginTop: '-6%'}}>
+            <Text style={t.a9}> {i.slice(0,8)} </Text>
+            <Text style={t.a9}> {i.slice(8,17)} </Text>
+            <Text style={t.a9}> {i.slice(17,27)} </Text>
+            <Text style={t.a9}> {i.slice(27,36)} </Text>
+           </View>  
+
+           <View style={{marginTop: '-6%'}}>
+            <Text style={t.a10}> {j.slice(0,19)} </Text>
+            <Text style={t.a10}> {j.slice(19,30)} </Text>
+            <Text style={t.a10}> {j.slice(30,60)} </Text>
+           </View>  
+
+           <View style={{marginTop: '8%'}}>
+            <Text style={t.a11}> {k.slice(0,19)} </Text>
+            <Text style={t.a11}> {k.slice(19,30)} </Text>
+            <Text style={t.a11}> {k.slice(30,40)} </Text>
+           </View> 
+
+           <View style={{marginTop: '13%'}}>
+            <Text style={t.a12}> {l.slice(0,16)} </Text>
+            <Text style={t.a12}> {l.slice(16,30)} </Text>
+            <Text style={t.a12}> {l.slice(30,40)} </Text>
+            <Text style={t.a12}> {l.slice(40,50)} </Text>
+           </View>  
+
+           <View style={{marginTop: '6%'}}>
+            <Text style={t.a13}> {m.slice(0,9)} </Text>
+            <Text style={t.a13}> {m.slice(9,18)} </Text>
+            <Text style={t.a13}> {m.slice(18,27)} </Text>
+            <Text style={t.a13}> {m.slice(27,36)} </Text>
+           </View>  
+
 
       </View>
     );
@@ -85,40 +132,39 @@ const styles = StyleSheet.create({
 const t = StyleSheet.create({
   a1: {
     color: 'white',
-    marginLeft:'35%',
-    marginTop:'0%'
+    marginLeft:'50%',
   },
   a2: {
     color: 'white',
-    marginLeft:' 35%',
+    marginLeft:'50%',
   },
   a3: {
     color: 'white',
-    marginLeft:'35%'
+    marginLeft:'50%'
   },
   a4: {
     color: 'white',
-    marginLeft:'35%'
+    marginLeft:'50%'
   },
-
-
-
-  a5:{
+  a5: {
     color: 'white',
-    marginLeft:'35%'
+    marginLeft:'50%'
   },
   a6:{
     color: 'white',
-    marginLeft:'35%'
+    marginLeft:'50%'
+  },
+  a7:{
+    color: 'white',
+    marginLeft:'50%'
   },
   a8:{
     color: 'white',
-    marginLeft:'30%',
-    marginTop:'0%'
+    marginLeft:'10%',
   },
   a9:{
     color: 'white',
-    marginLeft:'30%',
+    marginLeft:'10%',
   },
   a10:{
     color: 'white',
@@ -126,36 +172,21 @@ const t = StyleSheet.create({
   },
   a11:{
     color: 'white',
-    marginLeft:'25%',
+    marginLeft:'10%',
   },
   a12:{
     color: 'white',
-    marginLeft:'38%',
+    marginLeft:'10%',
   },
   a13:{
     color: 'white',
-    marginLeft:'42%',
+    marginLeft:'34%',
   },
   a14:{
     color: 'white',
-    marginLeft:'42%',
+    marginLeft:'41%',
   },
-  a15:{
-    color: 'white',
-    marginLeft:'42%',
-  },
-  a16:{
-    color: 'white',
-    marginLeft:'42%',
-  },
-  a17:{
-    color: 'white',
-    marginLeft:'10%',
-  },
-  a18:{
-    color: 'white',
-    marginLeft:'25%',
-  },
+
 });
 
 export default withNavigationFocus(BP2A)

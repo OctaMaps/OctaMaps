@@ -20,6 +20,7 @@ let nave = 0
 // importando banco de dados e conexoes
 const Database = require("../services/Database")
 import filter from "../utils/filter"
+
 const database = Database()
 
 // nova implementaçao de alert 03/05/19
@@ -163,17 +164,19 @@ class NewHeader extends React.Component {
 		this.setState({ pressed: "0" })
 	}
 
-	alertaSimples = term => {
+	alertaSimples = (term,a,b,c,d) => {
 		//function to make two option alert
-		let text = "Transição Para " + term
+		let text = 'Confirmar Rediricionamento'
+		//(item.titulo_bloco, item.codigo_sala, item.numero_piso, item.titulo_sala, item.titulo_campus
+		let coleta = "Campus: "+ d +"\nNome: "+ c+ "\nBloco: " + term +"\nPiso: "+ b+ "\nSala: "+ a
 		Alert.alert(
 			//title
 			text,
 			//body
 			// falta deixar mais bonito
-			"Deseja ser redirecionado à tela correspondente?",
+			coleta,
 			[
-				{ text: "Sim", onPress: () => this.props.navigation.navigate(term) },
+				{ text: "Sim", onPress: () => this.redirecionar(d,c,term,b,a)},
 				{
 					text: "Não",
 					onPress: () => console.log("No Pressed"),
@@ -185,6 +188,25 @@ class NewHeader extends React.Component {
 		)
 	}
 
+	redirecionar = (campus,nome,bloco,piso,sala) => {
+		let x = bloco.replace(' ','')
+		switch(piso){ 	
+			case 0:
+				this.props.navigation.navigate(x+"Terreo")
+				console.log("t")
+			case 1:
+				this.props.navigation.navigate(x+"P1")
+				console.log("1")
+			case 2:
+				this.props.navigation.navigate(x+"P2")
+				console.log("2")
+
+
+
+		}
+		
+	}
+
 	render() {
 		//existe um text inutil ali pois o return precisa obrigatoriamente um componente ao menos.
 		return (
@@ -193,17 +215,17 @@ class NewHeader extends React.Component {
 
 				{this.state.pressed == "1" ? (
 					<TouchableHighlight
-						style={{ backgroundColor: "rgba(255, 255, 255, 0.0)" }}
+						style={{ backgroundColor: "rgba(255, 255, 255, 0.8)" }}
 						onPress={() => this.setState({ pressed: "0" })}
 					>
 						<View style={{ width: "100%", height: "100%" }}>
 							<Animatable.View animation="fadeIn" duration={5000}>
 								<FlatList
-									style={{ backgroundColor: "white", marginLeft: "10%" }}
+									style={{ backgroundColor: "rgba(255, 255, 255, 0.7)", marginLeft: "10%", }}
 									data={this.state.volatileData}
 									renderItem={({ item }) => (
 										<TouchableOpacity
-											onPress={value => this.alertaSimples(item.titulo_bloco)}
+											onPress={value => this.alertaSimples(item.titulo_bloco, item.codigo_sala, item.numero_piso, item.titulo_sala, item.titulo_campus)}
 											style={header.touchableTouch}
 										>
 											<Text style={header.textTouch}>
@@ -273,9 +295,9 @@ const header = StyleSheet.create({
 	},
 	touchableTouch: {
 		flexDirection: "row",
-		borderRadius: 5,
+		borderRadius: 100,
 		borderWidth: 1,
-		borderColor: "#fff"
+		borderColor: "rgba(255, 255, 255, 0.2)"
 	}
 })
 

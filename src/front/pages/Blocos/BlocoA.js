@@ -42,7 +42,7 @@ export default class BlocoA extends React.Component {
     setTimeout( () => {
        console.log("Video Terminado")
        this.setState({videoOn: false})
-    },1300)
+    },2200)
   }
 
 

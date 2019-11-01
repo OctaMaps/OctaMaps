@@ -3,6 +3,8 @@ import { StyleSheet, View, ImageBackground,Text } from 'react-native';
 import Header from '../../../component/NewHeader';
 import Icon from 'react-native-vector-icons/Feather';
 
+import Info1  from '../../../component/text/BBT0'
+import Info2  from '../../../component/text/BBT1'
 
 export default class BlocoBTerreo extends React.Component {
   constructor(props){         
@@ -35,6 +37,7 @@ export default class BlocoBTerreo extends React.Component {
                           color={'#dee9fc'}size={30} style ={header.icon}
                           name="arrow-down" onPress={this.changeUp}
                   />
+                  <Info1> </Info1>
              </ImageBackground>
          )
       case 1:
@@ -48,12 +51,8 @@ export default class BlocoBTerreo extends React.Component {
                         color={'#dee9fc'}size={30} style ={header.icon}
                         name="arrow-up" onPress={this.changeDown}
                 />
-
-                <Icon.Button 
-                        backgroundColor={'transparent'}
-                        color={'#dee9fc'}size={30} style ={{flexDirection: 'row'}}
-                        name="arrow-down" onPress={this.changeUp}
-                />
+    <Info2> </Info2>
+                
 
              </ImageBackground>
               )

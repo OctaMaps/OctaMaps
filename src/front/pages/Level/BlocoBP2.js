@@ -4,6 +4,11 @@ import Header from '../../../component/NewHeader';
 import Icon from 'react-native-vector-icons/Feather';
 
 import Info1 from '../../../component/text/BP2A';
+import Info2 from '../../../component/text/BP2B';
+import Info3 from '../../../component/text/BP2C';
+import Info4 from '../../../component/text/BP2D';
+import Info5 from '../../../component/text/BP2E';
+
 
 
 export default class BlocoBP2 extends React.Component {
@@ -53,12 +58,12 @@ export default class BlocoBP2 extends React.Component {
                         color={'#dee9fc'}size={30} style ={header.icon}
                         name="arrow-up" onPress={this.changeDown}
                 />
-
                 <Icon.Button 
                         backgroundColor={'transparent'}
                         color={'#dee9fc'}size={30} style ={{flexDirection: 'row'}}
                         name="arrow-down" onPress={this.changeUp}
                 />
+  <Info2> </Info2>
 
              </ImageBackground>
               )
@@ -79,6 +84,7 @@ export default class BlocoBP2 extends React.Component {
                         color={'#dee9fc'}size={30} style ={{flexDirection: 'row'}}
                         name="arrow-down" onPress={this.changeUp}
                 />
+                <Info3> </Info3>
 
              </ImageBackground>
               )
@@ -98,6 +104,7 @@ export default class BlocoBP2 extends React.Component {
                         color={'#dee9fc'}size={30} style ={{flexDirection: 'row'}}
                         name="arrow-down" onPress={this.changeUp}
                 />
+                <Info4> </Info4>
 
              </ImageBackground>
               )
@@ -111,7 +118,7 @@ export default class BlocoBP2 extends React.Component {
                         color={'#dee9fc'}size={30} style ={header.icon}
                         name="arrow-up" onPress={this.changeDown}
                 />
-                
+                <Info5> </Info5>
              </ImageBackground>
               )    
 
