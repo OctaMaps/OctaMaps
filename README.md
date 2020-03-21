@@ -1,5 +1,6 @@
 # Octa.Maps  
-![Project Name] (https://travis-ci.org/joemccann/dillinger.svg?branch=master) 
+![Build Status](https://img.shields.io/badge/-Octa--Maps-informational)
+![Build Status](https://img.shields.io/badge/-Em--Produ%C3%A7%C3%A3o-brightgreen)
 
 ### Resumo 
 Este projeto foi criado com a intenção de oportunizar a estudantes com destaque em rendimento, organização e proatividade, na disciplina de Algoritmos e Lógica de programação do curso Técnico em Informática Integrado ao Ensino Médio do Campus Cuiabá “Cel. Octayde Jorge da Silva”, o contato com aspectos científicos da produção intelectual como recurso alternativo às práticas desenvolvidas dentro e entre as disciplinas do curso.
