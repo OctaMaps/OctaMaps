@@ -1,6 +1,41 @@
-//Iniciando Aplicativo
+import {StackNavigator} from 'react-navigation';
 
-import Menu from './src/front/pages/Menu'
+import Principal from './src/pages/Principal';
+import Sobre from './src/pages/Sobre';
 
-export default Menu;
+export default StackNavigator({
+    'Main': {
+      screen: Principal
 
+    },
+    'Sobre':{
+      screen: Sobre,
+      navigationOptions:{
+        title: 'Detalhes',
+       
+      }
+
+    }
+  }
+,
+
+{
+  navigationOptions:{
+    title:'Mapa IFMT',
+    headerTintColor:'white'
+    ,
+    headerStyle:{
+      backgroundColor: '#333',
+      borderBottomWidth: 1,
+      borderBottomColor: 'white'
+    },
+    headerTitleStyle:{      
+      color:'#C5C5C5',
+      alignSelf: 'center' 
+    }
+
+
+  } 
+});
+
+  
