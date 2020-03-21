@@ -13,5 +13,4 @@ This project was created with the intention of providing students with an emphas
 In addition, another purpose of this project is to encourage these students to seek information from sources other than academia, thus enriching their solutions and expanding their mental map of information processes for the solution in software and computer systems.
 
 ## Parte Grafica Atualmente // Graphics  
-![Tela](https://raw.githubusercontent.com/OctaMaps/OctaMaps/master/src/imagens/example.jpg)
-
+![](https://github.com/OctaMaps/OctaMaps/blob/master/src/screen.gif)
