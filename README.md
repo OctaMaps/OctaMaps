@@ -14,5 +14,5 @@ In addition, another purpose of this project is to encourage these students to s
 
 ## Parte Grafica Atualmente // Graphics  
 <div align="center">
-  <img src="https://github.com/OctaMaps/OctaMaps/blob/master/src/screen.gif" align="center" wight="200"/>
+  <img src="https://github.com/OctaMaps/OctaMaps/blob/master/src/screen.gif" align="center"  height="600">/>
 </div>
