@@ -1,10 +1,9 @@
 {
   "expo": {
-    "name": "Octa.Maps",    
+    "name": "Octa.Maps",
     "description": "APP de autodirecionamento do Campus IFMT-Octayde",
     "slug": "OctaMaps",
     "privacy": "public",
-    "sdkVersion": "33.0.0",
     "platforms": [
       "ios",
       "android"
@@ -39,10 +38,9 @@
         "WRITE_EXTERNAL_STORAGE",
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION",
-        //"CHANGE_CONFIGURATION",
         "com.android.launcher.permission.INSTALL_SHORTCUT",
         "com.htc.launcher.permission.UPDATE_SHORTCUT"
       ]
-    },
+    }
   }
 }
