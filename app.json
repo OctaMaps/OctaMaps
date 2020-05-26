@@ -1,46 +1,4 @@
 {
-  "expo": {
-    "name": "Octa.Maps",
-    "description": "APP de autodirecionamento do Campus IFMT-Octayde",
-    "slug": "OctaMaps",
-    "privacy": "public",
-    "platforms": [
-      "ios",
-      "android"
-    ],
-    "version": "1.1.9.5",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "package": "projeto.ifmt",
-      "versionCode": 13,
-      "permissions": [
-        "CAMERA",
-        "RECORD_AUDIO",
-        "READ_PHONE_STATE",
-        "READ_CONTACTS",
-        "READ_INTERNAL_STORAGE",
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE",
-        "ACCESS_FINE_LOCATION",
-        "ACCESS_COARSE_LOCATION",
-        "com.android.launcher.permission.INSTALL_SHORTCUT",
-        "com.htc.launcher.permission.UPDATE_SHORTCUT"
-      ]
-    }
-  }
+  "name": "Octa",
+  "displayName": "Octa"
 }

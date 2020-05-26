@@ -1,6 +1,4 @@
-//Iniciando Aplicativo
+import * as React from 'react';
+import Routes from './src/routes'
 
-import Menu from './src/front/pages/Menu'
-
-export default Menu;
-
+export default Routes
