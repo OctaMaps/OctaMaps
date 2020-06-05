@@ -1,7 +1,8 @@
 import * as React from 'react';
+import { StatusBar } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import CustomDrawerContent from './component/CustomDrawerContent'
+import CustomDrawerContent from './component/CustomDrawerContent';
 
 // Importando Telas
 import Main from './screens/Home'
@@ -35,6 +36,7 @@ const Drawer = createDrawerNavigator();
 export default function App() {
     return (
         <NavigationContainer>
+            <StatusBar hidden />
             <Drawer.Navigator
                 drawerContent={
                     (props, navigation) => <CustomDrawerContent navigation={navigation} {...props} />

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aroldo/workspace/Octa/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml",
+            "outputFile": "/home/aroldo/workspace/octa/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml",
             "map": [
                 {
                     "source": "/home/aroldo/.gradle/caches/transforms-2/files-2.1/7b4521e09033db39989053c4a0984cc2/material-1.1.0/res/values-large-v4/values-large-v4.xml",

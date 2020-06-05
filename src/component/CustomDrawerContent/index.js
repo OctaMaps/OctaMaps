@@ -16,13 +16,13 @@ function CustomDrawerContent({ navigation }, props) {
         let { primary, darkMode } = theme;
         return (
             <DrawerContentScrollView {...props}>
-                <SafeAreaView style={{ backgroundColor: primary.backgroundDrawer }}>
+                <SafeAreaView style={{ backgroundColor: primary.backgroundDrawer, marginTop: '-2%' }}>
                     <Image
                         source={{ uri: 'http://placekitten.com/723/724' }}
-                        style={{ width: 150, height: 150, marginLeft: '22%', borderRadius: 200, margin: '5%' }}
+                        style={{ marginTop: '7%', marginBottom: '7%', width: 150, height: 150, marginLeft: '20%', borderRadius: 200, margin: '5%' }}
                         PlaceholderContent={<ActivityIndicator />}
                     />
-                    <Text style={{ color: primary.textPhotoDrawer, fontSize: 25, textAlign: 'center', marginBottom: '5%' }}> Bem Vindo !</Text>
+                    <Text style={{ color: primary.textPhotoDrawer, fontSize: 25, textAlign: 'center', marginBottom: '5%' }}>Bem Vindo !</Text>
                 </SafeAreaView>
 
                 <SafeAreaView>
@@ -31,6 +31,7 @@ function CustomDrawerContent({ navigation }, props) {
                             renderIcon('home')
                         }
                         label="Home"
+                        inactiveTintColor={primary.inactiveTintColorDrawer}
                         onPress={() => navigation.navigate('Home')} />
 
                     <DrawerItem
@@ -38,6 +39,7 @@ function CustomDrawerContent({ navigation }, props) {
                             renderIcon('info')
                         }
                         label="Sobre"
+                        inactiveTintColor={primary.inactiveTintColorDrawer}
                         onPress={() => alert('Link to help')} />
 
                     <DrawerItem
@@ -45,6 +47,7 @@ function CustomDrawerContent({ navigation }, props) {
                             renderIcon('mail')
                         }
                         label="Contato"
+                        inactiveTintColor={primary.inactiveTintColorDrawer}
                         onPress={() => alert('Link to help')} />
 
                     <DrawerItem
@@ -52,6 +55,7 @@ function CustomDrawerContent({ navigation }, props) {
                             renderIcon('star')
                         }
                         label="Avalie"
+                        inactiveTintColor={primary.inactiveTintColorDrawer}
                         onPress={() => alert('Link to help')} />
                 </SafeAreaView>
             </DrawerContentScrollView>
@@ -61,7 +65,7 @@ function CustomDrawerContent({ navigation }, props) {
     let renderIcon = name => {
         let { primary, darkMode } = theme;
         return (
-            <Icon color={primary.iconColor} size={25} name={name} />
+            <Icon color={primary.iconColorDrawer} size={25} name={name} />
         )
     }
 

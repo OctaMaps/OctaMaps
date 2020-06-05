@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'Octa' do
-  # Pods for Octa
+target 'octa' do
+  # Pods for octa
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -77,7 +77,7 @@ target 'Octa' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'OctaTests' do
+  target 'octaTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -94,10 +94,10 @@ target 'Octa' do
   end
 end
 
-target 'Octa-tvOS' do
-  # Pods for Octa-tvOS
+target 'octa-tvOS' do
+  # Pods for octa-tvOS
 
-  target 'Octa-tvOSTests' do
+  target 'octa-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

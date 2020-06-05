@@ -1,11 +1,11 @@
 {
-  "name": "Octa",
+  "name": "octa",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "npx react-native run-android",
+    "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "npx react-native start",
+    "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
   },
@@ -14,15 +14,17 @@
     "@react-navigation/drawer": "^5.8.0",
     "@react-navigation/native": "^5.4.3",
     "react": "16.11.0",
-    "react-native": "0.62.2",
+    "react-native": "^0.62.2",
     "react-native-elements": "^2.0.0",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-image-mapper": "^0.1.11",
     "react-native-reanimated": "^1.9.0",
     "react-native-safe-area-context": "^2.0.0",
     "react-native-screens": "^2.8.0",
+    "react-native-svg": "^12.1.0",
     "react-native-vector-icons": "^6.6.0",
-    "react-native-video": "^4.4.5"
+    "react-native-video": "^4.4.5",
+    "react-native-webview": "^10.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
