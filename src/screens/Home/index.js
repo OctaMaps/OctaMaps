@@ -14,8 +14,6 @@ function HomeScreen({ navigation }) {
 
     return (
         <>
-
-
             <Image source={require('../../images/Geral.png')}
                 style={{ width: '100%', height: '100%', borderRadius: 0 }}
                 PlaceholderContent={<ActivityIndicator />} >

@@ -1,4 +1,0 @@
-#Sat May 30 15:13:03 BOT 2020
-base.0=/home/aroldo/workspace/octa/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

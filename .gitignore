@@ -57,10 +57,3 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
-
-# Ignore build ( Android Studio)
-android/app/build/*
-android/.gradle/*
-
-android/app/build/
-android/.gradle/
