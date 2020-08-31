@@ -1,0 +1,12 @@
+{
+  "name": "octas",
+  "displayName": "octas",
+  "expo": {
+    "name": "octas",
+    "slug": "octas",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
