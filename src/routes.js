@@ -8,6 +8,8 @@ import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
 import Floor from './screens/floor';
 import Main from './screens/main';
 import About from './screens/about';
+import Review from './screens/review';
+import Contact from './screens/contact';
 
 const Drawer = createDrawerNavigator();
 
@@ -21,7 +23,9 @@ export default function App(props) {
           ...DefaultTheme.colors,
           primary: '#0fadad',
           inactiveTintColor: 'rgb(28, 28, 30)',
-          lightText: '#fcffff'
+          lightText: '#fcffff',
+          primaryDarker: '#0f9df9',
+          coloredText: '#353331'
         },
     };
       
@@ -48,6 +52,14 @@ export default function App(props) {
         {
             page: About,
             routeName: 'About'
+        },  
+        {
+            page: Review,
+            routeName: 'Review'
+        },
+        {
+            page: Contact,
+            routeName: 'Contact'
         }
     ]
 

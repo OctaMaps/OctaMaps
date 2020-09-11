@@ -3605,6 +3605,15 @@ expo-asset@~8.1.7:
     path-browserify "^1.0.0"
     url-parse "^1.4.4"
 
+expo-av@~8.2.1:
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/expo-av/-/expo-av-8.2.1.tgz#cab16a5f0766b84a7c2e05e04523cb73a0cd4e9b"
+  integrity sha512-p1W6ta5yFLsyUUB4bH/Bm2gz/KEleYWRYkF7PR3aYXjtTjMX9Ud1gwzEfbMJMKZRSlJydSzy/ieQT8CVatd68A==
+  dependencies:
+    lodash "^4.17.15"
+    nullthrows "^1.1.0"
+    prop-types "15.7.2"
+
 expo-constants@~9.1.1:
   version "9.1.1"
   resolved "https://registry.yarnpkg.com/expo-constants/-/expo-constants-9.1.1.tgz#bca141ee3d4550e308798128f66c6d9c6a206ca1"
@@ -6663,10 +6672,20 @@ react-native-gesture-handler@~1.6.0:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
+react-native-in-app-review@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-native-in-app-review/-/react-native-in-app-review-1.0.6.tgz#d9910f7a6feeff503d1399ea51033d7dd73f3e76"
+  integrity sha512-feWWXi2YNdde2KZSq2KoDNPnPOJiq9/sgFOIgqhGSr3ob1OaP2Z/LeIAyZo/do3liTh1In0J+HWcZun40LLX6A==
+
 react-native-iphone-x-helper@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
   integrity sha512-/VbpIEp8tSNNHIvstuA3Swx610whci1Zpc9mqNkqn14DkMbw+ORviln2u0XyHG1kPvvwTNGZY6QpeFwxYaSdbQ==
+
+react-native-mail@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-mail/-/react-native-mail-5.2.0.tgz#01c9bf8142767d241c7145a1734cc0c92c291656"
+  integrity sha512-WZNRngUTj+9e42T10043jWBBZbEokOqHmtMAwWnwNGB/yCU+U3LSEaUJimp+Qblvo2d1Fj3cZz4SAGUzt4VWfw==
 
 react-native-reanimated@~1.9.0:
   version "1.9.0"

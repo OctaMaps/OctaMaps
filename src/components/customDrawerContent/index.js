@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { ActivityIndicator, SafeAreaView, Text, Image, StyleSheet } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import { useTheme } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Feather';
@@ -62,12 +61,12 @@ function CustomDrawerContent({ navigation }, props) {
                         icon={() => renderIcon('mail') }
                         label="Contato"
                         inactiveTintColor={inactiveTintColor}
-                        onPress={() => alert('Link to help')} />
+                        onPress={() => navigation.navigate('Contact')} />
                     <DrawerItem
                         icon={() => renderIcon('star') }
                         label="Avalie"
                         inactiveTintColor={inactiveTintColor}
-                        onPress={() => alert('Link to help')} />
+                        onPress={() => navigation.navigate('Review')} />
                 </SafeAreaView>
             </DrawerContentScrollView>
         );

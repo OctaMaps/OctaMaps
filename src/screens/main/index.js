@@ -50,7 +50,6 @@ export default function Main(props) {
       > 
         <Header 
           leftIcon={'menu'} 
-          rightIcon={'search'}
           leftPress={() => props.navigation.openDrawer()}
         />
 

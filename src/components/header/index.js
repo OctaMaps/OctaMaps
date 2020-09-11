@@ -26,8 +26,6 @@ export default function Main(props) {
     
     
 
-    console.log(props)
-
     if (rightDisable & leftDisable) {
         return null
     }
