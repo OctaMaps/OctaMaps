@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Button, Dimensions, ImageBackground } from 'react-native';
+import { Video } from 'expo-av';
+
+import Header from '../../components/header';
 
 import BlocoA from '../../images/BlocoA.png';
 import BlocoB from '../../images/BlocoB.png';
@@ -15,19 +18,22 @@ import VideoD from '../../videos/BlocoD.mp4';
 import VideoE from '../../videos/BlocoE.mp4';
 import VideoF from '../../videos/BlocoF.mp4';
 
-import Header from '../../components/header';
-import { Video } from 'expo-av';
+import MapaE from '../../components/maps/e';
+import MapaD from '../../components/maps/d';
 
 export default function Floor(props) {
   let { params } = props.route;
+  let { isBacked = false } = props;
   let { screen, percentage, original } = params;  
   let [videoShow, setVideoShow] = useState(true);
-
+  
   useEffect(() => {
-    setVideoShow(true); 
+    !isBacked && setVideoShow(true); 
   }, [] )
 
   let Index;
+  let FloorMap;
+
   switch(screen) {
     case 'A':
       Index = BlocoA
@@ -40,13 +46,17 @@ export default function Floor(props) {
       break;
     case 'D':
       Index = BlocoD
+      FloorMap = MapaD
       break;
-    case 'E':
+    case 'E': {
       Index = BlocoE
+      FloorMap = MapaE
       break;
+    }
     case 'F':
       Index = BlocoF
       break;
+
   }
 
   let selectVideo = () => {
@@ -70,44 +80,55 @@ export default function Floor(props) {
     setTimeout( () => {
       console.log("Video Terminado")
       setVideoShow(false)
-   },1300)
+   },300)
   }
 
-  return (
-    <>
-    {
-      videoShow &&
-        <Video
-        source={selectVideo()}
-        rate={1.0}
-        volume={1.0}
-        isMuted={true}
-        resizeMode="cover"
-        shouldPlay
-        onLoadStart={() => console.log('loading.')}
-        onLoad={() => onLoad()}
-        onError={() => console.log('error')}
-        onEnd={() => console.log('ended')}
-        style={{ width: '100%', height: '100%' }}
-      />
-    }
-    
+  let showVideo = () => {
+    return (
+      <Video
+          source={selectVideo()}
+          rate={1.0}
+          volume={1.0}
+          isMuted={true}
+          resizeMode={'cover'}
+          shouldPlay
+          onLoadStart={() => console.log('loading.')}
+          onLoad={() => onLoad()}
+          onError={() => console.log('error')}
+          onEnd={() => console.log('ended')}
+          style={{ width: '100%', height: '100%' }}
+        />
+    )
+  }
 
+  let showContent = () => {
+    return (
       <ImageBackground 
-        fadeDuration={300}
-        resizeMethod={'scale'}
-        style={{     
-          ...StyleSheet.absoluteFillObject,
-          opacity: 0.8,
-          width: original[0]/percentage[0],
-          height: original[1]/percentage[1],
-          borderRadius: 40
-        }}
-        blurRadius={0}
-        source={Index}
-      >
-      <Header/>
-      </ImageBackground>
+          fadeDuration={300}
+          resizeMethod={'scale'}
+          style={{     
+            ...StyleSheet.absoluteFillObject,
+            opacity: 0.8,
+            width: original[0]/percentage[0],
+            height: original[1]/percentage[1],
+            borderRadius: 40,
+          }}
+          blurRadius={0}
+          source={Index}
+          >
+          <Header/> 
+          {FloorMap && <FloorMap/>} 
+        </ImageBackground>
+    )
+  }
+
+   return (  
+    <>
+      {
+        videoShow 
+          ? showVideo()
+          : showContent()
+      }
     </>
   );
 }

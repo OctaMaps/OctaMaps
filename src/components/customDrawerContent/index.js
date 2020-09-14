@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ActivityIndicator, SafeAreaView, Text, Image, StyleSheet } from 'react-native';
+import { ActivityIndicator, SafeAreaView, Text, Image, StyleSheet, Linking } from 'react-native';
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import { useTheme } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Feather';
@@ -32,6 +32,19 @@ function CustomDrawerContent({ navigation }, props) {
         },
 
      });
+
+     // Criar link para a tela de review
+     let tryLink = () => {
+        try  {
+          // Deve funcionar apos o app ser upado na playstore
+          Linking.openURL('https://play.google.com/store/apps/details?id=projeto.ifmt')
+  
+        }
+        catch(e) {
+            Linking.openURL('https://play.google.com/store/apps/details?id=projeto.ifmt')
+        }
+      }
+
 
     // Configurar os Items do Menu Drawer
     let CustomDrawerContent = (props, navigation) => {
@@ -66,7 +79,7 @@ function CustomDrawerContent({ navigation }, props) {
                         icon={() => renderIcon('star') }
                         label="Avalie"
                         inactiveTintColor={inactiveTintColor}
-                        onPress={() => navigation.navigate('Review')} />
+                        onPress={() => tryLink()} />
                 </SafeAreaView>
             </DrawerContentScrollView>
         );
