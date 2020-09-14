@@ -66,16 +66,17 @@ export default function About() {
           <Text style={styles.separatorText}>Bolsistas</Text>
 
           <Text 
-            onPress={() => Linking.openURL('https://www.linkedin.com/in/aroldo-goulart-barros/')}       style={ styles.studentText} >Aroldo Goulart Barros
+            onPress={() => Linking.openURL('https://www.linkedin.com/in/aroldo-goulart-barros/')}       
+            style={ styles.studentText} >Aroldo Goulart Barros
           </Text>
           <Text 
             onPress={() => Linking.openURL('https://www.linkedin.com/in/alessandro-teiji-m-watanabe-144584171/')}  
-          style={ styles.studentText} >Alessandro Teiji Watanabe Mourão
+            style={ styles.studentText} >Alessandro Teiji Mourão Watanabe 
           </Text>
 
           <Text 
             onPress={() => Linking.openURL('https://www.linkedin.com/in/vitoria-angel-silva-130003196/')}  
-          style={ [styles.studentText, styles.lastStudent]} >Vitória Angel S. Silva 
+            style={ [styles.studentText, styles.lastStudent]} >Vitória Angel S. Silva 
           </Text>
 
           <Text style={styles.separatorText}>Voluntarios</Text>
