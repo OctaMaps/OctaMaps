@@ -80,7 +80,7 @@ export default function Floor(props) {
     setTimeout( () => {
       console.log("Video Terminado")
       setVideoShow(false)
-   },300)
+   },1300)
   }
 
   let showVideo = () => {
