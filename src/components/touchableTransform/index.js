@@ -6,8 +6,9 @@ export default function TouchableTransform(props) {
     let percentage = getPercentage;
 
     // array = [left, top, height, width].
-    let { array=[0, 0, 0, 0], trans=[0,0], backgroundColor="red", name="", onPressed={} } = props;  
+    let { array=[0, 0, 0, 0], trans=[0,0], backgroundColor="transparent", name="", onPressed = () => {} } = props;  
 
+    trans.length < 2 || trans.length > 3 && console.error("Transform need only two parameters")
 
     if(array.length > 4) {
         console.error("You have passed a lot of elements in Array. It should contain Left, Top, Height and Width values only.")
@@ -31,7 +32,7 @@ export default function TouchableTransform(props) {
                 ]
             }
             } 
-            onPress={() => onPressed()} 
+            onPress={() => onPressed() } 
         />
         )
     }

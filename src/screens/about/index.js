@@ -21,28 +21,30 @@ export default function About() {
     },
     headerText: {
       color: colors.text,
-      fontSize: 28,
-      paddingBottom: 20,
+      fontSize: 28/percentage[1],
+      paddingBottom: 20/percentage[1],
     },
     separatorText: {
       color: colors.coloredText,
-      fontSize: 25,
+      fontSize: 25/percentage[1],
       paddingBottom: 5
     },
     studentText: {
       color: colors.text,
-      fontSize: 20,
+      fontSize: 20/percentage[1],
       marginLeft: 0
     },
     lastStudent:{ 
-      paddingBottom: 10
+      paddingBottom: 10/percentage[1]
     },
     mainView: {         
       backgroundColor: colors.primaryDarker,
       height: '100%'
     },
     textView: {    
-      padding: 40,
+      paddingTop: 40/percentage[1],
+      paddingLeft: 40/percentage[1],
+      paddingBottom: 20/percentage[1],
       backgroundColor: colors.card,
       marginTop: 115/percentage[0]
     }
