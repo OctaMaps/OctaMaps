@@ -18,8 +18,12 @@ import VideoD from '../../videos/BlocoD.mp4';
 import VideoE from '../../videos/BlocoE.mp4';
 import VideoF from '../../videos/BlocoF.mp4';
 
+import MapaF from '../../components/maps/f';
 import MapaE from '../../components/maps/e';
 import MapaD from '../../components/maps/d';
+import MapaC from '../../components/maps/c';
+import MapaB from '../../components/maps/b';
+import MapaA from '../../components/maps/a';
 
 export default function Floor(props) {
   let { params } = props.route;
@@ -37,12 +41,15 @@ export default function Floor(props) {
   switch(screen) {
     case 'A':
       Index = BlocoA
+      FloorMap = MapaA
       break;
     case 'B':
       Index = BlocoB
+      FloorMap = MapaB
       break;
     case 'C':
       Index = BlocoC
+      FloorMap = MapaC
       break;
     case 'D':
       Index = BlocoD
@@ -55,6 +62,7 @@ export default function Floor(props) {
     }
     case 'F':
       Index = BlocoF
+      FloorMap = MapaF
       break;
 
   }
