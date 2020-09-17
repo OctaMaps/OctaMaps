@@ -6653,6 +6653,13 @@ react-is@^16.12.0, react-is@^16.13.0, react-is@^16.8.1, react-is@^16.8.4, react-
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-native-animated-splash-screen@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-animated-splash-screen/-/react-native-animated-splash-screen-2.0.5.tgz#5dcfafc2841a8b0636662eaf6980e791d9acc7e1"
+  integrity sha512-VTZmcYHQq8lxtVtiXQFJKGSSftewI+F3hgLY0ONBA2g3GP/jIgLJHoShup4HBLeA0Q2mjvyNT39JpfTDcLKtHQ==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-native-appearance@^0.3.4, react-native-appearance@~0.3.3:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/react-native-appearance/-/react-native-appearance-0.3.4.tgz#2cbcbc5142cdc1898c116684f519b16c879cbec2"
@@ -6672,20 +6679,10 @@ react-native-gesture-handler@~1.6.0:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
-react-native-in-app-review@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/react-native-in-app-review/-/react-native-in-app-review-1.0.6.tgz#d9910f7a6feeff503d1399ea51033d7dd73f3e76"
-  integrity sha512-feWWXi2YNdde2KZSq2KoDNPnPOJiq9/sgFOIgqhGSr3ob1OaP2Z/LeIAyZo/do3liTh1In0J+HWcZun40LLX6A==
-
 react-native-iphone-x-helper@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
   integrity sha512-/VbpIEp8tSNNHIvstuA3Swx610whci1Zpc9mqNkqn14DkMbw+ORviln2u0XyHG1kPvvwTNGZY6QpeFwxYaSdbQ==
-
-react-native-mail@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/react-native-mail/-/react-native-mail-5.2.0.tgz#01c9bf8142767d241c7145a1734cc0c92c291656"
-  integrity sha512-WZNRngUTj+9e42T10043jWBBZbEokOqHmtMAwWnwNGB/yCU+U3LSEaUJimp+Qblvo2d1Fj3cZz4SAGUzt4VWfw==
 
 react-native-reanimated@~1.9.0:
   version "1.9.0"

@@ -1,9 +1,13 @@
 import React from 'react';
 import TouchableTransform from '../../touchableTransform'
 
+import { useNavigation } from '@react-navigation/native'
+import percentage from "../../../utils/getPercentage"
+import original from "../../../utils/getOriginalSize"
+
 function Mapa() {
     let debug = false;
-    
+    let navigation = useNavigation();
     let createTouchable = ( l, t, h, w, trans, backgroundColor, name) => {
         return (
           <TouchableTransform 
@@ -11,7 +15,7 @@ function Mapa() {
             trans={trans}
             backgroundColor={debug ? backgroundColor : 'transparent'}
             name={name} 
-            onPressed={() => props.navigation.navigate('Floor', { screen: name, percentage, original } )} 
+            onPressed={() => navigation.navigate('Floor', { screen: name, percentage, original } )} 
           />
         )
     }
