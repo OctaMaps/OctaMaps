@@ -5,7 +5,8 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "optimize": "node ./src/utils/imageCompressor/index.js"
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
@@ -36,6 +37,7 @@
   "devDependencies": {
     "@babel/core": "~7.9.0",
     "babel-jest": "~25.2.6",
+    "compress-images": "^1.9.5",
     "jest": "~25.2.6",
     "react-test-renderer": "~16.11.0"
   },
