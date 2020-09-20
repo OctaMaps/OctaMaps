@@ -1,20 +1,28 @@
 import React from 'react';
 import { View } from 'react-native';
 import TouchableTransform from '../../touchableTransform'
+import { useNavigation } from '@react-navigation/native'
 
 function Mapa() {
     let debug = false;
+    let navigation = useNavigation();
+
+
     let floor3 = () => {
-        
+        navigation.navigate('Step')
+
     }
     let floor2 = () => {
-        
+        navigation.navigate('Step')
+
     }
     let floor1 = () => {
-        
+        navigation.navigate('Step')
+
     }
     let art = () => {
-        
+        navigation.navigate('Step')
+
     }
 
     return (

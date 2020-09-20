@@ -28,7 +28,8 @@ function CustomDrawerContent({ navigation }, props) {
             color: colors.text, 
             fontSize: 25, 
             textAlign: 'center',
-            marginTop: -9/getPercentage[1]
+            marginTop: -14/getPercentage[1],
+            marginBottom: 14/getPercentage[1]
         },
 
      });
@@ -56,7 +57,7 @@ function CustomDrawerContent({ navigation }, props) {
                         style={styles.image}
                         PlaceholderContent={<ActivityIndicator />}
                     />
-                    <Text style={styles.menuText}> Olá, bem vindo !</Text>
+                    <Text style={styles.menuText}> Bem Vindo !</Text>
                 </SafeAreaView>
 
                 <SafeAreaView>

@@ -9,6 +9,7 @@ import Floor from './screens/floor';
 import Main from './screens/main';
 import About from './screens/about';
 import Contact from './screens/contact';
+import Step from './screens/step';
 
 const Drawer = createDrawerNavigator();
 
@@ -55,6 +56,10 @@ export default function App(props) {
         {
             page: Contact,
             routeName: 'Contact'
+        },
+        {
+            page: Step,
+            routeName: "Step"
         }
     ]
 
