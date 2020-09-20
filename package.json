@@ -41,7 +41,7 @@
     "@babel/core": "~7.9.0",
     "babel-jest": "~25.2.6",
     "compress-images": "^1.9.5",
-    "eslint-plugin-react-hooks": "^4.1.2",
+    "eslint-plugin-react-hooks": "^4.1.0-rc.0",
     "jest": "~25.2.6",
     "react-test-renderer": "~16.11.0"
   },
