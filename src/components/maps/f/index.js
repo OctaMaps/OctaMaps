@@ -7,10 +7,10 @@ function Mapa() {
     let navigation = useNavigation();
     let debug = false;
     let floor2 = () => {
-        navigation.navigate('Step', {piso: 'Piso 2 - F' })
+        navigation.navigate('Step', { bloco: "F", piso: '1' })
     }
     let floor1 = () => {
-        navigation.navigate('Step', {piso: 'Piso 1 - F' })
+        navigation.navigate('Step', { bloco: "F", piso: '1'})
     }
 
     return (
