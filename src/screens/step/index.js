@@ -6,10 +6,11 @@ import Header from '../../components/header'
 
 import percentage from '../../utils/getPercentage';
 
-import FP1 from "../../images/Level/BlocoFP1.jpg"
+import FP1 from "../../images/Level/BlocoF1.jpg"
 import Images from "./images"
 
 function Step(props){
+    let image;
 
     // Seleciona a imagem para ser exibida com base no props
     let selectImageFromData = () => {
@@ -18,8 +19,8 @@ function Step(props){
         switch(bloco) {
             case "F": {
                 // Parei aqui na parte de criar a indentificação de imagem por piso
-
-            }
+                
+            }  
         }
     }
 
@@ -31,7 +32,7 @@ function Step(props){
                     width: '100%',
                     height: '100%'
                 }} 
-                source={Images.F[0]}>
+                source={FP1}>
             <Header/>
 
             </ImageBackground>
