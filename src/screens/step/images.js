@@ -30,8 +30,17 @@ const Images={
     },
     B: {
         totalFloor: 3,
+        haveSteps: true,
         level: [
-            { 
+            {   
+                totalStep: 3,
+                step: [
+                    require("../../images/Level/BlocoBTerreo1.jpg"),
+                    require("../../images/Level/BlocoBTerreo2.jpg"),
+                    require("../../images/Level/BlocoBTerreo3.jpg")
+                ]
+            },
+            {   
                 totalStep: 4,
                 step: [
                     require("../../images/Level/BlocoB1P1.jpg"),
@@ -41,14 +50,14 @@ const Images={
                 ]
             },
             {
-                totalStep: 3,
+                totalStep: 5,
                 step: [
-                   
-                    
+                    require("../../images/Level/BlocoB1P2.png"),
+                    require("../../images/Level/BlocoB2P2.png"),
+                    require("../../images/Level/BlocoB3P2.png"),
+                    require("../../images/Level/BlocoB4P2.png"),
+                    require("../../images/Level/BlocoB5P2.png"),
                 ]
-            },
-            {
-                
             }
         ]
     }

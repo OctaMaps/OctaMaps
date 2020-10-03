@@ -16,11 +16,20 @@ function Step(props){
     let selectImageFromData = () => {
         let { route: { params: { bloco, piso } } } = props;
         bloco = bloco.toUpperCase();
-        switch(bloco) {
-            case "F": {
-                // Parei aqui na parte de criar a indentificação de imagem por piso
-                
-            }  
+        let info = Images[bloco];
+
+        if(info.totalFloor > piso){
+            let { haveSteps = false } = info
+            console.log(haveSteps)
+            if(haveSteps){
+                // rotina pra pisos tipo bloco B
+            }
+            else {
+                image = info.level[piso]
+            }
+        }
+        else {
+            console.error("This floor not exist.")
         }
     }
 
@@ -32,7 +41,7 @@ function Step(props){
                     width: '100%',
                     height: '100%'
                 }} 
-                source={FP1}>
+                source={image}>
             <Header/>
 
             </ImageBackground>
