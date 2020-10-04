@@ -7,16 +7,16 @@ import { useNavigation } from '@react-navigation/native'
 function Mapa() {
     let debug = false;
     let navigation = useNavigation();
-
+    let bloco = "E"
     let floor3 = () => {
-        navigation.navigate('Step')
+        navigation.navigate('Step', { bloco, piso: '0' })
     }
     let floor2 = () => {
-        navigation.navigate('Step')
+        navigation.navigate('Step', { bloco, piso: '1' })
 
     }
     let floor1 = () => {
-        navigation.navigate('Step')
+        navigation.navigate('Step', { bloco, piso: '2' })
     }
 
     return (

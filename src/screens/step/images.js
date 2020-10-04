@@ -28,6 +28,14 @@ const Images={
             require("../../images/Level/BlocoCP1.jpg")
         ]
     },
+    A: {
+        totalFloor: 3,
+        level: [
+            require("../../images/Level/BlocoATerreo.jpg"),
+            require("../../images/Level/BlocoAP1.jpg"),
+            require("../../images/Level/BlocoAP2.png")
+        ]
+    },
     B: {
         totalFloor: 3,
         haveSteps: true,

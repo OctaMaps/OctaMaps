@@ -12,7 +12,7 @@ function Mapa() {
     let floor1 = () => {
         navigation.navigate('Step', { bloco: "F", piso: '1'})
     }
-
+ 
     return (
         <View>
              <TouchableTransform 

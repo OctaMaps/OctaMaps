@@ -6,23 +6,21 @@ import { useNavigation } from '@react-navigation/native'
 function Mapa() {
     let debug = false;
     let navigation = useNavigation();
-
+    let bloco = "B"
 
     let floor3 = () => {
-        navigation.navigate('Step')
-
+        navigation.navigate('Step', { bloco, piso: '2' })
     }
     let floor2 = () => {
-        navigation.navigate('Step')
+        navigation.navigate('Step', { bloco, piso: '1' })
 
     }
     let floor1 = () => {
-        navigation.navigate('Step')
+        navigation.navigate('Step', { bloco, piso: '0' })
 
     }
     let art = () => {
-        navigation.navigate('Step')
-
+        navigation.navigate('Step', { bloco, piso: '0' })
     }
 
     return (
@@ -31,33 +29,33 @@ function Mapa() {
                 array={[-60, 250, 48, 460]}
                 trans={[0, -38]}
                 backgroundColor={debug ? "orange" : "transparent"}
-                onPress={() => floor1()}
+                onPressed={() => floor1()}
             />
             
             <TouchableTransform 
                 array={[-60, 200, 48, 460]}
                 trans={[0, -38]}
                 backgroundColor={debug ? "white" : "transparent"}
-                onPress={() => floor2()}
+                onPressed={() => floor2()}
             />
 
             <TouchableTransform 
                 array={[-60, 155, 48, 460]}
                 trans={[0, -35]}
                 backgroundColor={debug ? "lightblue" : "transparent"}
-                onPress={() => floor3()}
+                onPressed={() => floor3()}
             />
             <TouchableTransform 
                 array={[-60, 130, 48, 410]}
                 trans={[0, -32]}
                 backgroundColor={debug ? "lightblue" : "transparent"}
-                onPress={() => floor3()}
+                onPressed={() => floor3()}
             />
             <TouchableTransform 
                 array={[365, 110, 40, 50]}
                 trans={[0, -60]}
                 backgroundColor={debug ? "cyan" : "transparent"}
-                onPress={() => art()}
+                onPressed={() => art()}
             />
             
 

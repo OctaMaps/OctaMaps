@@ -1,1 +1,9 @@
 Me confundi na separação do blocoB no documento images, separar e depois codar.
+
+03/10/20
+Fiz o mapeamento do bloco b (imagens) e agora falta configurar o sistema de rotas para as 
+telas e o extra "haveSteps"
+
+04/10/20
+Configurando o sistema de rotas para todas as telas restantes, e comecei a view para 
+selecionar os pisos da tela com "steps"
