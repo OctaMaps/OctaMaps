@@ -55,7 +55,8 @@ const Images={
                     require("../../images/Level/BlocoB2P1.jpg"),
                     require("../../images/Level/BlocoB3P1.jpg"),
                     require("../../images/Level/BlocoB4P1.jpg"),
-                ]
+                ],
+                inverted: true
             },
             {
                 totalStep: 5,
@@ -66,7 +67,7 @@ const Images={
                     require("../../images/Level/BlocoB4P2.png"),
                     require("../../images/Level/BlocoB5P2.png"),
                 ]
-            }
+            },
         ]
     }
     

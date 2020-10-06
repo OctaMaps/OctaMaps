@@ -7,3 +7,8 @@ telas e o extra "haveSteps"
 04/10/20
 Configurando o sistema de rotas para todas as telas restantes, e comecei a view para 
 selecionar os pisos da tela com "steps"
+
+05/10/20
+Criação do suporte de telas com varios niveis(imagens)(blocoB) e criação de navegação
+envolta dos niveis, tentativa de usar handler para fazer navegação por gestos(apenas para baixo funcionou)
+// preciso aprender a diferenciar os sinais de cima e para baixo.(up down)
