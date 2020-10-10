@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View, ImageBackground, Animated, Easing, StyleSheet  } from 'react-native';
+import { Text, View, ImageBackground, Animated, Alert, StyleSheet, BackHandler  } from 'react-native';
 
 import Header from '../../components/header'
 
@@ -8,13 +8,15 @@ import percentage from '../../utils/getPercentage';
 import Images from "./images"
 import { useTheme } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import  { FlingGestureHandler, Directions, State, } from 'react-native-gesture-handler'
+import  { FlingGestureHandler, Directions, } from 'react-native-gesture-handler'
 
 let image;
 
 function Step(props){
     const { colors } = useTheme();
+    const [y, setY] = useState(0);
     const [partSelect, setPartSelect] = useState(0);
+    const [lastScreen, setLastScreen] = useState(0);
 
     let { route: { params: { bloco: bloco, piso: piso } } } = props;
     let info = Images[bloco.toUpperCase()];
@@ -50,6 +52,11 @@ function Step(props){
                 let levels = info.level;
                 let level = levels[piso];
                 newImage = level.step[partSelect];
+                let thisScreen = `${bloco}${piso}`
+                if(thisScreen != lastScreen) {
+                    setPartSelect(0)
+                    setLastScreen(thisScreen)
+                }
             }
             else {
                 newImage = info.level[piso];
@@ -91,7 +98,6 @@ function Step(props){
                 left: !inverted ? 20/percentage[0] : 360/percentage[0] ,
                 borderRadius: 13,
                 borderColor: colors.card,
-                
             },
             options: {
                 padding: 18,
@@ -142,14 +148,26 @@ function Step(props){
 
     selectImageFromData()
 
+    // Faz a verificação de fingerUp e down
     let handleGesture = event => {
+        setLastScreen(`${bloco}${piso}`)
         let { level } = info;
-        let { nativeEvent: { state } } = event;
+        let { nativeEvent: { state, absoluteY} } = event;
         level = level[piso]
         let totalStep = level.totalStep;
-        if(state == 5) {
-            if(partSelect < totalStep-1) {
-                setPartSelect(partSelect+1)
+        if(state == 5 || state == 2) {
+            if(state == 2) {
+                setY(absoluteY)
+            }
+            if(state == 5) {
+                if(y > absoluteY) {
+                    if(partSelect < totalStep)
+                        setPartSelect(partSelect+1)
+                }
+                else if (y < absoluteY) {
+                    if(partSelect > 0)
+                    setPartSelect(partSelect-1)
+                }        
             }
         }
     }
