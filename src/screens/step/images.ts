@@ -13,7 +13,6 @@ const Images={
                         left: 0,
                         top: 0,
                         height: 0,
-                        top: 0,
                         transform: {
                             rotateY: 0,
                             rotateZ: 0
@@ -25,7 +24,6 @@ const Images={
                         left: 0,
                         top: 0,
                         height: 0,
-                        top: 0,
                         transform: {
                             rotateY: 0,
                             rotateZ: 0
