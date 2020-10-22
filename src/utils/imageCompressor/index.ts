@@ -7,7 +7,6 @@ const compress_images = require("compress-images")
 
 let inputPath;
 let outputPath;
-let errors = [];
 
 inputPath = "../../images/*/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}";
 outputPath = "../../optimizedImages";
@@ -21,15 +20,13 @@ compress_images(
     { svg: { engine: "svgo", command: "--multipass" } },
     { gif: { engine: "gifsicle", command: ["--colors", "64", "--use-col=web"] } },
 
-  function (error, completed, statistic) {
+  function (error: Error, completed: any, statistic: any) {
     if(statistic) {
         console.log("-------------");
         console.log(statistic);
         console.log("-------------");
     }   
     if(error) 
-        errors.push(error)
+        console.log(error)
   } 
 );
-
-console.log(errors ? "Everything was ok, no errors found." : `Error happened: ${errors} `)

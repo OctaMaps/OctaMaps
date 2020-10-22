@@ -1,5 +1,5 @@
 {
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -39,11 +39,15 @@
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-native": "^0.63.29",
     "babel-jest": "~25.2.6",
     "compress-images": "^1.9.5",
     "eslint-plugin-react-hooks": "^4.1.0-rc.0",
     "jest": "~25.2.6",
-    "react-test-renderer": "~16.11.0"
+    "react-test-renderer": "~16.11.0",
+    "typescript": "^4.0.3"
   },
   "jest": {
     "preset": "react-native"

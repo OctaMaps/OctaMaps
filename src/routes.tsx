@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Button, View, useWindowDimensions } from 'react-native';
+import { useWindowDimensions } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer , DefaultTheme, DarkTheme } from '@react-navigation/native';
 import CustomDrawerContent from './components/customDrawerContent';
-import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
+import { useColorScheme } from 'react-native-appearance';
 
 import Floor from './screens/floor';
 import Main from './screens/main';

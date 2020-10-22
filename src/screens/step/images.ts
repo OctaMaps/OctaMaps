@@ -4,7 +4,36 @@ const Images={
         level: [
             require("../../images/Level/BlocoF0.jpg"), 
             require("../../images/Level/BlocoF1.jpg"), 
-        ]
+        ],
+        touchable: {
+            haveSteps: false,
+            pisos: {
+                piso1: [
+                    { 
+                        left: 0,
+                        top: 0,
+                        height: 0,
+                        top: 0,
+                        transform: {
+                            rotateY: 0,
+                            rotateZ: 0
+                        }
+                    }
+                ],
+                piso2: [
+                    {
+                        left: 0,
+                        top: 0,
+                        height: 0,
+                        top: 0,
+                        transform: {
+                            rotateY: 0,
+                            rotateZ: 0
+                        }
+                    }
+                ]
+            }
+        }
     },
     E: {
         totalFloor: 3,
@@ -12,7 +41,8 @@ const Images={
             require("../../images/Level/BlocoETerreo.jpg"),
             require("../../images/Level/BlocoEP1.jpg"),
             require("../../images/Level/BlocoEP2.png")
-        ]
+        ],
+        
     },
     D: {
         totalFloor: 2,

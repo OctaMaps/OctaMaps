@@ -2,12 +2,17 @@
 // para criar uma adatação visual mais realista.
 
 import { Dimensions } from 'react-native';
-import getOriginalSize from '../getOriginalSize'
+import getOriginalSize from '../getOriginalSize/'
+
+interface arrayType {
+    width: number,
+    height: number
+}
 
 let original = getOriginalSize;
 
 function executeConversion() {
-    let ex = {
+    let ex : arrayType = {
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height
     } 

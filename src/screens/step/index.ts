@@ -157,11 +157,11 @@ function Step(props){
         let totalStep = level.totalStep;
         if(state == 5 || state == 2) {
             if(state == 2) {
-                setY(absoluteY)
+                setY(absoluteY) 
             }
             if(state == 5) {
                 if(y > absoluteY) {
-                    if(partSelect < totalStep)
+                    if(partSelect < totalStep-1)
                         setPartSelect(partSelect+1)
                 }
                 else if (y < absoluteY) {
