@@ -15,7 +15,6 @@ export default function Main(props) {
   let percentage = getPercentage;
   let original = getOriginalSize;
   
-
   return (
     <>
     <StatusBar hidden StatusBarAnimation={'fade'} style="light" />

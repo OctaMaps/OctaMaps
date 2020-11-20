@@ -1,0 +1,21 @@
+
+02/10/20
+Me confundi na separação do blocoB no documento images, separar e depois codar.
+
+03/10/20
+Fiz o mapeamento do bloco b (imagens) e agora falta configurar o sistema de rotas para as 
+telas e o extra "haveSteps"
+
+04/10/20
+Configurando o sistema de rotas para todas as telas restantes, e comecei a view para 
+selecionar os pisos da tela com "steps"
+
+05/10/20
+Criação do suporte de telas com varios niveis(imagens)(blocoB) e criação de navegação
+envolta dos niveis, tentativa de usar handler para fazer navegação por gestos(apenas para baixo funcionou)
+// preciso aprender a diferenciar os sinais de cima e para baixo. (up down)
+
+10/10/20
+Finalizei a diferenciação do movimento up e down na tela steps.
+Adicinonei verificação de tela anterior para corrigir problema do indicador do piso ir fora dos limites.
+

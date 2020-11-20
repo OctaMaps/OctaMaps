@@ -86,7 +86,6 @@ export default function Floor(props) {
 
   let onLoad = () => {
     setTimeout( () => {
-      console.log("Video Terminado")
       setVideoShow(false)
    },1300)
   }

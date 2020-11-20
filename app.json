@@ -3,10 +3,15 @@
   "displayName": "octas",
   "expo": {
     "name": "octas",
-    "slug": "octas",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
-  }
+    "slug": "octa-maps-new",
+    "ios": {
+      "bundleIdentifier": "com.octa.maps",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.octa.maps",
+      "versionCode": 1
+    }
+   }
 }

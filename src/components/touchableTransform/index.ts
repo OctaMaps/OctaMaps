@@ -4,7 +4,6 @@ import getPercentage from '../../utils/getPercentage';
 
 export default function TouchableTransform(props) {
     let percentage = getPercentage;
-    console.log(props)
 
     // array = [left, top, height, width].
     let { array=[0, 0, 0, 0], trans=[0,0], backgroundColor="transparent", name="", onPressed = () => {} } = props;  
@@ -33,7 +32,7 @@ export default function TouchableTransform(props) {
                 ]
             }
             } 
-            onPress={() => onPressed() } 
+            onPress={() => onPressed()} 
         />
         )
     }
