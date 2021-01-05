@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "array-sync": "^3.0.1",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "expo": "^37.0.0",
     "expo-av": "~8.1.0",
     "expo-updates": "~0.1.2",
